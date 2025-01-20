@@ -1,10 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <script src="scripts.js" defer></script>
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>Join UMBC Rugby</title>
 </head>
 <body>
-$END$
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
+
+  <!-- HEADER -->
+  <header id="hero-header">
+    <!-- Background Image -->
+    <img src="gokarn.jpg" alt="Header Background" id="header-image" />
+
+    <!-- Optional Gradient Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1>UMBC Rugby Club</h1>
+      <p>Join the only contact sport at UMBC!</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BELOW THE HEADER -->
+  <nav id="navbar" role="navigation">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- RECRUITMENT FORM SECTION -->
+    <section id="recruitment-form">
+      <h2>Recruitment Form</h2>
+      <p>
+        We’re always looking for talented players and enthusiastic novices alike.
+        Fill out the form below to learn more about UMBC Rugby and join our legacy.
+      </p>
+      <form
+        action="https://formspree.io/f/xqaagkjn"
+        method="POST"
+        class="styled-form"
+      >
+        <div class="form-row">
+          <label for="name">Full Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="email">Email Address *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone Number *</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="Enter your phone number"
+            required
+          />
+        </div>
+        <div class="form-row">
+          <label for="experience">Rugby Experience</label>
+          <textarea
+            id="experience"
+            name="experience"
+            placeholder="Share your rugby experience (optional)"
+            rows="5"
+          ></textarea>
+        </div>
+        <div class="form-row">
+          <button type="submit" class="cta-button">Submit</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+  <!-- Logo -->
+  <div class="footer-logo">
+    <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
+    <img src="ncr.png" alt="NCR Logo" />
+    <img src="umbclogo.png" alt="UMBC Logo" />
+
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- Copyright Text -->
+  <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+</footer>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

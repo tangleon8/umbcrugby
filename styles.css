@@ -1,100 +1,1810 @@
-/* General Body Styles */
+/*****************************************
+  ROOT VARIABLES & GLOBAL STYLES
+******************************************/
+:root {
+  --umbc-gold: #ffb81c;
+  --umbc-black: #000000;
+  --umbc-grey: #f7f7f7;
+  --hero-bg: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.5)
+  );
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+/*****************************************
+  BASIC PAGE STYLING
+******************************************/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
+  font-family: "Montserrat", sans-serif;
+  color: var(--umbc-black);
+  background-color: var(--umbc-grey);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
 }
 
-/* Header Styles */
-header {
-    background-color: #000;
-    color: #FFD700;
-    padding: 20px;
-    text-align: center;
+h1, h2, h3 {
+  color: var(--umbc-gold);
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
-/* Navigation Bar */
+/*****************************************
+  UNIVERSAL CTA BUTTON STYLES
+******************************************/
+.cta-button {
+  display: inline-block;
+  background-color: var(--umbc-gold);
+  color: var(--umbc-black);
+  padding: 12px 25px;
+  font-size: 1.1rem; /* Adjust as needed */
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+.cta-button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+/*****************************************
+  NAVBAR (NOT STICKY)
+******************************************/
 nav#navbar {
-    margin-top: 10px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 15px 0;
+  /* Removed the 'top: 0;' property to prevent sticky/fixed behavior */
+  z-index: 10;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 nav#navbar ul {
-    list-style-type: none;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 nav#navbar li {
-    float: left;
+  margin: 0 15px;
 }
 
-nav#navbar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+nav#navbar a {
+  color: var(--umbc-gold);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-nav#navbar li a:hover {
-    background-color: #FFD700;
-    color: black;
+nav#navbar a:hover,
+nav#navbar a.active {
+  background-color: var(--umbc-gold);
+  color: var(--umbc-black);
 }
 
-/* Carousel Styles */
-section#carousel {
-    position: relative;
-    max-width: 800px;
-    margin: 20px auto;
+/*****************************************
+  HERO HEADER
+******************************************/
+#hero-header {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  color: #fff; /* White text for contrast */
 }
 
-.carousel-img {
-    width: 100%;
-    border-radius: 8px;
-    display: none;
+/* Background Video */
+#header-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
 }
 
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    z-index: 1;
-    transform: translateY(-50%);
-    color: #FFD700;
-    font-size: 24px;
-    border-radius: 0 3px 3px 0;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    cursor: pointer;
-    padding: 16px;
-    transition: background-color 0.6s ease;
+/* Gradient Overlay */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4),
+    rgba(0, 0, 0, 0.8)
+  );
+  z-index: -1;
 }
 
-button.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
+/* Hero Content */
+.hero-content {
+  position: relative;
+  text-align: center;
+  margin-bottom: 70px; /* Space for nav if it’s anchored at bottom */
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 1rem;
 }
 
-button.prev:hover, button.next:hover {
-    background-color: #ddd;
-    color: #555;
+.hero-logo {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
 }
 
-/* About Section Styles */
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 20px 0 10px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/*****************************************
+  HERO BANNER (If separate from Hero Header)
+******************************************/
+.hero-banner {
+  z-index: 2;
+  padding: 50px 20px;
+  color: #fff;
+  background: var(--hero-bg);
+  border-radius: 12px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-banner h1 {
+  font-size: 3.5rem;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.hero-banner p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+/*****************************************
+  SECTION STYLING
+******************************************/
 section {
-    padding: 20px;
-    text-align: center;
+  background-color: #fff;
+  padding: 40px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  text-align: center;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #000;
-    color: #FFD700;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--umbc-gold);
+  text-transform: uppercase;
 }
+
+section p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+section img {
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+}
+
+/*****************************************
+  ABOUT SECTION
+******************************************/
+.about-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  justify-content: space-between; /* or center */
+}
+
+.about-text {
+  flex: 1 1 300px;
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.team-photo {
+  max-width: 100%;
+  width: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*****************************************
+  SCROLLING PLAYER SECTION
+******************************************/
+#scrolling-player-section {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.player-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.player-image {
+  position: absolute;
+  top: 50%;
+  left: -500px;
+  transform: translateY(-50%);
+  width: 1000px;
+  height: auto;
+  object-fit: cover;
+}
+
+/*****************************************
+  RESPONSIVE ADJUSTMENTS (TABLET, ETC.)
+  max-width: 768px
+******************************************/
+@media (max-width: 768px) {
+  .hero-banner {
+    padding: 30px 20px;
+  }
+  .hero-banner h1 {
+    font-size: 2.5rem;
+  }
+  .hero-banner p {
+    font-size: 1.2rem;
+  }
+  .cta-button {
+    font-size: 1rem;
+  }
+  nav#navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  nav#navbar li {
+    margin: 10px 0;
+  }
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .team-photo {
+    max-width: 300px;
+  }
+  #scrolling-player-section {
+    height: 50vh;
+  }
+
+  /* Hero Header Adjustments */
+  #hero-header {
+    height: auto; /* Let content dictate height on smaller screens */
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+/*****************************************
+  EXTRA PHONE-SPECIFIC ADJUSTMENTS
+  (max-width: 480px)
+******************************************/
+@media (max-width: 480px) {
+  /* Scale down headings and allow wrapping */
+  h1, h2, h3 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  /* Specifically target hero heading if needed */
+  .hero-content h1 {
+    font-size: 1.4rem;
+    line-height: 1.2;
+  }
+
+  /* Ensure the container doesn't clip text */
+  .hero-content {
+    overflow: visible;
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  /* Make nav items smaller and stacked */
+  nav#navbar a {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
+
+  /* Further reduce hero text if necessary */
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-logo {
+    width: 120px;
+  }
+
+  /* Section padding adjustments for tiny screens */
+  section {
+    padding: 20px;
+    margin: 10px auto;
+  }
+  section h2 {
+    font-size: 2rem;
+  }
+  section p {
+    font-size: 1rem;
+  }
+
+  /* About section adjustments */
+  .about-section {
+    padding: 2rem 1rem;
+  }
+  .about-text {
+    font-size: 1rem;
+  }
+
+  /* Donation form, recruitment form, etc. */
+  #recruitment-form h2 {
+    font-size: 1.6rem;
+  }
+  #recruitment-form p {
+    font-size: 1rem;
+  }
+
+  /* Footer text size */
+  footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/*****************************************
+  FOOTER
+******************************************/
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: var(--umbc-black);
+  color: var(--umbc-gold);
+  font-size: 0.9rem;
+  border-top: 4px solid var(--umbc-gold);
+}
+
+/*****************************************
+  BACK TO TOP BUTTON
+******************************************/
+#back-to-top {
+  display: none; /* Hidden by default */
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 99;
+  font-size: 18px;
+  background-color: var(--umbc-gold);
+  color: var(--umbc-black);
+  cursor: pointer;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+#back-to-top:hover {
+  transform: scale(1.1);
+}
+
+/*****************************************
+  LOADING SCREEN
+******************************************/
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--umbc-grey);
+  z-index: 1000; /* Above all other content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-logo {
+  width: 120px;
+  height: auto;
+  animation: spin 2s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-container {
+  width: 80%;
+  height: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: var(--umbc-gold);
+  transition: width 0.2s ease-in-out;
+}
+
+/*****************************************
+  INSTAGRAM FEED SECTION
+******************************************/
+#instagram-feed {
+  background-color: var(--umbc-grey);
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+#instagram-feed .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--umbc-gold);
+  text-transform: uppercase;
+}
+
+#instagram-feed p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--umbc-black);
+}
+
+.widget-container {
+  margin-top: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+[data-aos="zoom-in"].aos-animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*****************************************
+  SUPPORT RUGBY SECTION
+******************************************/
+#support-rugby {
+  background-color: var(--umbc-grey);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+#support-rugby p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: var(--umbc-black);
+}
+
+/*****************************************
+  FINANCIAL SUPPORT SECTION
+******************************************/
+#financial-support {
+  background-color: var(--umbc-grey);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+#financial-support ol {
+  font-size: 1.2rem;
+  margin: 20px auto;
+  text-align: left;
+  max-width: 600px;
+  color: var(--umbc-black);
+  padding-left: 20px;
+}
+
+/*****************************************
+  EMBEDDED FORM
+******************************************/
+#donation-form {
+  background-color: #fff;
+  padding: 50px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 1200px;
+}
+
+/*****************************************
+  CAROUSEL
+******************************************/
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-image {
+  flex: 0 0 100%;
+  max-width: 100%;
+  cursor: pointer;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.indicator.active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+/*****************************************
+  MODAL
+******************************************/
+/* Modal Popup Styles */
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #ffffff;
+  margin: 10% auto; /* Center vertically */
+  padding: 20px;
+  border-radius: 10px;
+  width: 90%; /* Mobile-friendly width */
+  max-width: 400px; /* Limit the width */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  text-align: center;
+}
+
+/* Popup Image */
+.popup-image {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 2rem; /* Increase font size for better visibility */
+  font-weight: bold;
+  color: #ffffff; /* White text */
+  background-color: #ff0000; /* Bright red background */
+  padding: 5px 10px; /* Add padding for a button-like feel */
+  border-radius: 50%; /* Make it circular */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.close-modal:hover {
+  background-color: darkred; /* Darker red on hover */
+  color: #ffffff; /* Keep text white */
+  transform: scale(1.2); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhance shadow on hover */
+}
+
+.close-modal:hover {
+  color: #ff0000; /* Highlight red on hover */
+  transform: scale(1.2); /* Enlarge slightly */
+}
+
+/* Add to Calendar Button */
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: var(--umbc-gold);
+  color: #000000;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+/*****************************************
+  ROSTER
+******************************************/
+.roster-list {
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.roster-item {
+  border-bottom: 1px solid #ddd;
+  padding: 15px;
+}
+.roster-item:last-child {
+  border-bottom: none;
+}
+
+.roster-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.roster-summary h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: #333;
+}
+
+.roster-summary p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.roster-details {
+  display: none;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #444;
+  line-height: 1.5;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.roster-item.expanded .roster-details {
+  display: block;
+}
+
+.roster-item:hover {
+  background-color: #f1f1f1;
+}
+
+.roster-summary:hover {
+  color: #007bff;
+  transition: color 0.2s ease;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.sort-label {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+#sortSelect {
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  outline: none;
+  cursor: pointer;
+}
+#sortSelect:focus {
+  border-color: var(--umbc-gold);
+  box-shadow: 0 0 3px var(--umbc-gold);
+}
+
+/*****************************************
+  ALUMNI GALLERY / WEEKEND / SCHOLARSHIP
+******************************************/
+#alumni-gallery {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, #fff, var(--umbc-grey));
+  border-radius: 15px;
+  margin: 20px auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Alumni Weekend */
+.weekend-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.weekend-event {
+  background: var(--umbc-grey);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+.weekend-event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.event-title {
+  font-size: 1.5rem;
+  color: var(--umbc-gold);
+  margin-bottom: 10px;
+}
+.event-time {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--umbc-black);
+  margin-bottom: 10px;
+}
+.event-description {
+  font-size: 1rem;
+  color: var(--umbc-black);
+  line-height: 1.6;
+}
+
+/* Haud Collumni Scholarship */
+.scholarship-content {
+  background: var(--umbc-grey);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+.scholarship-details,
+.scholarship-growth {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.detail-title {
+  font-size: 1.5rem;
+  color: var(--umbc-gold);
+  margin-bottom: 10px;
+}
+.scholarship-details ul,
+.scholarship-growth ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.scholarship-details ul li,
+.scholarship-growth ul li {
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.scholarship-details ul li:last-child,
+.scholarship-growth ul li:last-child {
+  border-bottom: none;
+}
+.scholarship-growth ul li strong {
+  color: var(--umbc-black);
+}
+.closing-paragraph {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  text-align: justify;
+}
+
+/*****************************************
+  ALUMNI TEAMS SECTION
+******************************************/
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+.team-card {
+  background: var(--umbc-grey);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+.team-title {
+  font-size: 1.5rem;
+  color: var(--umbc-gold);
+  margin-bottom: 15px;
+}
+.team-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--umbc-black);
+}
+.team-card ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  list-style: disc;
+}
+.team-card ul li {
+  margin-bottom: 10px;
+}
+
+/* Team Logos */
+.team-logo {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.team-logo img {
+  max-width: 120px;
+  height: auto;
+  border-radius: 10px; /* For rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.team-logo img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*****************************************
+  VIDEO EMBEDS
+******************************************/
+.video-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+video {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Make the header image cover the entire header */
+#hero-header {
+  position: relative;
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  overflow: hidden; /* Prevent overflow issues */
+}
+
+#header-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Ensure the image covers the header completely */
+  z-index: -1; /* Place the image behind other content */
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: white;
+  z-index: 1; /* Bring content above the image */
+}
+
+/* Footer Styling */
+footer {
+  background-color: var(--umbc-black);
+  color: var(--umbc-gold);
+  text-align: center;
+  padding: 20px 10px;
+  border-top: 4px solid var(--umbc-gold);
+}
+
+.footer-logo img {
+  max-width: 120px;
+  margin-bottom: 10px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap links for smaller screens */
+}
+
+.footer-nav li {
+  margin: 0 10px;
+}
+
+.footer-nav a {
+  color: var(--umbc-gold);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: white;
+}
+
+footer p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+#recruitment-form {
+  max-width: 700px;
+  margin: 3rem auto;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+#recruitment-form h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #000; /* UMBC black */
+}
+
+#recruitment-form p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Form Styles */
+.styled-form .form-row {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Labels */
+.styled-form label {
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  color: #000; /* UMBC black */
+}
+
+/* Text Inputs & Textareas */
+.styled-form input[type="text"],
+.styled-form input[type="email"],
+.styled-form input[type="tel"],
+.styled-form textarea {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.styled-form input:focus,
+.styled-form textarea:focus {
+  outline: none;
+  border-color: #ffcc00; /* UMBC gold */
+  box-shadow: 0 0 5px rgba(255, 204, 0, 0.3);
+}
+
+/* Submit Button */
+.cta-button {
+  background-color: #ffcc00; /* UMBC gold */
+  color: #000; /* black text on gold background */
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e6b800; /* slightly darker gold */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*****************************************
+  FAQ CONTENT
+******************************************/
+#faq-content {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.faq-section {
+  background: #fff;
+  margin-bottom: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.faq-item {
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  width: 100%;
+  background: var(--umbc-gold);
+  color: var(--umbc-black);
+  text-align: left;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: darkorange;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background: var(--umbc-grey);
+  padding: 0 15px;
+  transition: max-height 0.3s ease;
+  border-radius: 5px;
+}
+
+.faq-answer p {
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+.faq-answer a {
+  color: var(--umbc-gold);
+  text-decoration: underline;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.faq-answer a:hover {
+  color: darkorange;
+  text-decoration: none;
+}
+
+/* Venmo Donation Section */
+#venmo-donation {
+  text-align: center;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #f7f7f7);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.venmo-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.venmo-logo {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+.venmo-actions {
+  margin-top: 20px;
+}
+
+.venmo-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #3d95ce;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 25px;
+  text-decoration: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.venmo-button:hover {
+  background-color: #006cff;
+  transform: scale(1.05);
+}
+/* Base styles for role badges */
+.role-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 12px;
+  margin-left: 10px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+/* Specific role colors */
+.captain {
+  background-color: #ffb81c; /* Gold */
+}
+
+.president {
+  background-color: #0073e6; /* Blue */
+}
+
+.secretary {
+  background-color: #FFA500 !important;
+}
+
+.vp {
+  background-color: #28a745; /* Green */
+}
+
+.shed-manager {
+  background-color: #6c757d; /* Grey */
+}
+
+.treasurer {
+  background-color: #d9534f; /* Red */
+}
+
+.co-captain {
+  background-color: #ffc107; /* Yellow */
+}
+
+/* Hover effect */
+.role-badge:hover {
+  filter: brightness(1.2);
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Instagram Feed Section */
+#instagram-feed {
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #f4f4f4; /* Light gray background */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Subtle shadow */
+  text-align: center;
+}
+
+#instagram-feed h2 {
+  font-size: 2.5rem; /* Larger heading */
+  font-weight: bold;
+  color: #222; /* Dark text */
+  margin-bottom: 15px;
+}
+
+#instagram-feed p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+#instagram-feed blockquote {
+  width: 100%;
+  max-width: 800px; /* Adjust max size of the Instagram widget */
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* New Carousel Container */
+.new-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Carousel Track */
+.new-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Carousel Images */
+.new-carousel-image {
+  width: 100%;
+  flex-shrink: 0;
+  height: 500px;
+  object-fit: cover;
+  border-right: 5px solid white;
+}
+
+/* Navigation Buttons */
+.new-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.new-carousel-btn.prev {
+  left: 15px;
+}
+
+.new-carousel-btn.next {
+  right: 15px;
+}
+
+.new-carousel-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Dots Navigation */
+.new-carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.new-carousel-dots .dot {
+  width: 12px;
+  height: 12px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.new-carousel-dots .dot.active {
+  background-color: rgba(0, 0, 0, 1);
+}
+/* Swipe Gestures Smoothness */
+.new-carousel-track {
+  touch-action: pan-x; /* Restrict gestures to horizontal swiping */
+}
+
+/* Optional: Adjust Dots for Better Visibility */
+.new-carousel-dots .dot {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px;
+}
+
+.new-carousel-dots .dot.active {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+/* Fancy Carousel Container */
+.fancy-carousel-container {
+  position: relative;
+  perspective: 1000px; /* Enables the 3D effect */
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background: #000;
+}
+
+/* Carousel Track */
+.fancy-carousel-track {
+  position: relative;
+  width: 100%;
+  height: 500px; /* match the slide height */
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+  /* Remove the initial translateZ(-400px) so it’s easier to handle in JS */
+}
+
+/* Carousel Slides */
+.fancy-carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden; /* Hide back side during rotation */
+  transform-origin: center center; /* Let JS handle translateZ/rotateY */
+  text-align: center;
+}
+
+/* Image Styling */
+.fancy-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* Caption */
+.carousel-caption {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fancy-carousel-slide:hover .carousel-caption {
+  opacity: 1;
+}
+
+/* Navigation Buttons */
+.fancy-carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: none;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.fancy-carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.fancy-carousel-btn.prev {
+  left: 15px;
+}
+
+.fancy-carousel-btn.next {
+  right: 15px;
+}
+
+/* Dots Navigation */
+.fancy-carousel-dots {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.fancy-carousel-dots .dot {
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.fancy-carousel-dots .dot.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+.footer-logo img {
+  max-width: 70px;
+  margin-bottom: 10px;
+  margin-right: 20px; /* Add space between logos */
+}
+
+.footer-logo img:last-child {
+  margin-right: 0; /* Remove margin from the last logo */
+}
+
+/***************************************************
+ * COACHES SECTION - Enhanced Styling
+ **************************************************/
+.coaches-section {
+  /* A subtle dark gradient background */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(51, 51, 51, 0.8)
+  );
+  color: #fff;
+  padding: 50px 20px;
+  /* override .info-section’s default if needed */
+  margin: 40px auto 0;
+  border-radius: 15px;
+  max-width: 1200px;
+}
+
+.coaches-section .section-title {
+  color: var(--umbc-gold);
+}
+
+/* Container that holds all coach cards */
+.coaches-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch; /* keep cards uniform in height if they differ */
+  margin-top: 30px;
+}
+
+/* Each individual coach card */
+.coach-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  max-width: 300px;
+  width: 100%;
+  text-align: center;
+  margin: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover lift and shadow effect */
+.coach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Coach photo at the top of the card */
+.coach-photo {
+  width: 100%;
+  height: 240px; /* consistent height across cards */
+  object-fit: cover;
+  display: block;
+}
+
+/* Text content inside the card */
+.coach-info {
+  padding: 20px;
+}
+
+.coach-info h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #fff;
+}
+
+.coach-info .role {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--umbc-gold);
+  margin: 5px 0;
+}
+
+.coach-info .hometown {
+  font-style: italic;
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.coach-info .bio {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+/***************************************************
+ * Coaches Section - Side-by-Side, No Photos
+ **************************************************/
+.coaches-section {
+  /* Dark gradient matching the site's color scheme */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.85),
+    rgba(34, 34, 34, 0.85)
+  );
+  color: #fff;
+  padding: 50px 20px;
+  margin: 40px auto 0;
+  border-radius: 15px;
+  max-width: 1200px; /* Center it nicely */
+  text-align: center;
+}
+
+.coaches-section .section-title {
+  color: var(--umbc-gold);
+  margin-bottom: 30px;
+}
+
+.coaches-container {
+  display: flex;
+  flex-wrap: wrap;      /* wrap on small screens */
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;            /* space between cards */
+}
+
+/* Each Coach Card */
+.coach-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  flex: 1;                    /* evenly distribute width */
+  min-width: 240px;           /* ensure cards don't get too narrow */
+  max-width: 300px;           /* optional, so they don't get too wide */
+  border-radius: 15px;
+  padding: 20px;
+  margin: 0 auto;             /* center if there's extra space */
+  text-align: left;           /* left-align text within the card */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Subtle hover effect to "lift" the card */
+.coach-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Coach details */
+.coach-name {
+  margin-top: 0;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.coach-role {
+  color: var(--umbc-gold);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.coach-hometown {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.coach-bio {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #ddd;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .coaches-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .coach-card {
+    max-width: 90%;  /* make them fill most of screen on mobile */
+    margin: 10px auto;
+    text-align: center;
+  }
+}
+.role-badge.secretary {
+  background-color: #A020F0; /* Use your desired purple */
+}
+

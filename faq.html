@@ -1,10 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <script src="scripts.js" defer></script>
+  <title>FAQs - UMBC Rugby</title>
 </head>
 <body>
-$END$
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
+
+  <!-- HEADER -->
+  <header id="hero-header">
+    <img src="raf.jpg" alt="UMBC Rugby Header Image" id="header-image" />
+
+    <!-- Gradient Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" data-aos="fade-up">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1 class="hero-title">FAQs</h1>
+      <p class="hero-subtitle">Your Questions, Answered</p>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="hero-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html" class="active">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="faq-content">
+    <!-- FAQ Sections -->
+   <section class="faq-section" data-aos="fade-up">
+    <h2>General Questions</h2>
+    <div class="faq-item">
+      <button class="faq-question">Q: I don't know anything about rugby. Can I still play?</button>
+      <div class="faq-answer">
+        <p>A: Yes! We'll teach you everything you need to know.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: What do I need to play? Do I need to buy anything?</button>
+      <div class="faq-answer">
+        <p>
+          A: No, not right away! You can come practice with as little as good athletic shoes and a water bottle.
+          Eventually, you'll need a mouth guard, cleats, and rugby shorts, but you're fine to start without.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: Is rugby dangerous?</button>
+      <div class="faq-answer">
+        <p>
+          A: Like any contact sport, it can be. However, our USA rugby-certified coaching staff and senior players
+          teach the fundamentals of safe and secure play to reduce risk.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Practice & Games -->
+  <section class="faq-section" data-aos="fade-right">
+    <h2>Practice & Games</h2>
+    <div class="faq-item">
+      <button class="faq-question">Q: When and where are practices?</button>
+      <div class="faq-answer">
+        <p>A: Practices are held on Walker Avenue Field, typically on weekday evenings. Check our schedule for updates.</p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: Do I need to attend every practice?</button>
+      <div class="faq-answer">
+        <p>
+          A: While regular attendance is encouraged to build skills and teamwork, we understand if you have other commitments.
+          Just communicate with the team captains and coaches.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: What teams do you play against?</button>
+      <div class="faq-answer">
+        <p>
+          A: We play against other collegiate teams in the Mid-Atlantic Rugby Conference (MARC).
+          We also welcome matches with new teams. If you're interested, reach out via Instagram or fill out our <a href="recruitment.html">recruitment form</a>.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: What positions are there in rugby?</button>
+      <div class="faq-answer">
+        <p>
+          A: Rugby positions are divided into forwards and backs. Forwards are typically stronger and involved in physical contests
+          while backs are faster and focus on running and scoring. You'll find the best position for your skills during practice.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsorship Opportunities -->
+  <section class="faq-section" data-aos="fade-left">
+    <h2>Sponsorship Opportunities</h2>
+    <div class="faq-item">
+      <button class="faq-question">Q: How can my company sponsor UMBC Rugby?</button>
+      <div class="faq-answer">
+        <p>
+          A: We offer multiple sponsorship opportunities to support UMBC Rugby and connect with our vibrant community.
+          Download our <a href="sponsor.pdf" target="_blank">Sponsor Packet</a> for detailed information about sponsorship tiers, benefits, and how your contribution can make an impact.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: What are the benefits of sponsoring UMBC Rugby?</button>
+      <div class="faq-answer">
+        <p>
+          A: Sponsors receive recognition on our website, social media, and game-day materials, along with opportunities
+          to showcase their brand to the UMBC community and beyond. For more details, please refer to the
+          <a href="sponsor.pdf" target="_blank">Sponsor Packet</a>.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: Who should I contact for sponsorship inquiries?</button>
+      <div class="faq-answer">
+        <p>
+          A: Feel free to reach out to us via Instagram or email us directly!.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Culture & Events -->
+  <section class="faq-section" data-aos="fade-up">
+    <h2>Team Culture & Events</h2>
+    <div class="faq-item">
+      <button class="faq-question">Q: What is the team culture like?</button>
+      <div class="faq-answer">
+        <p>
+          A: Our team culture is centered on inclusivity, sportsmanship, and brotherhood. We welcome players of all skill levels
+          and backgrounds to join and contribute to our supportive and competitive environment.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: What events do you host?</button>
+      <div class="faq-answer">
+        <p>
+          A: We host several events throughout the year, including the Alumni Weekend, Hall of Fame Ceremony, and post-game socials.
+          These events are open to players, alumni, and fans to celebrate the spirit of UMBC Rugby.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: Can I invite friends and family to watch games?</button>
+      <div class="faq-answer">
+        <p>
+          A: Absolutely! Games are free to attend and open to everyone. Bring your friends and family to cheer us on and enjoy the rugby experience.
+        </p>
+      </div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Q: How does rugby prepare players for life outside the game?</button>
+      <div class="faq-answer">
+        <p>
+          A: Rugby teaches resilience, teamwork, and leadership—qualities that benefit players in their careers and personal lives.
+          Many of our alumni carry these values into their communities and professions.
+        </p>
+      </div>
+    </div>
+  </section>
+
+    <section class="faq-section" data-aos="fade-up">
+    <h2>Rugby Merchandise</h2>
+    <div class="faq-item">
+      <button class="faq-question">Q: Where can I buy UMBC Rugby merchandise?</button>
+      <div class="faq-answer">
+        <p>
+          A: Show your UMBC Rugby pride with official merchandise! Visit our partner store
+          <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank">
+            Steamroller Rugby</a> for jerseys, shorts, accessories, and more.
+        </p>
+        <p>
+          Whether you're a player, fan, or alumni, you’ll find high-quality gear that helps support the team.
+        </p>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
+      <img src="ncr.png" alt="NCR Logo" />
+      <img src="umbclogo.png" alt="UMBC Logo" />
+    </div>
+
+    <!-- Footer Navigation Links -->
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="rugby-ready.html">Rugby Ready</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </nav>
+
+    <!-- Copyright -->
+    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+  </footer>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init();
+
+    // FAQ Accordion Functionalitydocument.addEventListener("DOMContentLoaded", () => {
+  const faqQuestions = document.querySelectorAll(".faq-question");
+
+  faqQuestions.forEach((question) => {
+    question.addEventListener("click", () => {
+      const answer = question.nextElementSibling;
+      const isOpen = answer.style.maxHeight;
+
+      // Close other answers
+      document.querySelectorAll(".faq-answer").forEach((otherAnswer) => {
+        if (otherAnswer !== answer) {
+          otherAnswer.style.maxHeight = null;
+        }
+      });
+
+      // Toggle current answer
+      answer.style.maxHeight = isOpen ? null : `${answer.scrollHeight}px`;
+    });
+  });
+  </script>
 </body>
 </html>

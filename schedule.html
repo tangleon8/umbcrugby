@@ -1,10 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="scripts.js" defer></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <title>UMBC Rugby | Home</title>
 </head>
 <body>
-$END$
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top" aria-label="Back to Top">↑</button>
+
+  <!-- HEADER -->
+  <header id="hero-header">
+    <!-- Background Image -->
+    <img src="DSC_3573.jpg" alt="UMBC Rugby Header Image" id="header-image" />
+
+    <!-- Gradient Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" data-aos="fade-up">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1>Team Schedule</h1>
+      <a href="recruitment.html" class="cta-button">Join the Team</a>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BELOW THE HEADER -->
+  <nav id="navbar" role="navigation">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- PRACTICE SCHEDULE -->
+    <section id="practice-schedule" aria-labelledby="practice-schedule-title" data-aos="fade-up">
+      <h2 id="practice-schedule-title">Practice Schedule</h2>
+      <p>
+        We hold practice every <strong>Tuesday, Thursday, and Friday</strong> from
+        <strong>4–6 PM</strong> at Walker Field on the UMBC campus.
+      </p>
+    </section>
+
+    <!-- FALL 2024 GAME SCHEDULE -->
+    <section id="fall-schedule" aria-labelledby="fall-schedule-title" data-aos="fade-right">
+      <h2 id="fall-schedule-title">Fall 2024 Schedule</h2>
+      <img
+        src="fallschedule.png"
+        alt="UMBC Rugby Fall 2024 Schedule"
+        class="schedule-image"
+      />
+    </section>
+
+    <!-- MAP LOCATION -->
+    <section id="map-location" aria-labelledby="map-location-title" data-aos="fade-left">
+      <h2 id="map-location-title">Walker Field Location</h2>
+      <p>
+        Our practices take place at <strong>Walker Field</strong> on the UMBC campus.
+        Check the map below for directions:
+      </p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1544.674839476125!2d-76.7174043148411!3d39.25763190706712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81dcca1aaaaab%3A0xaad2b84386103553!2sWalker%20Field!5e0!3m2!1sen!2sus!4v1735791923883!5m2!1sen!2sus"
+          width="600"
+          height="450"
+          style="border:0; width: 100%; max-width: 900px;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Walker Field Location"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+  <!-- Logo -->
+  <div class="footer-logo">
+    <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
+    <img src="ncr.png" alt="NCR Logo" />
+    <img src="umbclogo.png" alt="UMBC Logo" />
+
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+    <!-- Copyright Text -->
+    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+  </footer>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1200, // Animation duration in ms
+      once: true,     // Animation only occurs once
+    });
+
+    // Back to Top Button Logic
+    const backToTopBtn = document.getElementById("back-to-top");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.style.display = "block";
+      } else {
+        backToTopBtn.style.display = "none";
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
 </body>
 </html>

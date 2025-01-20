@@ -2,9 +2,263 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <title>UMBC Rugby Alumni</title>
+  <script src="scripts.js" defer></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
-$END$
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
+
+  <!-- HEADER -->
+  <header id="hero-header">
+    <img src="1987.jpg" alt="UMBC Rugby Alumni Banner" id="header-image">
+    <div class="hero-content" data-aos="fade-up">
+      <h1 class="glow-text">UMBC Rugby Alumni</h1>
+      <p class="highlight">Celebrating Tradition, Leadership, and Legacy</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BELOW THE HEADER -->
+  <nav id="navbar" role="navigation">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+
+ <div class="fancy-carousel-container">
+  <!-- Carousel Track -->
+  <div class="fancy-carousel-track">
+    <div class="fancy-carousel-slide">
+      <img src="rugby20.jpg" alt="Rugby Image 20" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby21.jpg" alt="Rugby Image 21" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby22.jpg" alt="Rugby Image 22" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby23.jpg" alt="Rugby Image 23" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby24.jpg" alt="Rugby Image 24" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby25.jpg" alt="Rugby Image 25" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby26.jpg" alt="Rugby Image 26" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby27.jpg" alt="Rugby Image 27" />
+      <div class="carousel-caption"></div>
+    </div>
+    <div class="fancy-carousel-slide">
+      <img src="rugby28.jpg" alt="Rugby Image 28" />
+      <div class="carousel-caption"></div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button class="fancy-carousel-btn prev" aria-label="Previous Slide">←</button>
+  <button class="fancy-carousel-btn next" aria-label="Next Slide">→</button>
+
+  <!-- Dots Navigation -->
+  <div class="fancy-carousel-dots"></div>
+</div>
+
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Alumni Introduction Section -->
+    <section id="alumni-introduction" class="info-section" data-aos="fade-up">
+      <h2 class="section-title">Welcome to UMBC Rugby Alumni</h2>
+      <p>
+      It all started in November 1992 with the playing of the very first UMBC Alumni Game. It was cold that day, it snowed during the game and yes the field slanted uphill both ways. The next was held in 1994 and starting in 1996 it became a fixture in the spring calendar of UMBC.  In the past guys would come to enjoy post game, then a few snack foods were brought,  someone brought a bucket of fried chicken and finally somewhere in 1998-1999 things started to get more formalized. Fast forward a decade plus and what started as a Saturday afternoon has become a weekend event that includes a Hall of Fame induction, presentation of the Haud Colluni Scholarship, a fantastic post game BBQ, the Best Damn Awards in all of Rugby and the presentation of the Alumni Cup.
+
+      </p>
+    </section>
+
+
+
+    <!-- Alumni Video Section -->
+    <section id="alumni-video" class="info-section" data-aos="fade-up">
+      <h2 class="section-title">2008 Rugby Highlights</h2>
+      <div class="video-container">
+        <video controls width="100%" height="auto">
+          <source src="2008.mp4" type="video/mp4" />
+          Your browser does not support the video tag. Please
+          <a href="2008.mp4">download the video</a>.
+        </video>
+      </div>
+    </section>
+
+    <!-- Alumni Weekend Section -->
+    <section id="alumni-weekend" class="info-section" data-aos="fade-right">
+      <h2 class="section-title">Alumni Weekend</h2>
+      <div class="weekend-details">
+        <div class="weekend-event">
+          <h3 class="event-title">Friday Night</h3>
+          <p class="event-time">7:00 PM – 10:00 PM</p>
+          <p class="event-description">
+Kick off Alumni Weekend with the Hall of Fame Induction Ceremony. Celebrate our rugby legends and their contributions to UMBC Rugby.          </p>
+        </div>
+        <div class="weekend-event">
+          <h3 class="event-title">Saturday Rugby Matches</h3>
+          <p class="event-time">12:00PM</p>
+          <p class="event-description">
+       Join us on Walker Avenue Field for thrilling matches featuring the current UMBC Rugby teams and our alumni. Bring your energy and team spirit!
+          </p>
+        </div>
+        <div class="weekend-event">
+          <h3 class="event-title">Post-Game BBQ</h3>
+          <p class="event-time">1:30 PM – Twilight</p>
+          <p class="event-description">
+            After the matches, enjoy a delicious BBQ with fellow alumni, players, and families. Share stories, laughs, and awards as we wrap up the weekend.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Haud Collumni Scholarship Section -->
+    <section id="haud-collumni-scholarship" class="info-section" data-aos="fade-left">
+      <h2 class="section-title">Haud Collumni Scholarship</h2>
+      <div class="scholarship-content">
+        <p>
+Established in 2005 by the UMBC Alumni Association and the UMBC Rugby team, the Haud Collumni Scholarship is a trailblazing initiative—the first and only club sports scholarship at UMBC. The name "Haud Collumni," meaning steadfast and resilient, reflects the spirit of the rugby community.
+        </p>
+        <div class="scholarship-details">
+          <h3 class="detail-title">Eligibility Criteria</h3>
+          <ul>
+            <li>Minimum GPA of 3.25</li>
+       <li>At least two years of active participation in the rugby club</li>
+       <li>Demonstrates leadership and character both on and off the field</li>
+     </ul>
+
+        </div>
+        <div class="scholarship-growth">
+          <h3 class="detail-title">Scholarship Fund Growth</h3>
+          <ul>
+            <li><strong>2008:</strong> $7,406.64</li>
+            <li><strong>2009:</strong> $25,910.67</li>
+            <li><strong>2010:</strong> $30,742.50</li>
+            <li><strong>2011:</strong> $32,459.45</li>
+          </ul>
+        </div>
+        <p class="closing-paragraph">
+The first Haud Collumni Scholarship was awarded in 2012 and continues to support exceptional candidates. Our ultimate goal is to establish a full team of scholarship recipients, highlighting the dedication and excellence of UMBC Rugby.        </p>
+      </div>
+    </section>
+
+    <!-- Alumni Teams Section -->
+    <section id="alumni-teams" class="info-section" data-aos="zoom-in">
+      <h2 class="section-title">Alumni Teams</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-logo">
+            <img src="arbutian.png" alt="Arbutian Revolution Logo" />
+          </div>
+          <h3 class="team-title">The Arbutian Revolution</h3>
+          <p>
+Founded in 2010, the Arbutian Revolution is a dynamic group of UMBC alumni and active players who compete in 7’s tournaments to stay connected and continue their rugby legacy. The team officially adopted the name "Arbutian Revolution" in 2012 and quickly gained a reputation for competitive play.
+          </p>
+          <p>
+       In 2015, under the leadership of President and Co-Founder Nadir Mechanicalman, the team reached new heights by participating in multiple tournaments and bringing home trophies. Notable achievements include:
+     </p>
+
+          <ul>
+            <li>5th place finish and Bowl victory in their first 2015 tournament.</li>
+            <li>3rd and 5th place finishes with two teams in the same competition</li>
+            <li>2nd place in a tightly contested final during a Tennessee tournament</li>
+          </ul>
+          <p>
+       The Arbutian Revolution continues to grow, striving for even greater success while fostering camaraderie and the spirit of rugby.
+     </p>
+
+        </div>
+        <div class="team-card">
+          <div class="team-logo">
+            <img src="rockygorge.png" alt="Rocky Gorge Rugby Logo" />
+          </div>
+          <h3 class="team-title">Rocky Gorge Rugby</h3>
+          <p>
+             Many UMBC Rugby alumni extend their rugby careers with Rocky Gorge Rugby Football Club, a premier team in the Mid-Atlantic region. This connection emphasizes the strong relationship between UMBC and the broader rugby community.
+
+          </p>
+
+          <p>
+       Rocky Gorge thrives on the collective strength and passion of its players, many of whom bring the resilience and teamwork cultivated during their time at UMBC Rugby. The club's history of national championships and consistent performance in regional leagues demonstrates its dedication to excellence.
+     </p>
+     <p>
+       As a dynamic club, Rocky Gorge continues to develop talent and embrace new strategies, ensuring the rugby spirit remains vibrant for players and fans alike.
+     </p>
+   </div>
+ </div>
+</section>
+
+
+
+
+
+    <!-- Alumni Game Popup -->
+    <div id="alumni-popup" class="modal">
+      <div class="modal-content">
+        <span id="close-popup" class="close-modal">&times;</span>
+        <img src="alumday.jpg" alt="Alumni Day" class="popup-image" />
+        <h2>Alumni Game 2025</h2>
+        <p>Mark your calendars! Join us on <strong>May 3rd, 2025</strong> at <strong>12:00 PM</strong>...</p>
+        <button id="add-to-calendar" class="cta-button">Add to Calendar</button>
+      </div>
+    </div>
+
+    <!-- Footer Navigation -->
+    <footer>
+  <!-- Logo -->
+  <div class="footer-logo">
+    <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
+    <img src="ncr.png" alt="NCR Logo" />
+    <img src="umbclogo.png" alt="UMBC Logo" />
+
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="footer-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="roster.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>

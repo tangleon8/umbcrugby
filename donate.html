@@ -1,10 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="scripts.js" defer></script>
+  <title>Donate | UMBC Rugby</title>
 </head>
 <body>
-$END$
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
+
+  <!-- HEADER -->
+  <header id="hero-header">
+    <!-- Background Image -->
+    <img src="gran.jpg" alt="UMBC Rugby Header Image" id="header-image" />
+
+    <!-- Optional Gradient Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Hero Content -->
+    <div class="hero-content" data-aos="fade-up">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1>Support UMBC Rugby</h1>
+      <p>Your support builds the future of UMBC Rugby and its student-athletes.</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BELOW THE HEADER -->
+  <nav id="navbar" role="navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="team.html">Roster</a></li>
+      <li><a href="schedule.html">Schedule</a></li>
+      <li><a href="rugby-ready.html">Rugby Ready</a></li>
+      <li><a href="recruitment.html">Recruitment</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="donate.html" class="active">Donate</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    <!-- Support Section -->
+    <section id="support-rugby" data-aos="fade-up">
+      <h2 class="section-title">Support UMBC Rugby</h2>
+      <p>
+        We appreciate any and all efforts in supporting UMBC Rugby and its student-athletes.
+        One fun and impactful way to show your support is by cheering us on during our matches!
+        Below are additional ways you can contribute to the growth and success of UMBC Rugby.
+      </p>
+    </section>
+
+    <!-- Financial Support Section -->
+    <section id="financial-support" data-aos="fade-up">
+      <h2 class="section-title">Financial Support</h2>
+      <p>
+        As a student-run club, UMBC Rugby receives minimal funding through the Department of Athletics
+        and Recreation. Donations are crucial to our growth and sustainability, providing essential
+        resources for training, scholarships, and travel expenses. Your generosity directly impacts
+        the future of UMBC Rugby.
+      </p>
+      <p>
+        To donate:
+        <ol>
+          <li>Select <strong>"Athletics & Recreation"</strong> in the category dropdown.</li>
+          <li>Choose <strong>"Haud Collumi Scholarship Award"</strong>.</li>
+        </ol>
+      </p>
+      <p>
+        If you prefer, you can click the button below to donate directly:
+      </p>
+      <a
+        href="https://give.umbc.edu/campaigns/40919/donations/new?donation_type=general"
+        class="cta-button"
+        target="_blank"
+      >
+        Donate Now
+      </a>
+    </section>
+
+    <!-- Venmo Donation Section -->
+<section id="venmo-donation" data-aos="fade-up">
+  <h2 class="section-title">Donate Directly via Venmo</h2>
+  <div class="venmo-container">
+    <img src="venmo.webp" alt="Venmo Logo" class="venmo-logo" />
+    <p>
+      Support UMBC Rugby directly by sending your donation to our treasurer on Venmo:
+      <strong>@Ty-Schwartz-1</strong>. Every contribution helps us continue our journey
+      and make an impact on and off the field.
+    </p>
+    <p>Simply scan the QR code or click the Venmo link below:</p>
+    <div class="venmo-actions">
+      <a
+        href="https://venmo.com/Ty-Schwartz-1"
+        target="_blank"
+        class="cta-button venmo-button"
+      >
+        Venmo @Ty-Schwartz-1
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Embedded Form Section -->
+    <section id="donation-form" data-aos="fade-up">
+      <h2 class="section-title">Make a Contribution</h2>
+      <div class="donation-container">
+        <iframe
+          src="https://give.umbc.edu/campaigns/40919/donations/new?donation_type=general"
+          title="Donate to Haud Collumi Scholarship"
+          width="100%"
+          height="800"
+          frameborder="0"
+          style="
+            border-radius: 10px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+          "
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
+      <img src="ncr.png" alt="NCR Logo" />
+      <img src="umbclogo.png" alt="UMBC Logo" />
+    </div>
+
+    <!-- Footer Navigation Links -->
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="rugby-ready.html">Rugby Ready</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </nav>
+
+    <!-- Copyright -->
+    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+  </footer>
+
+
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
