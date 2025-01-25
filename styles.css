@@ -1356,9 +1356,6 @@ footer p {
   background-color: #0073e6; /* Blue */
 }
 
-.secretary {
-  background-color: #FFA500 !important;
-}
 
 .vp {
   background-color: #28a745; /* Green */
@@ -1804,7 +1801,93 @@ footer p {
     text-align: center;
   }
 }
+
 .role-badge.secretary {
-  background-color: #A020F0; /* Use your desired purple */
+  background-color: #56A0D3 !important; /* Carolina Blue */
+}
+/* Popup Overlay: dark semi-transparent background */
+#schedule-popup-overlay {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9998; /* above most site elements */
 }
 
+/* Popup Container */
+#schedule-popup {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000; /* UMBC black */
+  color: #ffb81c;         /* UMBC gold text */
+  width: 90%;
+  max-width: 500px;
+  border-radius: 12px;
+  padding: 20px;
+  z-index: 9999; /* above overlay */
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Close Button (the 'X') */
+#schedule-popup-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #ffb81c;   /* gold */
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+#schedule-popup-close:hover {
+  transform: scale(1.2);
+}
+
+/* Popup Headline, Paragraph, etc. */
+#schedule-popup h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#schedule-popup p {
+  font-size: 1rem;
+  margin: 15px 0;
+}
+
+/* The schedule image */
+#schedule-popup img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin: 15px 0;
+}
+
+/* Popup Buttons container */
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* The "Download ICS" CTA button re-uses your main .cta-button style */
+#download-ics-btn {
+  background-color: var(--umbc-gold);
+  color: var(--umbc-black);
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+#download-ics-btn:hover {
+  background-color: darkorange;
+}

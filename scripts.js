@@ -558,3 +558,134 @@ document.addEventListener("DOMContentLoaded", () => {
   updateCarousel();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const askBtn = document.getElementById("ask-btn");
+  const questionInput = document.getElementById("user-question");
+  const answerDiv = document.getElementById("answer");
+
+  askBtn.addEventListener("click", async () => {
+    const question = questionInput.value.trim();
+    if (!question) {
+      answerDiv.textContent = "Please type a question first.";
+      return;
+    }
+
+    // Clear answer area
+    answerDiv.textContent = "Thinking...";
+
+    try {
+      // Make a POST request to your Flask endpoint
+      const response = await fetch("/ask_rugby", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ question })
+      });
+      const data = await response.json();
+
+      if (data.error) {
+        answerDiv.textContent = data.error;
+      } else {
+        answerDiv.textContent = data.answer;
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      answerDiv.textContent = "Error contacting the server.";
+    }
+  });
+});
+document.addEventListener("DOMContentLoaded", function() {
+  // 1) Show the popup on page load
+  const popupOverlay = document.getElementById("schedule-popup-overlay");
+  const popup = document.getElementById("schedule-popup");
+  const closeBtn = document.getElementById("schedule-popup-close");
+
+  // Only show once per load, or you could store a flag in localStorage
+  popupOverlay.style.display = "block";
+  popup.style.display = "block";
+
+  // 2) Close popup logic
+  closeBtn.addEventListener("click", () => {
+    popupOverlay.style.display = "none";
+    popup.style.display = "none";
+  });
+
+  // 3) ICS Download button logic
+  const icsButton = document.getElementById("download-ics-btn");
+  icsButton.addEventListener("click", () => {
+    // Build ICS string with multiple VEVENTS
+    const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+PRODID:-//UMBC Rugby//Spring 2025//EN
+${createVEVENT("20250301","Frostbite 7s (CRC Qualifiers)")}
+${createVEVENT("20250308","Rutgers University")}
+${createVEVENT("20250322","American University")}
+${createVEVENT("20250329","Bucknell 7s (CRC Qualifiers)")}
+${createVEVENT("20250405","Virginia Commonwealth")}
+${createVEVENT("20250412","George Washington")}
+${createVEVENT("20250426","William & Mary")}
+${createVEVENT("20250503","Alumni Game")}
+END:VCALENDAR`;
+
+    // Convert the string to a Blob
+    const blob = new Blob([icsContent], { type: "text/calendar" });
+    const blobUrl = URL.createObjectURL(blob);
+
+    // Create a hidden <a> to trigger download
+    const downloadLink = document.createElement("a");
+    downloadLink.href = blobUrl;
+    downloadLink.download = "UMBC-Spring2025-Schedule.ics";  // file name
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    // (Optional) Revoke object URL later
+    setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+  });
+
+  // Helper function to generate each VEVENT (all-day event)
+  function createVEVENT(yyyymmdd, summary) {
+    return `BEGIN:VEVENT
+DTSTAMP:${todayAsUTC()}
+UID:${yyyymmdd}-${Math.random().toString(36).substring(2)}
+DTSTART;VALUE=DATE:${yyyymmdd}
+DTEND;VALUE=DATE:${incrementDate(yyyymmdd)}
+SUMMARY:${summary}
+END:VEVENT`;
+  }
+
+  // Returns today's date/time in UTC as an ICS-compatible stamp, e.g. 20240223T150000Z
+  function todayAsUTC() {
+    const now = new Date();
+    const year = now.getUTCFullYear();
+    const month = String(now.getUTCMonth() + 1).padStart(2, "0");
+    const day = String(now.getUTCDate()).padStart(2, "0");
+    const hours = String(now.getUTCHours()).padStart(2, "0");
+    const minutes = String(now.getUTCMinutes()).padStart(2, "0");
+    const seconds = String(now.getUTCSeconds()).padStart(2, "0");
+    return `${year}${month}${day}T${hours}${minutes}${seconds}Z`;
+  }
+
+  // Simple function that returns the next day as YYYYMMDD (for DTEND)
+  function incrementDate(yyyymmdd) {
+    // yyyymmdd => year, month, day
+    const year = parseInt(yyyymmdd.slice(0,4), 10);
+    const month = parseInt(yyyymmdd.slice(4,6), 10) - 1; // zero-based
+    const day = parseInt(yyyymmdd.slice(6), 10);
+    const dateObj = new Date(year, month, day);
+    dateObj.setDate(dateObj.getDate() + 1); // next day
+    const y = dateObj.getFullYear();
+    const m = String(dateObj.getMonth() + 1).padStart(2, "0");
+    const d = String(dateObj.getDate()).padStart(2, "0");
+    return `${y}${m}${d}`;
+  }
+});
+
+if (!localStorage.getItem("spring2025popupShown")) {
+  // show popup
+  localStorage.setItem("spring2025popupShown", "true");
+}
+
