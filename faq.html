@@ -239,25 +239,27 @@
     // Initialize AOS
     AOS.init();
 
-    // FAQ Accordion Functionalitydocument.addEventListener("DOMContentLoaded", () => {
-  const faqQuestions = document.querySelectorAll(".faq-question");
+    // FAQ Accordion Functionality
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqQuestions = document.querySelectorAll(".faq-question");
 
-  faqQuestions.forEach((question) => {
-    question.addEventListener("click", () => {
-      const answer = question.nextElementSibling;
-      const isOpen = answer.style.maxHeight;
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const isOpen = answer.style.maxHeight;
 
-      // Close other answers
-      document.querySelectorAll(".faq-answer").forEach((otherAnswer) => {
-        if (otherAnswer !== answer) {
-          otherAnswer.style.maxHeight = null;
-        }
+          // Close other answers
+          document.querySelectorAll(".faq-answer").forEach((otherAnswer) => {
+            if (otherAnswer !== answer) {
+              otherAnswer.style.maxHeight = null;
+            }
+          });
+
+          // Toggle current answer
+          answer.style.maxHeight = isOpen ? null : `${answer.scrollHeight}px`;
+        });
       });
-
-      // Toggle current answer
-      answer.style.maxHeight = isOpen ? null : `${answer.scrollHeight}px`;
     });
-  });
   </script>
 </body>
 </html>

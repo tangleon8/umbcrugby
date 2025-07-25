@@ -4,299 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link rel="stylesheet" href="recruitment.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
   <title>Join UMBC Rugby | Recruitment</title>
 
-  <style>
-    :root {
-      --umbc-gold: #FFCA2B;
-      --umbc-black: #000;
-      --umbc-gray: #F7F7F7;
-      --umbc-red: #DC0032;
-      --text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-      --box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      color: var(--umbc-black);
-      background: var(--umbc-gray);
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-
-    .hero-header {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
-
-    .header-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: -1;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      padding: 2rem;
-    }
-
-    .hero-logo {
-      width: 200px;
-      filter: drop-shadow(var(--box-shadow));
-      margin-bottom: 1rem;
-    }
-
-    h1 {
-      font-size: 4rem;
-      text-shadow: var(--text-shadow);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .cta-button {
-      display: inline-block;
-      background: var(--umbc-gold);
-      color: var(--umbc-black);
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 1rem 2rem;
-      border-radius: 5px;
-      box-shadow: var(--box-shadow);
-      transition: transform 0.3s, background 0.3s;
-      text-decoration: none;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-3px);
-      background: var(--umbc-red);
-      color: white;
-    }
-
-    #navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0,0,0,0.8);
-      z-index: 999;
-    }
-
-    #navbar ul {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
-      height: 80px;
-    }
-
-    #navbar li {
-      margin: 0 1rem;
-    }
-
-    #navbar a {
-      color: white;
-      text-transform: uppercase;
-      text-decoration: none;
-      font-weight: 700;
-      padding: 1rem;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    #navbar a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: var(--umbc-gold);
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-
-    #navbar a:hover::after,
-    #navbar .active::after {
-      transform: scaleX(1);
-    }
-
-    .recruitment-form-section {
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 3rem;
-      color: var(--umbc-gold);
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    #recruitment-form {
-      max-width: 600px;
-      margin: 2rem auto 0;
-      text-align: left;
-    }
-
-    .form-row {
-      margin-bottom: 1.5rem;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 700;
-    }
-
-    input,
-    textarea {
-      width: 100%;
-      padding: 0.8rem;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button[type="submit"] {
-      background: var(--umbc-gold);
-      color: var(--umbc-black);
-      font-weight: 700;
-      text-transform: uppercase;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: transform 0.3s, background 0.3s;
-    }
-
-    button[type="submit"]:hover {
-      transform: translateY(-3px);
-      background: var(--umbc-red);
-      color: white;
-    }
-
-    .success-message {
-      background: #28a745;
-      color: white;
-      padding: 1rem;
-      border-radius: 5px;
-      margin-top: 2rem;
-      display: none;
-    }
-
-    .contact-info-section {
-      padding: 6rem 2rem;
-      text-align: center;
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      margin-top: 2rem;
-    }
-
-    .contact-card {
-      background: var(--umbc-gray);
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: var(--box-shadow);
-      transition: transform 0.3s;
-    }
-
-    .contact-card:hover {
-      transform: translateY(-10px);
-    }
-
-    .contact-icon {
-      font-size: 3rem;
-      color: var(--umbc-gold);
-      margin-bottom: 1rem;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    footer {
-      background: var(--umbc-black);
-      color: white;
-      text-align: center;
-      padding: 3rem 2rem;
-    }
-
-    .footer-logo {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 2rem;
-    }
-
-    .footer-logo img {
-      width: 100px;
-      margin: 0 1rem;
-    }
-
-    .footer-nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      margin-bottom: 2rem;
-    }
-
-    .footer-nav a {
-      color: white;
-      text-transform: uppercase;
-      text-decoration: none;
-      margin: 0 1rem;
-      transition: color 0.3s;
-    }
-
-    .footer-nav a:hover {
-      color: var(--umbc-gold);
-    }
-
-  </style>
 </head>
 <body>
   <header class="hero-header">
@@ -363,18 +76,18 @@
     <p>Have questions? Want to learn more? We're here to help.</p>
 
     <div class="contact-grid">
-      <div class="contact-card">
-        <div class="contact-icon">📧</div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="contact-icon">EMAIL</div>
         <h3>Email Us</h3>
         <p>umbcmensrugby@gmail.com</p>
       </div>
-      <div class="contact-card">
-        <div class="contact-icon">📱</div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="contact-icon">SOCIAL</div>
         <h3>Follow Us</h3>
         <p>@umbcmensrugby</p>
       </div>
-      <div class="contact-card">
-        <div class="contact-icon">🏟️</div>
+      <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="contact-icon">VISIT</div>
         <h3>Visit Practice</h3>
         <p>Walker Field, UMBC<br>Tue/Thu/Fri 4-6 PM</p>
       </div>
@@ -402,6 +115,7 @@
     <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({
       duration: 1200,

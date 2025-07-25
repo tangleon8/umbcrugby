@@ -3,6 +3,23 @@
   Maintains theme consistency with styles.css
 ******************************************/
 
+/* CSS Variables for consistency */
+:root {
+  --umbc-gold: #ffb81c;
+  --umbc-gold-light: #ffd65a;
+  --umbc-gold-dark: #e6a000;
+  --umbc-black: #000000;
+  --umbc-white: #ffffff;
+  --umbc-grey: #f7f7f7;
+  --umbc-dark-grey: #333333;
+  --text-light: #666666;
+  --text-darker: #2c2c2c;
+  
+  /* Enhanced Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: all 0.2s ease-out;
+}
+
 /*****************************************
   ALUMNI LOADING SCREEN
 ******************************************/
@@ -777,8 +794,20 @@
 
 .stat-icon {
   display: block;
-  font-size: 2rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--umbc-gold);
+  background: linear-gradient(135deg, var(--umbc-gold), var(--umbc-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: 2px solid var(--umbc-gold);
+  border-radius: 25px;
+  padding: 8px 16px;
+  display: inline-block;
 }
 
 .stat-value {
@@ -901,9 +930,38 @@
 }
 
 .event-icon {
-  font-size: 4rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--umbc-gold);
+  background: linear-gradient(135deg, var(--umbc-gold), var(--umbc-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 3px solid var(--umbc-gold);
+  border-radius: 50px;
+  padding: 15px 25px;
+  display: inline-block;
   animation: iconFloat 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.event-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 184, 28, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.event-card:hover .event-icon::before {
+  left: 100%;
 }
 
 @keyframes iconFloat {
@@ -1070,7 +1128,11 @@
 }
 
 .icon-wrap .icon {
-  font-size: 2.5rem;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--umbc-black);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .card-header h3 {
@@ -1096,9 +1158,14 @@
 }
 
 .req-icon {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: var(--umbc-black);
-  font-weight: 700;
+  font-weight: 800;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .fund-growth {
@@ -1417,7 +1484,19 @@
 }
 
 .trophy-icon {
-  font-size: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--umbc-gold);
+  background: linear-gradient(135deg, var(--umbc-gold), var(--umbc-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--umbc-gold);
+  border-radius: 20px;
+  padding: 5px 12px;
+  display: inline-block;
 }
 
 .team-stats {
@@ -1682,7 +1761,19 @@
 }
 
 .detail-icon {
-  font-size: 2rem;
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--umbc-gold);
+  background: linear-gradient(135deg, var(--umbc-gold), var(--umbc-gold-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 2px solid var(--umbc-gold);
+  border-radius: 20px;
+  padding: 5px 12px;
+  display: inline-block;
 }
 
 .detail-item span:last-child {

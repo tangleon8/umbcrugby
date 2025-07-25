@@ -2,394 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="rugbylogo.png" type="image/png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UMBC Rugby | Roster</title>
-
-  <!-- Google Fonts -->
+  <link rel="stylesheet" href="roster-styles.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <link rel="icon" href="rugbylogo.png" type="image/png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet"
   />
+  <title>Roster - UMBC Rugby</title>
 
-  <!-- CSS Styles (Inline for Demo) -->
-  <style>
-    :root {
-      --umbc-gold: #ffb81c;
-      --umbc-black: #000000;
-      --umbc-grey: #f7f7f7;
-      --hero-bg: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.8),
-        rgba(0, 0, 0, 0.5)
-      );
-    }
-
-    /* Base styles for role badges */
-.role-badge {
-  display: inline-block;
-  padding: 5px 12px;
-  font-size: 0.85rem;
-  font-weight: bold;
-  color: #fff;
-  border-radius: 12px;
-  margin-left: 10px;
-  text-transform: uppercase;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  letter-spacing: 1px;
-}
-
-/* Specific role colors */
-.captain {
-  background-color: #ffb81c; /* Gold */
-}
-
-.president {
-  background-color: #0073e6; /* Blue */
-}
-
-.vp {
-  background-color: #28a745; /* Green */
-}
-
-.shed-manager {
-  background-color: #6c757d; /* Grey */
-}
-
-.treasurer {
-  background-color: #d9534f; /* Red */
-}
-
-.co-captain {
-  background-color: #ffc107; /* Yellow */
-}
-
-/* Hover effect */
-.role-badge:hover {
-  filter: brightness(1.2);
-  transform: scale(1.05);
-  transition: all 0.2s ease-in-out;
-}
-
-
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: "Montserrat", sans-serif;
-      background-color: var(--umbc-grey);
-      color: var(--umbc-black);
-      line-height: 1.6;
-    }
-
-    h1,
-    h2,
-    h3 {
-      font-weight: bold;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* HEADER */
-    #hero-header {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* Full viewport height */
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    #header-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* Ensures the image covers the header area */
-      z-index: -2;
-    }
-
-    /* Gradient Overlay */
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.8)
-      );
-      z-index: -1;
-    }
-
-    /* Hero Content */
-    .hero-content {
-      position: relative;
-      text-align: center;
-      color: #fff;
-      margin-bottom: 70px;
-      z-index: 1;
-    }
-
-    .hero-logo {
-      width: 120px;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
-    }
-
-    .hero-content h1 {
-      font-size: 3.5rem;
-      margin: 20px 0 10px;
-      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
-    }
-
-    .hero-content p {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
-    }
-
-    .cta-button {
-      background-color: var(--umbc-gold);
-      color: var(--umbc-black);
-      padding: 12px 25px;
-      font-size: 1.2rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease-in-out;
-    }
-
-    .cta-button:hover {
-      background-color: darkorange;
-      transform: scale(1.05);
-    }
-
-    /* NAVBAR (placed below header) */
-    nav#navbar {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      padding: 15px 0;
-      /* If you want it sticky at the top while scrolling:
-         position: sticky;
-         top: 0;
-         Or position: relative; if just normal flow
-      */
-      position: relative;
-      z-index: 10;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    nav#navbar ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
-
-    nav#navbar li {
-      margin: 0 15px;
-    }
-
-    nav#navbar a {
-      color: var(--umbc-gold);
-      text-decoration: none;
-      font-size: 1rem;
-      padding: 8px 15px;
-      border-radius: 20px;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    nav#navbar a:hover,
-    nav#navbar a.active {
-      background-color: var(--umbc-gold);
-      color: var(--umbc-black);
-    }
-
-    /* SECTION */
-    section.info-section {
-      background-color: #fff;
-      padding: 40px;
-      margin: 20px auto;
-      border-radius: 15px;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-      max-width: 1200px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      color: var(--umbc-gold);
-      text-transform: uppercase;
-    }
-
-    /* SORTING CONTROLS */
-    .sort-controls {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      gap: 10px;
-    }
-
-    .sort-label {
-      font-weight: bold;
-      font-size: 1rem;
-      color: #333;
-    }
-
-    #sortSelect {
-      font-size: 1rem;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      outline: none;
-      cursor: pointer;
-    }
-
-    #sortSelect:focus {
-      border-color: var(--umbc-gold);
-      box-shadow: 0 0 3px var(--umbc-gold);
-    }
-
-    /* ROSTER LIST */
-    .roster-list {
-      margin: 20px auto;
-      max-width: 800px;
-      border-radius: 10px;
-      background-color: #f9f9f9;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      text-align: left; /* So each roster entry lines up nicely */
-    }
-
-    .roster-item {
-      border-bottom: 1px solid #ddd;
-      padding: 15px;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .roster-item:hover {
-      background-color: #f1f1f1;
-    }
-
-    .roster-summary h3 {
-      font-size: 1.5rem;
-      margin: 0;
-      color: #333;
-    }
-
-    .roster-summary p {
-      margin: 5px 0;
-      font-size: 1rem;
-      color: #555;
-    }
-
-    .roster-details {
-      display: none;
-      padding: 10px;
-      font-size: 0.9rem;
-      color: #444;
-      line-height: 1.5;
-      background-color: #f3f3f3;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-
-    .roster-item.expanded .roster-details {
-      display: block;
-    }
-
-    /* FOOTER */
-    footer {
-      background-color: var(--umbc-black);
-      color: var(--umbc-gold);
-      text-align: center;
-      padding: 20px 10px;
-      border-top: 4px solid var(--umbc-gold);
-    }
-
-    .footer-logo img {
-      max-width: 120px;
-      margin-bottom: 10px;
-    }
-
-    .footer-nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 10px 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap; /* Ensure wrapping on smaller screens */
-      gap: 15px;
-    }
-.role-badge.secretary {
-  background-color: #A020F0 !important; /* Carolina Blue */
-}
-    .footer-nav li {
-      margin: 0;
-    }
-
-    .footer-nav a {
-      color: var(--umbc-gold);
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: bold;
-      transition: color 0.3s ease, text-shadow 0.3s ease;
-    }
-
-    .footer-nav a:hover {
-      color: white;
-      text-shadow: 0 0 5px var(--umbc-gold);
-    }
-
-    footer p {
-      font-size: 0.9rem;
-      margin-top: 10px;
-    }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      #hero-header {
-        height: auto;
-      }
-
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-
-      .hero-content p {
-        font-size: 1.1rem;
-      }
-
-      nav#navbar ul {
-        flex-direction: column;
-      }
-
-      nav#navbar li {
-        margin: 8px 0;
-      }
-
-      .roster-list {
-        max-width: 100%;
-      }
-    }
-  </style>
 </head>
 <body>
+  <!-- Back to Top Button -->
+  <button id="back-to-top" title="Back to Top">↑</button>
   <!-- HEADER -->
   <header id="hero-header">
     <!-- Background Image -->
@@ -414,8 +40,8 @@
     </div>
   </header>
 
-  <!-- Navigation BELOW the header -->
-  <nav id="navbar">
+  <!-- Navigation -->
+  <nav id="navbar" class="hero-nav">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="roster.html" class="active">Roster</a></li>
@@ -1036,10 +662,21 @@
       <li><a href="faq.html">FAQs</a></li>
     </ul>
   </nav>
-  <!-- JavaScript -->
+
+  <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+</footer>
+
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<!-- JavaScript -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const rosterItems = document.querySelectorAll(".roster-item");
+      const backToTopBtn = document.getElementById("back-to-top");
 
       // Collapsible logic
       rosterItems.forEach((item) => {
@@ -1104,6 +741,22 @@
       // Listen to changes on the dropdown
       sortSelect.addEventListener("change", (e) => {
         sortRoster(e.target.value);
+      });
+
+      // Back to Top Button functionality
+      window.addEventListener("scroll", () => {
+        if (window.pageYOffset > 300) {
+          backToTopBtn.style.display = "block";
+        } else {
+          backToTopBtn.style.display = "none";
+        }
+      });
+
+      backToTopBtn.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
     });
   </script>
