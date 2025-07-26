@@ -36,20 +36,6 @@
       <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
         Celebrating Tradition, Leadership, and Legacy
       </p>
-      <div class="hero-stats" data-aos="fade-up" data-aos-delay="500">
-        <div class="stat-item">
-          <span class="stat-number" data-count="33">0</span>
-          <span class="stat-label">Years of Excellence</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="500">0</span>+
-          <span class="stat-label">Alumni Members</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number" data-count="100">0</span>+
-          <span class="stat-label">Championships</span>
-        </div>
-      </div>
     </div>
     <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
       <span class="mouse">
@@ -572,6 +558,54 @@
       speed: 400,
       glare: true,
       "max-glare": 0.5,
+    });
+
+    // Gallery Navigation Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryTrack = document.querySelector('.gallery-3d-track');
+      const slides = document.querySelectorAll('.gallery-3d-slide');
+      const prevBtn = document.querySelector('.gallery-nav.prev');
+      const nextBtn = document.querySelector('.gallery-nav.next');
+      
+      let currentIndex = 0;
+      const slideWidth = 440; // slide width + gap
+      const totalSlides = slides.length;
+      
+      function updateSlidePosition() {
+        const translateX = -currentIndex * slideWidth;
+        galleryTrack.style.transform = `translateX(${translateX}px)`;
+      }
+      
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+      }
+      
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      }
+      
+      // Event listeners for navigation buttons
+      if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+      }
+      
+      if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+      }
+      
+      // Auto-advance slides every 5 seconds
+      setInterval(nextSlide, 5000);
+      
+      // Keyboard navigation
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+          prevSlide();
+        } else if (e.key === 'ArrowRight') {
+          nextSlide();
+        }
+      });
     });
   </script>
 </body>

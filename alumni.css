@@ -493,11 +493,12 @@
   text-align: center;
   margin-bottom: 40px;
   position: relative;
+  color: var(--umbc-dark-grey);
 }
 
 .glitch {
   position: relative;
-  color: var(--umbc-gold);
+  color: var(--umbc-dark-grey);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -604,14 +605,14 @@
   display: block;
   font-size: 2rem;
   font-weight: 800;
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
   margin-bottom: 10px;
 }
 
 .timeline-item .event {
   display: block;
   font-size: 1rem;
-  color: var(--text-light);
+  color: var(--umbc-dark-grey);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
@@ -834,7 +835,7 @@
 }
 
 .title-accent {
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
   font-weight: 800;
 }
 
@@ -973,7 +974,7 @@
   font-size: 1.8rem;
   font-weight: 800;
   margin-bottom: 10px;
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
 }
 
 .card-back h3 {
@@ -1050,6 +1051,7 @@
   font-style: italic;
   font-weight: 800;
   letter-spacing: 3px;
+  color: var(--umbc-black);
 }
 
 .subtitle {
@@ -1059,6 +1061,7 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   margin-top: 10px;
+  color: var(--umbc-black);
 }
 
 .scholarship-intro {
@@ -1321,7 +1324,7 @@
 .alumni-teams .section-title {
   text-align: center;
   margin-bottom: 80px;
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -1419,7 +1422,7 @@
 
 .team-name {
   font-size: 2rem;
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
   font-weight: 800;
   margin-bottom: 10px;
   text-transform: uppercase;
@@ -1455,7 +1458,7 @@
 
 .achievements h4 {
   font-size: 1.3rem;
-  color: var(--umbc-gold);
+  color: var(--umbc-gold-dark);
   margin-bottom: 20px;
   font-weight: 700;
   text-transform: uppercase;
