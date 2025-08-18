@@ -29,8 +29,12 @@
   <meta name="twitter:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
 </head>
 <body>
-  <!-- Back to Top Button -->
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="loading-logo">
+  </div>
 
+  <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top">↑</button>
 
   <!-- HEADER -->
@@ -71,6 +75,7 @@
       <li><a href="alumni.html">Alumni</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
     </ul>
   </nav>
 
@@ -111,21 +116,20 @@
       </div>
     </section>
 
+
     <!-- Image Carousel Section -->
     <section id="image-carousel" class="info-section" data-aos="fade-up">
       <div class="carousel-container">
         <!-- Carousel Track -->
         <div class="carousel-track">
-          <img src="umbuc6.jpg" alt="Rugby Image 6" class="carousel-image" />
-          <img src="umbuc1.jpg" alt="Rugby Image 1" class="carousel-image" />
-          <img src="umbuc2.jpg" alt="Rugby Image 2" class="carousel-image" />
-          <img src="umbuc3.jpg" alt="Rugby Image 3" class="carousel-image" />
-          <img src="umbuc4.jpg" alt="Rugby Image 4" class="carousel-image" />
-          <img src="umbuc5.jpg" alt="Rugby Image 5" class="carousel-image" />
-          <img src="umbuc11.jpg" alt="Rugby Image 10" class="carousel-image" />
-          <img src="umbuc7.jpg" alt="Rugby Image 7" class="carousel-image" />
-          <img src="umbuc13.jpg" alt="Rugby Image 12" class="carousel-image" />
-          <img src="69c76f78b05d484ab6f05eac7689ae20.png" alt="Rugby Image 13" class="carousel-image" />
+          <img src="Latchana_Rugby84.jpg" alt="UMBC Rugby Since 1984" class="carousel-image" data-aos="zoom-in" />
+          <img src="IMG_7441.jpeg" alt="Rugby Action Shot 1" class="carousel-image" data-aos="zoom-in" data-aos-delay="100" />
+          <img src="IMG_7442.jpeg" alt="Rugby Action Shot 2" class="carousel-image" data-aos="zoom-in" data-aos-delay="200" />
+          <img src="Latchana_Rugby3.jpg" alt="Rugby Team Spirit" class="carousel-image" data-aos="zoom-in" data-aos-delay="300" />
+          <img src="Latchana_rugby106.jpg" alt="Rugby Excellence" class="carousel-image" data-aos="zoom-in" data-aos-delay="400" />
+          <img src="umbuc1.jpg" alt="Team Unity" class="carousel-image" data-aos="zoom-in" data-aos-delay="500" />
+          <img src="umbuc2.jpg" alt="Rugby Pride" class="carousel-image" data-aos="zoom-in" data-aos-delay="600" />
+          <img src="umbuc3.jpg" alt="Championship Spirit" class="carousel-image" data-aos="zoom-in" data-aos-delay="700" />
 
         </div>
 
@@ -143,8 +147,6 @@
           <span data-slide="5" class="indicator"></span>
           <span data-slide="6" class="indicator"></span>
           <span data-slide="7" class="indicator"></span>
-          <span data-slide="8" class="indicator"></span>
-          <span data-slide="9" class="indicator"></span>
 
         </div>
       </div>
@@ -190,6 +192,8 @@
       </div>
       <script async src="https://www.instagram.com/embed.js"></script>
     </section>
+
+
 
     <!-- Scrolling Player Section -->
     <section id="scrolling-player-section" data-aos="fade-up">
@@ -241,6 +245,22 @@
 
 // Enhanced JavaScript for UMBC Rugby Website
 document.addEventListener('DOMContentLoaded', function() {
+
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    
+    // Set initial theme
+    body.setAttribute('data-theme', currentTheme);
+    themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+    
+    themeToggle.addEventListener('click', () => {
+        const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
 
     // Initialize AOS with custom settings
     if (typeof AOS !== 'undefined') {
@@ -531,6 +551,7 @@ END:VCALENDAR`;
             });
         }
     }
+
 
     // Enhanced FAQ Accordion
     const faqItems = document.querySelectorAll('.faq-item');

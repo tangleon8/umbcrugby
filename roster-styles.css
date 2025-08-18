@@ -26,6 +26,32 @@
   --gradient-primary: linear-gradient(135deg, var(--umbc-gold) 0%, var(--umbc-gold-dark) 100%);
   --gradient-surface: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
   --gradient-text: linear-gradient(135deg, var(--umbc-gold), var(--umbc-gold-dark));
+  
+  /* Light mode colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #f7f7f7;
+  --text-primary: #2c2c2c;
+  --text-secondary: #666666;
+  --border-color: #e0e0e0;
+}
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --border-color: #555555;
+  --background-white: #1a1a1a;
+  --text-grey: #cccccc;
+  --text-darker: #ffffff;
+  --text-light: #cccccc;
+  --gradient-surface: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  --shadow-soft: 0 10px 50px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 20px 60px rgba(0, 0, 0, 0.4);
+  --shadow-strong: 0 30px 80px rgba(0, 0, 0, 0.5);
 }
 
 /* Enhanced role badges */
@@ -808,4 +834,71 @@ footer p {
     padding: 15px 35px;
     font-size: 1.1rem;
   }
+}
+
+/* Loading Screen - Match index.html */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-logo {
+  width: 150px;
+  height: auto;
+  animation: logoSpin 2s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  margin-bottom: 40px;
+  filter: drop-shadow(0 10px 20px rgba(255, 184, 28, 0.3));
+}
+
+@keyframes logoSpin {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+  transition: var(--transition-smooth);
+  color: var(--umbc-gold);
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 184, 28, 0.1);
+  transform: scale(1.1);
+}
+
+/* Update body for theme transitions */
+body {
+  background: var(--gradient-surface);
+  color: var(--text-primary);
+  transition: var(--transition-smooth);
 }
