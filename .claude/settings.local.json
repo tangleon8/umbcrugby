@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(move:*)",
+      "Bash(move *.jpg assetsimages )",
+      "Bash(move *.png assetsimages )",
+      "Bash(move *.JPG assetsimages )",
+      "Bash(move *.mp4 assetsvideos )",
+      "Bash(move *.pdf assetsdocs )",
+      "Bash(move *.txt assetsdocs)",
+      "Bash(mv:*)",
+      "Bash(true)",
+      "Bash(mv *.js js/)",
+      "Bash(find:*)"
+    ],
+    "deny": []
+  }
+}
