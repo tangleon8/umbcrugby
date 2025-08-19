@@ -3,38 +3,207 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet"
   />
-  <script src="scripts.js" defer></script>
+  <script src="js/scripts.js" defer></script>
   <title>FAQs - UMBC Rugby</title>
+  
+  <style>
+    /* FAQ Specific Styling */
+    .faq-section {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--umbc-gold, #FFB81C);
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+    
+    .faq-item {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-item:hover {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 25px 30px;
+      text-align: left;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--umbc-gold, #FFB81C);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+    
+    .faq-item.active .faq-question::after {
+      transform: rotate(45deg);
+    }
+    
+    .faq-question:hover {
+      background: rgba(255, 184, 28, 0.05);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      background: #f8f9fa;
+    }
+    
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      padding: 25px 30px;
+    }
+    
+    .faq-answer p {
+      margin: 0;
+      line-height: 1.6;
+      color: #555;
+      font-size: 1rem;
+    }
+    
+    .faq-answer a {
+      color: var(--umbc-gold, #FFB81C);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    
+    .faq-answer a:hover {
+      text-decoration: underline;
+    }
+    
+    /* Intro section styling */
+    .faq-intro {
+      background: linear-gradient(135deg, rgba(255, 184, 28, 0.1), rgba(255, 184, 28, 0.05));
+      padding: 60px 20px;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .intro-title {
+      font-size: 3rem;
+      color: var(--umbc-gold, #FFB81C);
+      font-weight: 900;
+      margin-bottom: 20px;
+    }
+    
+    .intro-description {
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .faq-question {
+        padding: 20px;
+        font-size: 1rem;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 20px;
+      }
+      
+      .section-header h2 {
+        font-size: 2rem;
+      }
+      
+      .intro-title {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- Rugby Loading Screen -->
+  <div id="epic-loading-screen">
+    <div class="loading-container">
+      <div class="rugby-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+      </div>
+      <div class="loading-text">UMBC RUGBY</div>
+      <div class="loading-subtitle">Building brotherhood since 1984</div>
+      
+      <!-- Rugby Field Progress Bar -->
+      <div class="rugby-field-container">
+        <div class="field-lines">
+          <div class="yard-line" data-yards="0">0</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line center" data-yards="50">50</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line" data-yards="0">TRY!</div>
+        </div>
+        <div class="rugby-ball"></div>
+      </div>
+      
+      <div class="loading-percentage">0m</div>
+    </div>
+  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top">↑</button>
 
   <!-- HEADER -->
-  <header id="hero-header">
-    <img src="raf.jpg" alt="UMBC Rugby Header Image" id="header-image" />
+  <header id="hero-header" style="position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+    <!-- Background Image -->
+    <img src="assets/images/Latchana_Rugby89.jpg" alt="UMBC Rugby FAQ Header Image" id="header-image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2;" />
 
     <!-- Gradient Overlay -->
-    <div class="hero-overlay"></div>
+    <div class="hero-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: -1;"></div>
 
     <!-- Hero Content -->
-    <div class="hero-content" data-aos="fade-up">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title">Frequently Asked Questions</h1>
-      <p class="hero-subtitle">Everything you need to know about UMBC Rugby</p>
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200" style="text-align: center; color: white; z-index: 1; max-width: 800px; padding: 0 20px;">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" data-aos="zoom-in" data-aos-delay="300" style="width: 150px; height: auto; margin-bottom: 30px;" />
+      <h1 class="hero-title typewriter" data-aos="fade-up" data-aos-delay="500" style="font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); color: #FFB81C;">Frequently Asked Questions</h1>
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="700" style="font-size: clamp(1.1rem, 2.5vw, 1.4rem); margin-bottom: 30px; text-shadow: 1px 1px 2px rgba(0,0,0,0.8); opacity: 0.95;">Everything you need to know about joining UMBC Rugby</p>
+      <a href="#faq-content" class="cta-button" data-aos="zoom-in" data-aos-delay="900" style="display: inline-block; background: linear-gradient(135deg, #FFB81C, #E6A500); color: #000; padding: 15px 30px; border-radius: 30px; text-decoration: none; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 184, 28, 0.3);">Get Answers</a>
     </div>
   </header>
 
   <!-- Navigation -->
-  <nav id="navbar" class="hero-nav">
+  <nav id="navbar" class="hero-nav" role="navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="roster.html">Roster</a></li>
@@ -44,6 +213,7 @@
       <li><a href="alumni.html">Alumni</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html" class="active">FAQs</a></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
     </ul>
   </nav>
 
@@ -60,17 +230,17 @@
     </section>
 
     <!-- FAQ Sections -->
-   <section class="faq-section" data-aos="fade-up">
-    <div class="section-header">
+   <section class="faq-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+    <div class="section-header" data-aos="slide-down" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
       <h2>General Questions</h2>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: I don't know anything about rugby. Can I still play?</button>
       <div class="faq-answer">
         <p>A: Yes! We'll teach you everything you need to know.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="flip-right" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: What do I need to play? Do I need to buy anything?</button>
       <div class="faq-answer">
         <p>
@@ -79,7 +249,7 @@
         </p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: Is rugby dangerous?</button>
       <div class="faq-answer">
         <p>
@@ -91,17 +261,17 @@
   </section>
 
   <!-- Practice & Games -->
-  <section class="faq-section" data-aos="fade-up">
-    <div class="section-header">
+  <section class="faq-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+    <div class="section-header" data-aos="slide-down" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
       <h2>Practice & Games</h2>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="slide-right" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: When and where are practices?</button>
       <div class="faq-answer">
         <p>A: Practices are held on Walker Avenue Field, typically on weekday evenings. Check our schedule for updates.</p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="slide-left" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: Do I need to attend every practice?</button>
       <div class="faq-answer">
         <p>
@@ -110,7 +280,7 @@
         </p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="slide-right" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: What teams do you play against?</button>
       <div class="faq-answer">
         <p>
@@ -119,7 +289,7 @@
         </p>
       </div>
     </div>
-    <div class="faq-item">
+    <div class="faq-item" data-aos="slide-left" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-back">
       <button class="faq-question">Q: What positions are there in rugby?</button>
       <div class="faq-answer">
         <p>
@@ -132,7 +302,7 @@
 
   <!-- Sponsorship Opportunities -->
   <section class="faq-section" data-aos="fade-up">
-    <div class="section-header">
+    <div class="section-header" data-aos="fade-left">
       <h2>Sponsorship Opportunities</h2>
     </div>
     <div class="faq-item">
@@ -140,7 +310,7 @@
       <div class="faq-answer">
         <p>
           A: We offer multiple sponsorship opportunities to support UMBC Rugby and connect with our vibrant community.
-          Download our <a href="sponsor.pdf" target="_blank">Sponsor Packet</a> for detailed information about sponsorship tiers, benefits, and how your contribution can make an impact.
+          Download our <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a> for detailed information about sponsorship tiers, benefits, and how your contribution can make an impact.
         </p>
       </div>
     </div>
@@ -150,7 +320,7 @@
         <p>
           A: Sponsors receive recognition on our website, social media, and game-day materials, along with opportunities
           to showcase their brand to the UMBC community and beyond. For more details, please refer to the
-          <a href="sponsor.pdf" target="_blank">Sponsor Packet</a>.
+          <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a>.
         </p>
       </div>
     </div>
@@ -230,9 +400,9 @@
   <footer>
     <!-- Logo -->
     <div class="footer-logo">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="ncr.png" alt="NCR Logo" />
-      <img src="umbclogo.png" alt="UMBC Logo" />
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
+      <img src="assets/images/ncr.png" alt="NCR Logo" />
+      <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
     </div>
 
     <!-- Footer Navigation Links -->
@@ -259,32 +429,115 @@
     // Initialize AOS
     AOS.init();
 
+    // Epic Loading Screen - Only on first visit
+    function initEpicLoadingScreen() {
+        const loadingScreen = document.getElementById('epic-loading-screen');
+        
+        // Check if this is the first visit in this session
+        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
+        
+        if (hasVisited) {
+            // Not first visit - remove loading screen immediately
+            loadingScreen.remove();
+            return;
+        }
+        
+        // First visit - show loading screen
+        sessionStorage.setItem('umbcRugbyVisited', 'true');
+        
+        const progressBar = document.querySelector('.epic-progress-bar');
+        const percentageDisplay = document.querySelector('.loading-percentage');
+        const particlesContainer = document.querySelector('.loading-particles');
+        
+        // Prevent scrolling during loading
+        document.body.style.overflow = 'hidden';
+        
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particlesContainer.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 8000);
+        }
+        
+        // Create more particles for epic effect
+        const particleInterval = setInterval(createParticle, 150);
+        
+        // Simulate loading progress
+        let progress = 0;
+        const loadingInterval = setInterval(() => {
+            // Random progress increments for realistic feel
+            const increment = Math.random() * 12 + 3;
+            progress = Math.min(progress + increment, 100);
+            
+            // Update progress bar and percentage
+            progressBar.style.width = progress + '%';
+            percentageDisplay.textContent = Math.floor(progress) + '%';
+            
+            // Complete loading when 100%
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                clearInterval(particleInterval);
+                
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    
+                    // Remove loading screen after transition
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 1200);
+                }, 800);
+            }
+        }, 120);
+    }
+    
+    // Initialize loading screen
+    initEpicLoadingScreen();
+
     // FAQ Accordion Functionality
     document.addEventListener("DOMContentLoaded", () => {
+      // Dark Mode Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      
+      // Set initial theme
+      body.setAttribute('data-theme', currentTheme);
+      themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+      
+      themeToggle.addEventListener('click', () => {
+          const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          body.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      });
+
+
       const faqQuestions = document.querySelectorAll(".faq-question");
 
       faqQuestions.forEach((question) => {
         question.addEventListener("click", () => {
           const faqItem = question.closest('.faq-item');
-          const answer = question.nextElementSibling;
+          const answer = faqItem.querySelector('.faq-answer');
           const isOpen = faqItem.classList.contains('active');
 
-          // Close other answers
+          // Close all other answers
           document.querySelectorAll(".faq-item").forEach((otherItem) => {
             if (otherItem !== faqItem) {
               otherItem.classList.remove('active');
-              const otherAnswer = otherItem.querySelector('.faq-answer');
-              otherAnswer.style.maxHeight = null;
             }
           });
 
           // Toggle current answer
           if (isOpen) {
             faqItem.classList.remove('active');
-            answer.style.maxHeight = null;
           } else {
             faqItem.classList.add('active');
-            answer.style.maxHeight = `${answer.scrollHeight}px`;
           }
         });
       });

@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="scripts.js" defer></script>
+  <script src="js/scripts.js" defer></script>
   <!-- Optional Google Fonts -->
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
@@ -16,7 +16,7 @@
 
    <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="UMBC Rugby Club" />
-  <meta property="og:description" content="Guys being Dudes since 1984." />
+  <meta property="og:description" content="Building brotherhood since 1984." />
   <meta property="og:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
   <meta property="og:url" content="https://umbcrugby.com" />
   <meta property="og:type" content="website" />
@@ -25,13 +25,33 @@
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="UMBC Rugby Club" />
-  <meta name="twitter:description" content="Guys being Dudes since 1984." />
+  <meta name="twitter:description" content="Building brotherhood since 1984." />
   <meta name="twitter:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
 </head>
 <body>
-  <!-- Loading Screen -->
-  <div id="loading-screen">
-    <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="loading-logo">
+  <!-- Rugby Loading Screen -->
+  <div id="epic-loading-screen">
+    <div class="loading-container">
+      <div class="rugby-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+      </div>
+      <div class="loading-text">UMBC RUGBY</div>
+      <div class="loading-subtitle">Building brotherhood since 1984</div>
+      
+      <!-- Rugby Field Progress Bar -->
+      <div class="rugby-field-container">
+        <div class="field-lines">
+          <div class="yard-line" data-yards="0">0</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line center" data-yards="50">50</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line" data-yards="0">TRY!</div>
+        </div>
+        <div class="rugby-ball"></div>
+      </div>
+      
+      <div class="loading-percentage">0m</div>
+    </div>
   </div>
 
   <!-- Back to Top Button -->
@@ -39,16 +59,28 @@
 
   <!-- HEADER -->
   <header id="hero-header">
-    <!-- Background Video -->
+    <!-- Background Videos -->
     <video
-      id="header-video"
+      id="header-video-1"
+      class="header-video active"
       autoplay
+      muted
+      playsinline
+      webkit-playsinline
+    >
+      <source src="assets/videos/umbcrugby1.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    
+    <video
+      id="header-video-2"
+      class="header-video"
       muted
       loop
       playsinline
       webkit-playsinline
     >
-      <source src="umbcrugby1.mp4" type="video/mp4" />
+      <source src="assets/videos/UMBC Video.mp4" type="video/mp4" />
       Your browser does not support the video tag.
     </video>
 
@@ -57,15 +89,15 @@
 
     <!-- Hero Content -->
     <div class="hero-content" data-aos="fade-up">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
       <h1 class="hero-title">UMBC Rugby Club</h1>
-      <p class="hero-subtitle">Guys being Dudes since 1984</p>
-      <a href="#about" class="cta-button">Learn More</a>
+      <p class="hero-subtitle" style="color: white;">Building brotherhood since 1984</p>
+      <a href="#about" class="cta-button transparent-btn small-btn">Learn More</a>
     </div>
   </header>
 
   <!-- NAVIGATION: Placed AFTER header to avoid overlapping the video -->
-  <nav id="navbar" class="hero-nav">
+  <nav id="navbar" class="hero-nav" role="navigation">
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="roster.html">Roster</a></li>
@@ -82,34 +114,35 @@
   <!-- Main Content -->
   <main>
     <!-- About Section -->
-    <section id="about" class="about-section" data-aos="fade-up">
+    <section id="about" class="about-section transparent-section" data-aos="fade-up" data-aos-duration="1200">
       <div class="container">
-        <h2 class="section-title">About UMBC Rugby</h2>
+        <h2 class="section-title" data-aos="slide-down" data-aos-duration="800" data-aos-easing="ease-out-back">About UMBC Rugby</h2>
         <div class="about-content">
-          <div class="about-text">
-            <p>
+          <div class="about-text" data-aos="slide-right" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-cubic">
+            <p data-aos="fade-in" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-quart">
               Founded in 1984, the UMBC Men's Rugby Club is the only contact sport at UMBC
               and is a proud member of the National Collegiate Rugby Division II. We are dedicated
               to excellence in competition and fostering a community of inclusivity and sportsmanship
               on and off the field.
             </p>
-            <p>
+            <p data-aos="fade-in" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-quart">
               Our mission is to develop skilled athletes, supportive teammates, and
               responsible leaders through the sport of rugby. Whether you're new to
               rugby or an experienced player, UMBC Rugby offers a welcoming
               environment to grow.
             </p>
-            <p>
+            <p data-aos="fade-in" data-aos-delay="800" data-aos-duration="800" data-aos-easing="ease-out-quart">
               Join us today and be part of our tradition of passion and pride that
               enriches campus life and personal growth.
             </p>
-            <a href="recruitment.html" class="cta-button">Join The Team</a>
+            <a href="recruitment.html" class="cta-button" data-aos="flip-up" data-aos-delay="1000" data-aos-duration="600" data-aos-easing="ease-out-back">Join The Team</a>
           </div>
-          <div class="about-image">
+          <div class="about-image" data-aos="slide-left" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-cubic">
             <img
-              src="team-photo.jpeg"
+              src="assets/images/Latchana_Rugby1.jpg"
               alt="UMBC Rugby Team Photo"
               class="team-photo"
+              data-aos="zoom-in-rotate" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-out-back"
             />
           </div>
         </div>
@@ -118,35 +151,35 @@
 
 
     <!-- Image Carousel Section -->
-    <section id="image-carousel" class="info-section" data-aos="fade-up">
-      <div class="carousel-container">
+    <section id="image-carousel" class="info-section transparent-section" data-aos="fade-up" data-aos-duration="1500" data-aos-easing="ease-out-cubic">
+      <div class="carousel-container" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="1000">
         <!-- Carousel Track -->
         <div class="carousel-track">
-          <img src="Latchana_Rugby84.jpg" alt="UMBC Rugby Since 1984" class="carousel-image" data-aos="zoom-in" />
-          <img src="IMG_7441.jpeg" alt="Rugby Action Shot 1" class="carousel-image" data-aos="zoom-in" data-aos-delay="100" />
-          <img src="IMG_7442.jpeg" alt="Rugby Action Shot 2" class="carousel-image" data-aos="zoom-in" data-aos-delay="200" />
-          <img src="Latchana_Rugby3.jpg" alt="Rugby Team Spirit" class="carousel-image" data-aos="zoom-in" data-aos-delay="300" />
-          <img src="Latchana_rugby106.jpg" alt="Rugby Excellence" class="carousel-image" data-aos="zoom-in" data-aos-delay="400" />
-          <img src="umbuc1.jpg" alt="Team Unity" class="carousel-image" data-aos="zoom-in" data-aos-delay="500" />
-          <img src="umbuc2.jpg" alt="Rugby Pride" class="carousel-image" data-aos="zoom-in" data-aos-delay="600" />
-          <img src="umbuc3.jpg" alt="Championship Spirit" class="carousel-image" data-aos="zoom-in" data-aos-delay="700" />
+          <img src="assets/images/Latchana_Rugby1.jpg" alt="UMBC Rugby Since 1984" class="carousel-image" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/Latchana_rubgy2.jpg" alt="Rugby Action Shot 1" class="carousel-image" data-aos="flip-right" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/Latchana_Rugby4.jpg" alt="Rugby Action Shot 2" class="carousel-image" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/IMG_7442.jpeg" alt="Rugby Team Spirit" class="carousel-image" data-aos="flip-right" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/Latchana_Rugby52.jpg" alt="Rugby Excellence" class="carousel-image" data-aos="flip-left" data-aos-delay="500" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/umbuc1.jpg" alt="Team Unity" class="carousel-image" data-aos="flip-right" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/umbuc2.jpg" alt="Rugby Pride" class="carousel-image" data-aos="flip-left" data-aos-delay="700" data-aos-duration="800" data-aos-easing="ease-out-back" />
+          <img src="assets/images/umbuc3.jpg" alt="Championship Spirit" class="carousel-image" data-aos="flip-right" data-aos-delay="800" data-aos-duration="800" data-aos-easing="ease-out-back" />
 
         </div>
 
         <!-- Navigation Buttons -->
-        <button class="carousel-btn prev" aria-label="Previous Slide">←</button>
-        <button class="carousel-btn next" aria-label="Next Slide">→</button>
+        <button class="carousel-btn prev" aria-label="Previous Slide" data-aos="slide-right" data-aos-delay="400" data-aos-duration="600">←</button>
+        <button class="carousel-btn next" aria-label="Next Slide" data-aos="slide-left" data-aos-delay="400" data-aos-duration="600">→</button>
 
         <!-- Carousel Indicators -->
-        <div class="carousel-indicators">
-          <span data-slide="0" class="indicator active"></span>
-          <span data-slide="1" class="indicator"></span>
-          <span data-slide="2" class="indicator"></span>
-          <span data-slide="3" class="indicator"></span>
-          <span data-slide="4" class="indicator"></span>
-          <span data-slide="5" class="indicator"></span>
-          <span data-slide="6" class="indicator"></span>
-          <span data-slide="7" class="indicator"></span>
+        <div class="carousel-indicators" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+          <span data-slide="0" class="indicator active" data-aos="zoom-in" data-aos-delay="700"></span>
+          <span data-slide="1" class="indicator" data-aos="zoom-in" data-aos-delay="750"></span>
+          <span data-slide="2" class="indicator" data-aos="zoom-in" data-aos-delay="800"></span>
+          <span data-slide="3" class="indicator" data-aos="zoom-in" data-aos-delay="850"></span>
+          <span data-slide="4" class="indicator" data-aos="zoom-in" data-aos-delay="900"></span>
+          <span data-slide="5" class="indicator" data-aos="zoom-in" data-aos-delay="950"></span>
+          <span data-slide="6" class="indicator" data-aos="zoom-in" data-aos-delay="1000"></span>
+          <span data-slide="7" class="indicator" data-aos="zoom-in" data-aos-delay="1050"></span>
 
         </div>
       </div>
@@ -159,13 +192,13 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" data-aos="fade-up">
-      <h2>What Our Players Say</h2>
-      <blockquote>
+    <section id="testimonials" class="transparent-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+      <h2 class="typewriter-testimonial">What Our Players Say</h2>
+      <blockquote class="typewriter-quote">
         "Rugby is the ultimate team sport! It combines the best of both sports I played growing up,
         football and soccer." – <strong>Kyle P</strong>.
       </blockquote>
-      <blockquote>
+      <blockquote class="typewriter-quote">
         "I played four Varsity sports in High School and have always been competitive. I decided
         to give rugby a try (pun intended) in Fall '23 and have fallen in love with the
         competitive nature of the game, the strategy behind it, and the brotherhood that
@@ -174,14 +207,14 @@
     </section>
 
     <!-- Instagram Feed Section -->
-    <section id="instagram-feed" data-aos="fade-up" data-aos-duration="800">
-      <h2 class="section-title" data-aos="fade-right" data-aos-duration="1000">
+    <section id="instagram-feed" class="transparent-section" data-aos="fade-up" data-aos-duration="800" data-aos-easing="ease-out-cubic">
+      <h2 class="section-title" data-aos="fade-right" data-aos-duration="1000" data-aos-easing="ease-out-back">
         Follow Us on Instagram
       </h2>
-      <p data-aos="fade-left" data-aos-duration="1200">
+      <p data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200" data-aos-easing="ease-out-quart">
         Stay connected and see the latest moments from UMBC Rugby.
       </p>
-      <div style="max-width: 900px; margin: auto; padding: 20px; text-align: center;">
+      <div style="max-width: 900px; margin: auto; padding: 20px; text-align: center;" data-aos="zoom-in" data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-out-back">
         <blockquote class="instagram-media"
           data-instgrm-permalink="https://www.instagram.com/umbcmensrugby/"
           data-instgrm-version="14"
@@ -196,52 +229,230 @@
 
 
     <!-- Scrolling Player Section -->
-    <section id="scrolling-player-section" data-aos="fade-up">
-      <div class="caption">
+    <section id="scrolling-player-section" class="transparent-section" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
+      <div class="caption" data-aos="zoom-in" data-aos-duration="800" data-aos-easing="ease-out-back">
         <h2>Catch the Kick</h2>
       </div>
-      <div class="player-container">
+      <div class="player-container" data-aos="slide-up" data-aos-duration="1200" data-aos-delay="300" data-aos-easing="ease-out-quart">
         <img
-          src="nate.png"
+          src="assets/images/nate.png"
           alt="Rugby Player Kicking"
           class="player-image"
+          data-aos="rotate-in" data-aos-delay="600" data-aos-duration="1000" data-aos-easing="ease-out-back"
         />
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
+  <footer data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-out-cubic">
     <!-- Logo -->
-    <div class="footer-logo">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="ncr.png" alt="NCR Logo" />
-      <img src="umbclogo.png" alt="UMBC Logo" />
+    <div class="footer-logo" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" data-aos="flip-left" data-aos-delay="300" />
+      <img src="assets/images/ncr.png" alt="NCR Logo" data-aos="flip-up" data-aos-delay="400" />
+      <img src="assets/images/umbclogo.png" alt="UMBC Logo" data-aos="flip-right" data-aos-delay="500" />
     </div>
 
     <!-- Footer Navigation Links -->
-    <nav class="footer-nav">
+    <nav class="footer-nav" data-aos="slide-up" data-aos-delay="300" data-aos-duration="800">
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="roster.html">Roster</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="rugby-ready.html">Rugby Ready</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="faq.html">FAQs</a></li>
+        <li data-aos="fade-in" data-aos-delay="400"><a href="index.html">Home</a></li>
+        <li data-aos="fade-in" data-aos-delay="450"><a href="roster.html">Roster</a></li>
+        <li data-aos="fade-in" data-aos-delay="500"><a href="schedule.html">Schedule</a></li>
+        <li data-aos="fade-in" data-aos-delay="550"><a href="rugby-ready.html">Rugby Ready</a></li>
+        <li data-aos="fade-in" data-aos-delay="600"><a href="recruitment.html">Recruitment</a></li>
+        <li data-aos="fade-in" data-aos-delay="650"><a href="alumni.html">Alumni</a></li>
+        <li data-aos="fade-in" data-aos-delay="700"><a href="donate.html">Donate</a></li>
+        <li data-aos="fade-in" data-aos-delay="750"><a href="faq.html">FAQs</a></li>
       </ul>
     </nav>
 
     <!-- Copyright -->
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+    <p data-aos="fade-in" data-aos-delay="600" data-aos-duration="800">&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
   <!-- AOS Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Initialize AOS
-    AOS.init();
+    // Initialize AOS with enhanced settings
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: false,
+      offset: 120,
+      delay: 0,
+      anchorPlacement: 'top-bottom',
+      disable: function() {
+        return window.innerWidth < 768;
+      }
+    });
+
+    // Rugby Loading Screen - Rugby field progress animation
+    function initEpicLoadingScreen() {
+        const loadingScreen = document.getElementById('epic-loading-screen');
+        
+        // Check if this is the first visit in this session
+        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
+        
+        if (hasVisited) {
+            // Not first visit - remove loading screen immediately
+            loadingScreen.remove();
+            return;
+        }
+        
+        // First visit - show loading screen
+        sessionStorage.setItem('umbcRugbyVisited', 'true');
+        
+        const rugbyBall = document.querySelector('.rugby-ball');
+        const percentageDisplay = document.querySelector('.loading-percentage');
+        const fieldContainer = document.querySelector('.rugby-field-container');
+        
+        // Prevent scrolling during loading
+        document.body.style.overflow = 'hidden';
+        
+        // Rugby field progress sequence: 0 → 22 → 50 → 22 → 100
+        const progressSequence = [0, 22, 50, 22, 100];
+        const yardLabels = ['0m', '22m', '50m', '22m', 'TRY!'];
+        let currentStep = 0;
+        
+        function updateRugbyProgress() {
+            const targetProgress = progressSequence[currentStep];
+            const targetLabel = yardLabels[currentStep];
+            
+            // Calculate ball position (0% = left, 100% = right)
+            const ballPosition = (targetProgress / 100) * (fieldContainer.offsetWidth - 20);
+            
+            // Animate ball movement
+            rugbyBall.style.left = ballPosition + 'px';
+            
+            // Update percentage display
+            percentageDisplay.textContent = targetLabel;
+            
+            // Move to next step
+            currentStep++;
+            
+            if (currentStep < progressSequence.length) {
+                // Continue to next step after delay
+                setTimeout(updateRugbyProgress, 800);
+            } else {
+                // Loading complete - show "TRY!" celebration briefly then finish
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    
+                    // Remove loading screen after transition
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 1200);
+                }, 1000);
+            }
+        }
+        
+        // Start the rugby progress sequence
+        setTimeout(updateRugbyProgress, 500);
+    }
+    
+    // Initialize loading screen
+    initEpicLoadingScreen();
+
+    // Enhanced Video Transition Handler
+    function initVideoTransition() {
+        const video1 = document.getElementById('header-video-1');
+        const video2 = document.getElementById('header-video-2');
+        let currentVideo = 1;
+        let transitionInterval;
+        
+        if (video1 && video2) {
+            // Ensure first video starts playing immediately
+            video1.play().catch(e => console.log('Video autoplay prevented:', e));
+            
+            function switchToVideo2() {
+                video1.classList.remove('active');
+                video2.classList.add('active');
+                video2.play().catch(e => console.log('Second video play prevented:', e));
+                currentVideo = 2;
+                
+                // Switch back to first video after 5 seconds
+                setTimeout(switchToVideo1, 5000);
+            }
+            
+            function switchToVideo1() {
+                video2.classList.remove('active');
+                video1.classList.add('active');
+                video1.play().catch(e => console.log('First video play prevented:', e));
+                currentVideo = 1;
+                
+                // Switch to second video after 8 seconds (longer duration)
+                setTimeout(switchToVideo2, 8000);
+            }
+            
+            // Start the cycle - first video plays for 8 seconds, then switch
+            setTimeout(switchToVideo2, 8000);
+            
+            // Handle video end events to maintain smooth looping
+            video1.addEventListener('ended', () => {
+                video1.currentTime = 0;
+                if (currentVideo === 1) {
+                    video1.play().catch(e => console.log('Video replay prevented:', e));
+                }
+            });
+            
+            video2.addEventListener('ended', () => {
+                video2.currentTime = 0;
+                if (currentVideo === 2) {
+                    video2.play().catch(e => console.log('Video replay prevented:', e));
+                }
+            });
+        }
+    }
+    
+    // Typewriter Effect
+    function typeWriter(element, text, speed = 50) {
+        let i = 0;
+        element.innerHTML = '';
+        
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+    
+    // Initialize typewriter effects for About section
+    function initTypewriterEffects() {
+        const aboutTitle = document.querySelector('#about .section-title');
+        const aboutParagraphs = document.querySelectorAll('#about .about-text p');
+        
+        // Create intersection observer for triggering typewriter when section comes into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Type out title first
+                    if (aboutTitle) {
+                        typeWriter(aboutTitle, 'About UMBC Rugby', 100);
+                    }
+                    
+                    // Type out paragraphs with delays
+                    aboutParagraphs.forEach((p, index) => {
+                        const originalText = p.textContent;
+                        setTimeout(() => {
+                            typeWriter(p, originalText, 30);
+                        }, 2000 + (index * 3000));
+                    });
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        
+        const aboutSection = document.getElementById('about');
+        if (aboutSection) {
+            observer.observe(aboutSection);
+        }
+    }
 
 // Enhanced JavaScript for UMBC Rugby Website
 document.addEventListener('DOMContentLoaded', function() {
@@ -454,30 +665,88 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Enhanced Scrolling Player Animation
+    // Enhanced Scroll-Controlled Catch the Kick Animation
     const playerImage = document.querySelector('.player-image');
-    const scrollingPlayerSection = document.getElementById('scrolling-player-section');
-
-    if (playerImage && scrollingPlayerSection) {
-        const animatePlayer = () => {
-            const scrollPosition = window.scrollY;
-            const sectionOffsetTop = scrollingPlayerSection.offsetTop;
-            const sectionHeight = scrollingPlayerSection.offsetHeight;
-            const windowHeight = window.innerHeight;
-            const bottomOfViewport = scrollPosition + windowHeight;
-
-            if (bottomOfViewport >= sectionOffsetTop && scrollPosition <= sectionOffsetTop + sectionHeight) {
-                const progress = (bottomOfViewport - sectionOffsetTop) / (sectionHeight + windowHeight);
-                const horizontalOffset = progress * window.innerWidth * 1.5;
-                const rotation = progress * 360;
-
-                playerImage.style.transform = `translateX(${horizontalOffset}px) rotate(${rotation}deg)`;
-                playerImage.style.opacity = Math.min(1, progress * 2);
+    const playerSection = document.getElementById('scrolling-player-section');
+    let lastScrollY = window.scrollY;
+    let scrollDirection = 0; // -1 for up, 1 for down
+    
+    if (playerImage && playerSection) {
+        function updatePlayerAnimation() {
+            const rect = playerSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const currentScrollY = window.scrollY;
+            
+            // Detect scroll direction
+            if (currentScrollY > lastScrollY) {
+                scrollDirection = 1; // scrolling down
+            } else if (currentScrollY < lastScrollY) {
+                scrollDirection = -1; // scrolling up
             }
-        };
-
-        window.addEventListener('scroll', animatePlayer);
-        animatePlayer(); // Initial call
+            lastScrollY = currentScrollY;
+            
+            // Calculate progress as section comes into view
+            let progress = 0;
+            if (rect.top < viewportHeight && rect.bottom > 0) {
+                progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight + rect.height)));
+            }
+            
+            // Enhanced horizontal movement based on scroll
+            const baseTranslateX = window.innerWidth * -0.2; // Start position
+            const maxTranslateX = window.innerWidth * 0.8; // End position
+            const translateX = baseTranslateX + (progress * maxTranslateX);
+            
+            // Dynamic vertical movement based on scroll direction and progress
+            const baseY = Math.sin(progress * Math.PI * 1.5) * 30; // Base bouncing
+            const scrollInfluence = scrollDirection * 10; // Additional movement based on scroll
+            const translateY = baseY + scrollInfluence;
+            
+            // Enhanced scaling with scroll responsiveness
+            const baseScale = 0.6 + (progress * 0.6);
+            const scrollScale = Math.abs(scrollDirection) * 0.05;
+            const scale = baseScale + scrollScale;
+            
+            // Rotation based on movement direction and scroll
+            const rotation = (translateX / 20) + (scrollDirection * 2);
+            
+            // Apply enhanced transform with rotation
+            playerImage.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(${scale}) rotate(${rotation}deg)`;
+            
+            // Enhanced opacity with scroll responsiveness
+            const baseOpacity = Math.max(0.2, progress * 1.2);
+            const scrollOpacity = Math.abs(scrollDirection) * 0.1;
+            playerImage.style.opacity = Math.min(1, baseOpacity + scrollOpacity);
+            
+            // Enhanced glow effect that responds to scrolling
+            const glowIntensity = Math.max(0, progress * 25 + Math.abs(scrollDirection) * 5);
+            if (progress > 0.1) {
+                playerImage.style.filter = `drop-shadow(0 0 ${glowIntensity}px rgba(255, 184, 28, 0.7)) brightness(${1 + scrollDirection * 0.1})`;
+            }
+            
+            // Add motion blur effect during fast scrolling
+            if (Math.abs(scrollDirection) > 0) {
+                const blur = Math.min(3, Math.abs(scrollDirection));
+                playerImage.style.filter += ` blur(${blur * 0.5}px)`;
+            }
+        }
+        
+        // Throttled scroll event for better performance
+        let ticking = false;
+        function requestTick() {
+            if (!ticking) {
+                requestAnimationFrame(() => {
+                    updatePlayerAnimation();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        // Update on scroll with throttling
+        window.addEventListener('scroll', requestTick);
+        
+        // Initial call
+        updatePlayerAnimation();
     }
 
     // Enhanced Schedule Popup
@@ -618,29 +887,6 @@ END:VCALENDAR`;
         });
     });
 
-    // Loading Screen
-    const loadingScreen = document.getElementById('loading-screen');
-    if (loadingScreen) {
-        const progressBar = document.querySelector('.progress-bar');
-        let progress = 0;
-
-        const loadingInterval = setInterval(() => {
-            progress += Math.random() * 30;
-            if (progress >= 100) {
-                progress = 100;
-                clearInterval(loadingInterval);
-
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                }, 500);
-            }
-
-            if (progressBar) {
-                progressBar.style.width = progress + '%';
-            }
-        }, 200);
-    }
 
     // Smooth Scroll for Navigation Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -713,6 +959,10 @@ END:VCALENDAR`;
         }
     `;
     document.head.appendChild(style);
+    
+    // Initialize video transition and typewriter effects
+    initVideoTransition();
+    initTypewriterEffects();
 });
 
 // Intersection Observer for Advanced Animations

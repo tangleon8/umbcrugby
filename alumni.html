@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="alumni.css">
-  <link rel="icon" href="rugbylogo.png" type="image/png" />
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/alumni.css">
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
   <title>UMBC Rugby Alumni - Legacy of Excellence</title>
-  <script src="scripts.js" defer></script>
+  <script src="js/scripts.js" defer></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
+  <!-- Rugby Loading Screen -->
+  <div id="epic-loading-screen">
+    <div class="loading-container">
+      <div class="rugby-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+      </div>
+      <div class="loading-text">UMBC RUGBY</div>
+      <div class="loading-subtitle">Building brotherhood since 1984</div>
+      
+      <!-- Rugby Field Progress Bar -->
+      <div class="rugby-field-container">
+        <div class="field-lines">
+          <div class="yard-line" data-yards="0">0</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line center" data-yards="50">50</div>
+          <div class="yard-line" data-yards="22">22</div>
+          <div class="yard-line" data-yards="0">TRY!</div>
+        </div>
+        <div class="rugby-ball"></div>
+      </div>
+      
+      <div class="loading-percentage">0m</div>
+    </div>
+  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" class="alumni-back-top" title="Back to Top">
@@ -22,22 +46,22 @@
   <!-- HEADER -->
   <header id="alumni-hero" class="alumni-hero">
     <div class="hero-particles" id="particles"></div>
-    <img src="1987.jpg" alt="UMBC Rugby Alumni Banner" class="hero-bg-image">
+    <img src="assets/images/1987.jpg" alt="UMBC Rugby Alumni Banner" class="hero-bg-image">
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="zoom-in">
       <div class="hero-badge" data-aos="fade-down" data-aos-delay="300">
         <span>Est. 1992</span>
       </div>
       <h1 class="hero-title">
-        <span class="title-word" data-aos="fade-up" data-aos-delay="100">UMBC</span>
-        <span class="title-word" data-aos="fade-up" data-aos-delay="200">Rugby</span>
-        <span class="title-word golden" data-aos="fade-up" data-aos-delay="300">Alumni</span>
+        <span class="title-word" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">UMBC</span>
+        <span class="title-word" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">Rugby</span>
+        <span class="title-word golden" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">Alumni</span>
       </h1>
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400">
+      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-quart">
         Celebrating Tradition, Leadership, and Legacy
       </p>
     </div>
-    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600">
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-back">
       <span class="mouse">
         <span class="wheel"></span>
       </span>
@@ -56,65 +80,66 @@
       <li><a href="alumni.html" class="active">Alumni</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">DARK</span></button></li>
     </ul>
   </nav>
 
   <!-- Timeline Navigation -->
-  <div class="timeline-nav">
+  <div class="timeline-nav" data-aos="slide-right" data-aos-duration="1000" data-aos-delay="300">
     <div class="timeline-progress"></div>
     <div class="timeline-dots">
-      <span class="timeline-dot active" data-section="intro"></span>
-      <span class="timeline-dot" data-section="gallery"></span>
-      <span class="timeline-dot" data-section="video"></span>
-      <span class="timeline-dot" data-section="weekend"></span>
-      <span class="timeline-dot" data-section="scholarship"></span>
-      <span class="timeline-dot" data-section="teams"></span>
+      <span class="timeline-dot active" data-section="intro" data-aos="zoom-in" data-aos-delay="400"></span>
+      <span class="timeline-dot" data-section="gallery" data-aos="zoom-in" data-aos-delay="500"></span>
+      <span class="timeline-dot" data-section="video" data-aos="zoom-in" data-aos-delay="600"></span>
+      <span class="timeline-dot" data-section="weekend" data-aos="zoom-in" data-aos-delay="700"></span>
+      <span class="timeline-dot" data-section="scholarship" data-aos="zoom-in" data-aos-delay="800"></span>
+      <span class="timeline-dot" data-section="teams" data-aos="zoom-in" data-aos-delay="900"></span>
     </div>
   </div>
 
   <!-- 3D Photo Gallery -->
-  <div class="gallery-3d-container">
+  <div class="gallery-3d-container" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
     <div class="gallery-3d-track">
-      <div class="gallery-3d-slide" data-tilt>
-        <img src="rugby20.jpg" alt="Rugby Heritage">
+      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
+        <img src="assets/images/rugby20.jpg" alt="Rugby Heritage">
         <div class="slide-info">
           <h3>Heritage</h3>
           <p>Building on decades of tradition</p>
         </div>
       </div>
-      <div class="gallery-3d-slide" data-tilt>
-        <img src="rugby21.jpg" alt="Championship Glory">
+      <div class="gallery-3d-slide" data-tilt data-aos="flip-right" data-aos-delay="200" data-aos-duration="800">
+        <img src="assets/images/rugby21.jpg" alt="Championship Glory">
         <div class="slide-info">
           <h3>Champions</h3>
           <p>Victory through teamwork</p>
         </div>
       </div>
-      <div class="gallery-3d-slide" data-tilt>
-        <img src="rugby22.jpg" alt="Brotherhood">
+      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
+        <img src="assets/images/rugby22.jpg" alt="Brotherhood">
         <div class="slide-info">
           <h3>Brotherhood</h3>
           <p>Bonds that last a lifetime</p>
         </div>
       </div>
-      <div class="gallery-3d-slide" data-tilt>
-        <img src="rugby23.jpg" alt="Excellence">
+      <div class="gallery-3d-slide" data-tilt data-aos="flip-right" data-aos-delay="400" data-aos-duration="800">
+        <img src="assets/images/rugby23.jpg" alt="Excellence">
         <div class="slide-info">
           <h3>Excellence</h3>
           <p>Striving for greatness</p>
         </div>
       </div>
-      <div class="gallery-3d-slide" data-tilt>
-        <img src="rugby24.jpg" alt="Legacy">
+      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="500" data-aos-duration="800">
+        <img src="assets/images/rugby24.jpg" alt="Legacy">
         <div class="slide-info">
           <h3>Legacy</h3>
           <p>Inspiring future generations</p>
         </div>
       </div>
     </div>
-    <button class="gallery-nav prev" aria-label="Previous">
+    <button class="gallery-nav prev" aria-label="Previous" data-aos="slide-right" data-aos-delay="300" data-aos-duration="600">
       <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
     </button>
-    <button class="gallery-nav next" aria-label="Next">
+    <button class="gallery-nav next" aria-label="Next" data-aos="slide-left" data-aos-delay="300" data-aos-duration="600">
       <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
     </button>
   </div>
@@ -122,13 +147,13 @@
   <!-- MAIN CONTENT -->
   <main class="alumni-main">
     <!-- Alumni Introduction Section -->
-    <section id="intro" class="alumni-intro" data-aos="fade-up">
-      <div class="section-decoration">
-        <div class="deco-line left"></div>
-        <div class="deco-circle"></div>
-        <div class="deco-line right"></div>
+    <section id="intro" class="alumni-intro" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
+      <div class="section-decoration" data-aos="zoom-in" data-aos-delay="200">
+        <div class="deco-line left" data-aos="slide-right" data-aos-delay="300"></div>
+        <div class="deco-circle" data-aos="zoom-in" data-aos-delay="400"></div>
+        <div class="deco-line right" data-aos="slide-left" data-aos-delay="300"></div>
       </div>
-      <h2 class="section-title glitch" data-text="Welcome to UMBC Rugby Alumni">
+      <h2 class="section-title typewriter-section" data-text="Welcome to UMBC Rugby Alumni" data-aos="bounce-in" data-aos-delay="500" data-aos-duration="800">
         Welcome to UMBC Rugby Alumni
       </h2>
       <div class="intro-content">
@@ -136,21 +161,25 @@
           It all started in November 1992 with the playing of the very first UMBC Alumni Game. It was cold that day, it snowed during the game and yes the field slanted uphill both ways.
         </p>
         <div class="history-timeline">
-          <div class="timeline-item" data-aos="fade-right" data-aos-delay="100">
+          <div class="timeline-item" data-aos="flip-up" data-aos-delay="100" data-aos-duration="800">
             <span class="year">1992</span>
             <span class="event">First Alumni Game</span>
+            <div class="timeline-glow"></div>
           </div>
-          <div class="timeline-item" data-aos="fade-right" data-aos-delay="200">
+          <div class="timeline-item" data-aos="flip-up" data-aos-delay="200" data-aos-duration="800">
             <span class="year">1996</span>
             <span class="event">Annual Tradition Begins</span>
+            <div class="timeline-glow"></div>
           </div>
-          <div class="timeline-item" data-aos="fade-right" data-aos-delay="300">
+          <div class="timeline-item" data-aos="flip-up" data-aos-delay="300" data-aos-duration="800">
             <span class="year">1998</span>
             <span class="event">Formal Organization</span>
+            <div class="timeline-glow"></div>
           </div>
-          <div class="timeline-item" data-aos="fade-right" data-aos-delay="400">
+          <div class="timeline-item" data-aos="flip-up" data-aos-delay="400" data-aos-duration="800">
             <span class="year">Today</span>
             <span class="event">Weekend Celebration</span>
+            <div class="timeline-glow active"></div>
           </div>
         </div>
         <p class="story-text">
@@ -380,7 +409,7 @@
         <div class="team-card arbutian" data-aos="fade-right">
           <div class="team-header">
             <div class="team-logo-wrapper">
-              <img src="arbutian.png" alt="Arbutian Revolution" class="team-logo">
+              <img src="assets/images/arbutian.png" alt="Arbutian Revolution" class="team-logo">
               <div class="logo-glow"></div>
             </div>
             <h3 class="team-name">The Arbutian Revolution</h3>
@@ -423,7 +452,7 @@
         <div class="team-card rocky" data-aos="fade-left">
           <div class="team-header">
             <div class="team-logo-wrapper">
-              <img src="rockygorge.png" alt="Rocky Gorge Rugby" class="team-logo">
+              <img src="assets/images/rockygorge.png" alt="Rocky Gorge Rugby" class="team-logo">
               <div class="logo-glow"></div>
             </div>
             <h3 class="team-name">Rocky Gorge Rugby</h3>
@@ -482,7 +511,7 @@
     <div class="popup-content">
       <button id="close-popup" class="popup-close">&times;</button>
       <div class="popup-header">
-        <img src="alumday.jpg" alt="Alumni Day" class="popup-image" />
+        <img src="assets/images/alumday.jpg" alt="Alumni Day" class="popup-image" />
         <div class="popup-badge">Save the Date!</div>
       </div>
       <h2 class="popup-title">Alumni Game 2025</h2>
@@ -514,9 +543,9 @@
   <footer class="alumni-footer">
     <div class="footer-content">
       <div class="footer-logos">
-        <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
-        <img src="ncr.png" alt="NCR Logo" />
-        <img src="umbclogo.png" alt="UMBC Logo" />
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
+        <img src="assets/images/ncr.png" alt="NCR Logo" />
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
       </div>
       <nav class="footer-nav">
         <ul>
@@ -550,6 +579,95 @@
       duration: 1000,
       once: true,
       offset: 100
+    });
+
+    // Epic Loading Screen - Only on first visit
+    function initEpicLoadingScreen() {
+        const loadingScreen = document.getElementById('epic-loading-screen');
+        
+        // Check if this is the first visit in this session
+        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
+        
+        if (hasVisited) {
+            // Not first visit - remove loading screen immediately
+            loadingScreen.remove();
+            return;
+        }
+        
+        // First visit - show loading screen
+        sessionStorage.setItem('umbcRugbyVisited', 'true');
+        
+        const progressBar = document.querySelector('.epic-progress-bar');
+        const percentageDisplay = document.querySelector('.loading-percentage');
+        const particlesContainer = document.querySelector('.loading-particles');
+        
+        // Prevent scrolling during loading
+        document.body.style.overflow = 'hidden';
+        
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particlesContainer.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 8000);
+        }
+        
+        // Create more particles for epic effect
+        const particleInterval = setInterval(createParticle, 150);
+        
+        // Simulate loading progress
+        let progress = 0;
+        const loadingInterval = setInterval(() => {
+            // Random progress increments for realistic feel
+            const increment = Math.random() * 12 + 3;
+            progress = Math.min(progress + increment, 100);
+            
+            // Update progress bar and percentage
+            progressBar.style.width = progress + '%';
+            percentageDisplay.textContent = Math.floor(progress) + '%';
+            
+            // Complete loading when 100%
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                clearInterval(particleInterval);
+                
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    
+                    // Remove loading screen after transition
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 1200);
+                }, 800);
+            }
+        }, 120);
+    }
+    
+    // Initialize loading screen
+    initEpicLoadingScreen();
+
+    // Dark Mode Toggle
+    document.addEventListener('DOMContentLoaded', function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Set initial theme
+        body.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'dark' ? 'LIGHT' : 'DARK';
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? 'LIGHT' : 'DARK';
+        });
     });
 
     // Initialize Vanilla Tilt for 3D effects
@@ -606,6 +724,82 @@
           nextSlide();
         }
       });
+      
+      // Enhanced hover effects for stats
+      const statNumbers = document.querySelectorAll('.stat-number');
+      statNumbers.forEach(stat => {
+        stat.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.2) rotate(5deg)';
+          this.style.textShadow = '0 0 30px var(--umbc-gold)';
+        });
+        
+        stat.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) rotate(0deg)';
+          this.style.textShadow = '0 5px 15px rgba(255, 184, 28, 0.3)';
+        });
+      });
+      
+      // Dynamic particle effect for hero
+      function createParticle() {
+        const particle = document.createElement('div');
+        particle.className = 'floating-particle';
+        particle.style.cssText = `
+          position: absolute;
+          width: ${Math.random() * 6 + 2}px;
+          height: ${Math.random() * 6 + 2}px;
+          background: rgba(255, 184, 28, ${Math.random() * 0.7 + 0.3});
+          border-radius: 50%;
+          left: ${Math.random() * 100}%;
+          top: 100%;
+          animation: floatUp ${Math.random() * 10 + 15}s linear infinite;
+          pointer-events: none;
+        `;
+        
+        document.querySelector('.hero-particles').appendChild(particle);
+        
+        setTimeout(() => {
+          particle.remove();
+        }, 25000);
+      }
+      
+      // Create particles periodically
+      setInterval(createParticle, 800);
+      
+      // Add floating animation to CSS
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes floatUp {
+          0% {
+            transform: translateY(0) rotate(0deg);
+            opacity: 0;
+          }
+          10% {
+            opacity: 1;
+          }
+          90% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateY(-100vh) rotate(360deg);
+            opacity: 0;
+          }
+        }
+        
+        .gallery-3d-slide:hover {
+          transform: scale(1.05) !important;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .timeline-dot {
+          transition: all 0.3s ease;
+        }
+        
+        .timeline-dot:hover {
+          transform: scale(1.5);
+          box-shadow: 0 0 20px var(--umbc-gold);
+        }
+      `;
+      document.head.appendChild(style);
     });
   </script>
 </body>

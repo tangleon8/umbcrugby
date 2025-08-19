@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="rugbylogo.png" type="image/png" />
-  <link rel="stylesheet" href="recruitment.css" />
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
+  <link rel="stylesheet" href="css/recruitment.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
@@ -12,18 +12,36 @@
 
 </head>
 <body>
-  <header class="hero-header">
-    <img src="gokarn.jpg" alt="UMBC Rugby Recruitment Header" class="header-image" />
+
+  <!-- Epic Loading Screen -->
+  <div id="epic-loading-screen">
+    <div class="loading-particles"></div>
+    <div class="loading-ring"></div>
+    <div class="loading-container">
+      <div class="epic-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+      </div>
+      <div class="loading-text">UMBC RUGBY</div>
+      <div class="loading-subtitle">Guys being Dudes since 1984</div>
+      <div class="epic-progress-container">
+        <div class="epic-progress-bar"></div>
+      </div>
+      <div class="loading-percentage">0%</div>
+    </div>
+  </div>
+
+  <header id="hero-header">
+    <img src="assets/images/gokarn.jpg" alt="UMBC Rugby Recruitment Header" class="header-image" />
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
       <h1>Join UMBC Rugby</h1>
       <p>The Only Contact Sport at UMBC!</p>
       <a href="#recruitment-form" class="cta-button">Start Your Journey</a>
     </div>
   </header>
 
-  <nav id="navbar">
+  <nav id="navbar" class="hero-nav" role="navigation">
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="roster.html">Roster</a></li>
@@ -33,6 +51,7 @@
       <li><a href="alumni.html">Alumni</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
     </ul>
   </nav>
 
@@ -96,9 +115,9 @@
 
   <footer>
     <div class="footer-logo">
-      <img src="rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="ncr.png" alt="NCR Logo" />
-      <img src="umbclogo.png" alt="UMBC Logo" />
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
+      <img src="assets/images/ncr.png" alt="NCR Logo" />
+      <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
     </div>
     <nav class="footer-nav">
       <ul>
@@ -120,6 +139,95 @@
     AOS.init({
       duration: 1200,
       once: true
+    });
+
+    // Epic Loading Screen - Only on first visit
+    function initEpicLoadingScreen() {
+        const loadingScreen = document.getElementById('epic-loading-screen');
+        
+        // Check if this is the first visit in this session
+        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
+        
+        if (hasVisited) {
+            // Not first visit - remove loading screen immediately
+            loadingScreen.remove();
+            return;
+        }
+        
+        // First visit - show loading screen
+        sessionStorage.setItem('umbcRugbyVisited', 'true');
+        
+        const progressBar = document.querySelector('.epic-progress-bar');
+        const percentageDisplay = document.querySelector('.loading-percentage');
+        const particlesContainer = document.querySelector('.loading-particles');
+        
+        // Prevent scrolling during loading
+        document.body.style.overflow = 'hidden';
+        
+        // Create floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 8 + 's';
+            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            particlesContainer.appendChild(particle);
+            
+            setTimeout(() => particle.remove(), 8000);
+        }
+        
+        // Create more particles for epic effect
+        const particleInterval = setInterval(createParticle, 150);
+        
+        // Simulate loading progress
+        let progress = 0;
+        const loadingInterval = setInterval(() => {
+            // Random progress increments for realistic feel
+            const increment = Math.random() * 12 + 3;
+            progress = Math.min(progress + increment, 100);
+            
+            // Update progress bar and percentage
+            progressBar.style.width = progress + '%';
+            percentageDisplay.textContent = Math.floor(progress) + '%';
+            
+            // Complete loading when 100%
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                clearInterval(particleInterval);
+                
+                setTimeout(() => {
+                    loadingScreen.classList.add('hidden');
+                    document.body.style.overflow = '';
+                    
+                    // Remove loading screen after transition
+                    setTimeout(() => {
+                        loadingScreen.remove();
+                    }, 1200);
+                }, 800);
+            }
+        }, 120);
+    }
+    
+    // Initialize loading screen
+    initEpicLoadingScreen();
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        
+        // Set initial theme
+        body.setAttribute('data-theme', currentTheme);
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        
+        themeToggle.addEventListener('click', () => {
+            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        });
+
     });
 
     // Handle form submission
