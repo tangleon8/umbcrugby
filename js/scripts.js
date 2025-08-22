@@ -546,10 +546,156 @@ class ScrollingPlayer {
     }
 }
 
+
+// Mobile Navigation Toggle
+class MobileNavigation {
+    constructor() {
+        this.navbar = document.getElementById('navbar');
+        this.mobileToggle = document.querySelector('.mobile-menu-toggle');
+        this.init();
+    }
+
+    init() {
+        if (this.mobileToggle) {
+            this.mobileToggle.addEventListener('click', () => {
+                this.navbar.classList.toggle('mobile-open');
+                this.mobileToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!this.navbar.contains(e.target) && !this.mobileToggle.contains(e.target)) {
+                    this.navbar.classList.remove('mobile-open');
+                    this.mobileToggle.classList.remove('active');
+                }
+            });
+        }
+    }
+}
+
+// UMBC Rugby Loading Screen
+class UMBCLoadingScreen {
+    constructor() {
+        this.loadingScreen = document.getElementById('umbc-loading-screen');
+        this.progressBall = document.querySelector('.rugby-ball');
+        this.progressPercentage = document.querySelector('.progress-percentage');
+        this.loadingStatus = document.querySelector('.loading-status');
+        this.currentProgress = 0;
+        this.targetProgress = 0;
+        
+        this.statusMessages = [
+            'Initializing...',
+            'Loading rugby spirit...',
+            'Preparing the pitch...',
+            'Gathering the team...',
+            'Building brotherhood...',
+            'Ready for kickoff!'
+        ];
+        
+        this.init();
+    }
+    
+    init() {
+        // Only show loading screen on first visit or page refresh
+        const hasSeenLoading = sessionStorage.getItem('umbcLoadingShown');
+        
+        if (hasSeenLoading) {
+            this.hideLoadingScreen();
+            return;
+        }
+        
+        // Mark as shown for this session
+        sessionStorage.setItem('umbcLoadingShown', 'true');
+        
+        // Prevent scrolling during loading
+        document.body.classList.add('loading');
+        
+        // Start loading sequence
+        this.startLoadingSequence();
+    }
+    
+    startLoadingSequence() {
+        const loadingPhases = [
+            { progress: 20, duration: 600, status: 1 },
+            { progress: 45, duration: 800, status: 2 },
+            { progress: 70, duration: 700, status: 3 },
+            { progress: 85, duration: 500, status: 4 },
+            { progress: 100, duration: 600, status: 5 }
+        ];
+        
+        let currentPhase = 0;
+        
+        const executePhase = () => {
+            if (currentPhase < loadingPhases.length) {
+                const phase = loadingPhases[currentPhase];
+                this.animateToProgress(phase.progress, phase.status);
+                
+                setTimeout(() => {
+                    currentPhase++;
+                    executePhase();
+                }, phase.duration);
+            } else {
+                // Loading complete
+                setTimeout(() => this.hideLoadingScreen(), 800);
+            }
+        };
+        
+        executePhase();
+    }
+    
+    animateToProgress(targetProgress, statusIndex) {
+        this.targetProgress = targetProgress;
+        
+        // Update status message
+        if (statusIndex < this.statusMessages.length) {
+            this.loadingStatus.textContent = this.statusMessages[statusIndex];
+        }
+        
+        // Animate progress
+        const animateProgress = () => {
+            const diff = this.targetProgress - this.currentProgress;
+            if (Math.abs(diff) > 0.5) {
+                this.currentProgress += diff * 0.1;
+                this.updateVisuals();
+                requestAnimationFrame(animateProgress);
+            } else {
+                this.currentProgress = this.targetProgress;
+                this.updateVisuals();
+            }
+        };
+        
+        animateProgress();
+    }
+    
+    updateVisuals() {
+        // Update percentage
+        this.progressPercentage.textContent = Math.round(this.currentProgress) + '%';
+        
+        // Move rugby ball across field (adjusted for field container width)
+        const fieldContainer = document.querySelector('.rugby-field-progress');
+        const ballPosition = (this.currentProgress / 100) * (fieldContainer.offsetWidth - 60) + 20;
+        this.progressBall.style.left = ballPosition + 'px';
+    }
+    
+    hideLoadingScreen() {
+        this.loadingScreen.classList.add('hidden');
+        document.body.classList.remove('loading');
+        
+        setTimeout(() => {
+            this.loadingScreen.style.display = 'none';
+        }, 1000);
+    }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize loading screen first
+    new UMBCLoadingScreen();
+    
+    // Initialize mobile navigation
+    new MobileNavigation();
+    
     animationController.start();
-
 
     new AdvancedNavigation();
     new SchedulePopup();

@@ -690,30 +690,6 @@
 </head>
 <body>
 
-  <!-- Rugby Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-container">
-      <div class="rugby-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Guys being Dudes since 1984</div>
-      
-      <!-- Rugby Field Progress Bar -->
-      <div class="rugby-field-container">
-        <div class="field-lines">
-          <div class="yard-line" data-yards="0">0</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line center" data-yards="50">50</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line" data-yards="0">TRY!</div>
-        </div>
-        <div class="rugby-ball"></div>
-      </div>
-      
-      <div class="loading-percentage">0m</div>
-    </div>
-  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top" aria-label="Back to Top">↑</button>
@@ -732,8 +708,11 @@
     <!-- Hero Content -->
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1>Support UMBC Rugby</h1>
-      <p>Your support builds the future of UMBC Rugby and its student-athletes.</p>
+      <h1 class="animated-title">Support UMBC Rugby</h1>
+      <div class="hero-animated-text">
+        <p class="animated-subtitle">Your support builds the future of UMBC Rugby and its student-athletes.</p>
+        <p class="animated-description">Invest in Excellence. Invest in Brotherhood. Invest in Champions.</p>
+      </div>
     </div>
   </header>
 
@@ -748,7 +727,7 @@
       <li><a href="alumni.html">Alumni</a></li>
       <li><a href="donate.html" class="active">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">DARK</span></button></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
     </ul>
   </nav>
 
@@ -798,14 +777,14 @@
           </p>
         </div>
         <div class="way-card" data-aos="flip-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
-          <div class="way-icon">STADIUM</div>
+          <div class="way-icon">🏟</div>
           <h3 class="way-title">Attend Matches</h3>
           <p class="way-description">
             Show up and cheer! Your presence at our games provides incredible motivation and team spirit.
           </p>
         </div>
         <div class="way-card" data-aos="flip-right" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">
-          <div class="way-icon">SHARE</div>
+          <div class="way-icon">📣</div>
           <h3 class="way-title">Spread the Word</h3>
           <p class="way-description">
             Share our story on social media and help us recruit new players and supporters to join our family.
@@ -913,92 +892,22 @@
       easing: 'ease-out-cubic'
     });
 
-    // Epic Loading Screen - Only on first visit
-    function initEpicLoadingScreen() {
-        const loadingScreen = document.getElementById('epic-loading-screen');
-        
-        // Check if this is the first visit in this session
-        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-        
-        if (hasVisited) {
-            // Not first visit - remove loading screen immediately
-            loadingScreen.remove();
-            return;
-        }
-        
-        // First visit - show loading screen
-        sessionStorage.setItem('umbcRugbyVisited', 'true');
-        
-        const progressBar = document.querySelector('.epic-progress-bar');
-        const percentageDisplay = document.querySelector('.loading-percentage');
-        const particlesContainer = document.querySelector('.loading-particles');
-        
-        // Prevent scrolling during loading
-        document.body.style.overflow = 'hidden';
-        
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 8 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            particlesContainer.appendChild(particle);
-            
-            setTimeout(() => particle.remove(), 8000);
-        }
-        
-        // Create more particles for epic effect
-        const particleInterval = setInterval(createParticle, 150);
-        
-        // Simulate loading progress
-        let progress = 0;
-        const loadingInterval = setInterval(() => {
-            // Random progress increments for realistic feel
-            const increment = Math.random() * 12 + 3;
-            progress = Math.min(progress + increment, 100);
-            
-            // Update progress bar and percentage
-            progressBar.style.width = progress + '%';
-            percentageDisplay.textContent = Math.floor(progress) + '%';
-            
-            // Complete loading when 100%
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
-                clearInterval(particleInterval);
-                
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    
-                    // Remove loading screen after transition
-                    setTimeout(() => {
-                        loadingScreen.remove();
-                    }, 1200);
-                }, 800);
-            }
-        }, 120);
-    }
-    
-    // Initialize loading screen
-    initEpicLoadingScreen();
 
     // Dark Mode Toggle
     document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
         const body = document.body;
         const currentTheme = localStorage.getItem('theme') || 'light';
         
         // Set initial theme
         body.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? 'LIGHT' : 'DARK';
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
         
         themeToggle.addEventListener('click', () => {
             const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            themeIcon.textContent = newTheme === 'dark' ? 'LIGHT' : 'DARK';
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         });
     });
 

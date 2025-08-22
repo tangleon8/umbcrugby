@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/roster-styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link
@@ -15,22 +15,6 @@
 </head>
 <body>
 
-  <!-- Epic Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-particles"></div>
-    <div class="loading-ring"></div>
-    <div class="loading-container">
-      <div class="epic-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Guys being Dudes since 1984</div>
-      <div class="epic-progress-container">
-        <div class="epic-progress-bar"></div>
-      </div>
-      <div class="loading-percentage">0%</div>
-    </div>
-  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top">↑</button>
@@ -49,11 +33,14 @@
     <!-- Hero Content -->
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1>Meet the UMBC Rugby Team</h1>
-      <p>
-        Discover the players, their stories, and what drives them on and off
-        the field.
-      </p>
+      <h1 class="hero-title animated-title">Meet the UMBC Rugby Team</h1>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle">
+          Discover the players, their stories, and what drives them on and off
+          the field.
+        </p>
+        <p class="hero-description animated-description">Champions on the Field. Leaders in Life.</p>
+      </div>
       <a href="#roster-screen" class="cta-button">Explore the Roster</a>
     </div>
   </header>
@@ -644,7 +631,7 @@
 
   <section id="coaches-section" class="info-section coaches-section" data-aos="fade-up">
   <h2 class="section-title">Coaches</h2>
-  <p style="text-align: center; color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; margin-bottom: 40px;">
+  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">
     Meet the dedicated coaching staff leading UMBC Rugby to excellence
   </p>
   <div class="coaches-container">
@@ -704,75 +691,6 @@
 <script>
   AOS.init();
 
-  // Epic Loading Screen - Only on first visit
-  function initEpicLoadingScreen() {
-      const loadingScreen = document.getElementById('epic-loading-screen');
-      
-      // Check if this is the first visit in this session
-      const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-      
-      if (hasVisited) {
-          // Not first visit - remove loading screen immediately
-          loadingScreen.remove();
-          return;
-      }
-      
-      // First visit - show loading screen
-      sessionStorage.setItem('umbcRugbyVisited', 'true');
-      
-      const progressBar = document.querySelector('.epic-progress-bar');
-      const percentageDisplay = document.querySelector('.loading-percentage');
-      const particlesContainer = document.querySelector('.loading-particles');
-      
-      // Prevent scrolling during loading
-      document.body.style.overflow = 'hidden';
-      
-      // Create floating particles
-      function createParticle() {
-          const particle = document.createElement('div');
-          particle.className = 'particle';
-          particle.style.left = Math.random() * 100 + '%';
-          particle.style.animationDelay = Math.random() * 8 + 's';
-          particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-          particlesContainer.appendChild(particle);
-          
-          setTimeout(() => particle.remove(), 8000);
-      }
-      
-      // Create more particles for epic effect
-      const particleInterval = setInterval(createParticle, 150);
-      
-      // Simulate loading progress
-      let progress = 0;
-      const loadingInterval = setInterval(() => {
-          // Random progress increments for realistic feel
-          const increment = Math.random() * 12 + 3;
-          progress = Math.min(progress + increment, 100);
-          
-          // Update progress bar and percentage
-          progressBar.style.width = progress + '%';
-          percentageDisplay.textContent = Math.floor(progress) + '%';
-          
-          // Complete loading when 100%
-          if (progress >= 100) {
-              clearInterval(loadingInterval);
-              clearInterval(particleInterval);
-              
-              setTimeout(() => {
-                  loadingScreen.classList.add('hidden');
-                  document.body.style.overflow = '';
-                  
-                  // Remove loading screen after transition
-                  setTimeout(() => {
-                      loadingScreen.remove();
-                  }, 1200);
-              }, 800);
-          }
-      }, 120);
-  }
-  
-  // Initialize loading screen
-  initEpicLoadingScreen();
 </script>
 
 <!-- JavaScript -->

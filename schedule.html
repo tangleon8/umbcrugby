@@ -29,30 +29,6 @@
 </head>
 <body>
 
-  <!-- Rugby Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-container">
-      <div class="rugby-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Building brotherhood since 1984</div>
-      
-      <!-- Rugby Field Progress Bar -->
-      <div class="rugby-field-container">
-        <div class="field-lines">
-          <div class="yard-line" data-yards="0">0</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line center" data-yards="50">50</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line" data-yards="0">TRY!</div>
-        </div>
-        <div class="rugby-ball"></div>
-      </div>
-      
-      <div class="loading-percentage">0m</div>
-    </div>
-  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top" aria-label="Back to Top">↑</button>
@@ -68,8 +44,11 @@
     <!-- Hero Content -->
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title">2025 Schedule</h1>
-      <p class="hero-subtitle">Games, Practice & Events</p>
+      <h1 class="hero-title animated-title">2025 Schedule</h1>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle">Games, Practice & Events</p>
+        <p class="hero-description animated-description">Every Match Matters. Every Practice Builds Character.</p>
+      </div>
       <div class="schedule-status">
         <h3>📅 Fall 2025 Season</h3>
         <p>View games and add to your calendar!</p>
@@ -94,6 +73,21 @@
 
   <!-- MAIN CONTENT -->
   <main>
+    <!-- GAME LOCATION LEGEND -->
+    <section class="location-legend" data-aos="fade-up" style="text-align: center; margin: 40px auto; max-width: 600px; padding: 30px; background: var(--bg-secondary); border-radius: 20px; box-shadow: var(--shadow-soft);">
+      <h3 style="margin-bottom: 25px; color: var(--text-primary);">Game Location Guide</h3>
+      <div style="display: flex; justify-content: center; gap: 60px; align-items: center;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <div class="location-indicator home" style="position: static;"></div>
+          <span style="color: var(--text-primary); font-weight: 600;">Home Games</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <div class="location-indicator away" style="position: static;"></div>
+          <span style="color: var(--text-primary); font-weight: 600;">Away Games</span>
+        </div>
+      </div>
+    </section>
+
     <!-- PRACTICE SCHEDULE -->
     <section class="practice-info" data-aos="fade-up">
       <h2 style="text-align: center; margin-bottom: 20px;">Practice Schedule</h2>
@@ -171,7 +165,7 @@
             <div class="opponent-logo">
               <img src="assets/images/American_Eagles_logo.svg.png" alt="American University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -204,7 +198,7 @@
             <div class="opponent-logo">
               <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -237,7 +231,7 @@
             <div class="opponent-logo">
               <img src="assets/images/Georgetown_Hoyas_logo.svg.png" alt="Georgetown University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -270,7 +264,7 @@
             <div class="opponent-logo">
               <img src="assets/images/CNULogoSmall.png" alt="CNU Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -303,7 +297,7 @@
             <div class="opponent-logo">
               <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge away">AWAY</div>
+            <div class="location-indicator away"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -336,7 +330,7 @@
             <div class="opponent-logo">
               <img src="assets/images/tigerhead-transparentbkgd-ic.png" alt="Towson University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -367,7 +361,7 @@
               <p class="game-type">TBD</p>
             </div>
             <div class="opponent-logo potential-logo">❓</div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -400,7 +394,7 @@
             <div class="opponent-logo">
               <img src="assets/images/Salisbury_Seagulls_logo.svg.png" alt="Salisbury University Logo" onerror="this.style.display='none'">
             </div>
-            <div class="location-badge away">AWAY</div>
+            <div class="location-indicator away"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -431,7 +425,7 @@
               <p class="game-type">MARC Game</p>
             </div>
             <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -462,7 +456,7 @@
               <p class="game-type">MARC Game</p>
             </div>
             <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -493,7 +487,7 @@
               <p class="game-type">MARC Game</p>
             </div>
             <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-badge home">HOME</div>
+            <div class="location-indicator home"></div>
           </div>
           <div class="calendar-options">
             <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
@@ -627,75 +621,6 @@
       offset: 100
     });
 
-    // Epic Loading Screen - Only on first visit
-    function initEpicLoadingScreen() {
-        const loadingScreen = document.getElementById('epic-loading-screen');
-        
-        // Check if this is the first visit in this session
-        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-        
-        if (hasVisited) {
-            // Not first visit - remove loading screen immediately
-            loadingScreen.remove();
-            return;
-        }
-        
-        // First visit - show loading screen
-        sessionStorage.setItem('umbcRugbyVisited', 'true');
-        
-        const progressBar = document.querySelector('.epic-progress-bar');
-        const percentageDisplay = document.querySelector('.loading-percentage');
-        const particlesContainer = document.querySelector('.loading-particles');
-        
-        // Prevent scrolling during loading
-        document.body.style.overflow = 'hidden';
-        
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 8 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            particlesContainer.appendChild(particle);
-            
-            setTimeout(() => particle.remove(), 8000);
-        }
-        
-        // Create more particles for epic effect
-        const particleInterval = setInterval(createParticle, 150);
-        
-        // Simulate loading progress
-        let progress = 0;
-        const loadingInterval = setInterval(() => {
-            // Random progress increments for realistic feel
-            const increment = Math.random() * 12 + 3;
-            progress = Math.min(progress + increment, 100);
-            
-            // Update progress bar and percentage
-            progressBar.style.width = progress + '%';
-            percentageDisplay.textContent = Math.floor(progress) + '%';
-            
-            // Complete loading when 100%
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
-                clearInterval(particleInterval);
-                
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    
-                    // Remove loading screen after transition
-                    setTimeout(() => {
-                        loadingScreen.remove();
-                    }, 1200);
-                }, 800);
-            }
-        }, 120);
-    }
-    
-    // Initialize loading screen
-    initEpicLoadingScreen();
 
     // Dark Mode Toggle
     document.addEventListener('DOMContentLoaded', function() {
@@ -895,13 +820,73 @@ END:VCALENDAR`;
       navigator.clipboard.writeText(address).then(() => {
         const button = event.target;
         const originalText = button.textContent;
-        button.textContent = 'Copied!';
+        
+        // Enhanced visual feedback
+        button.textContent = '✓ Copied!';
         button.style.background = '#28a745';
+        button.style.transform = 'scale(1.1)';
+        
+        // Show toast notification
+        showCopyToast('Address copied to clipboard!');
+        
+        // Reset button after delay
         setTimeout(() => {
           button.textContent = originalText;
           button.style.background = '';
+          button.style.transform = '';
         }, 2000);
+      }).catch(err => {
+        // Fallback for browsers that don't support clipboard API
+        console.error('Could not copy address: ', err);
+        showCopyToast('Could not copy address automatically');
       });
+    }
+
+    // Toast notification system
+    function showCopyToast(message) {
+      // Remove existing toast if present
+      const existingToast = document.querySelector('.copy-toast');
+      if (existingToast) {
+        existingToast.remove();
+      }
+      
+      // Create new toast
+      const toast = document.createElement('div');
+      toast.className = 'copy-toast';
+      toast.textContent = message;
+      toast.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #28a745, #20c997);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 25px;
+        font-weight: 600;
+        font-size: 14px;
+        box-shadow: 0 8px 25px rgba(40, 167, 69, 0.4);
+        z-index: 10000;
+        opacity: 0;
+        transform: translateX(100px) scale(0.8);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      `;
+      
+      document.body.appendChild(toast);
+      
+      // Animate in
+      setTimeout(() => {
+        toast.style.opacity = '1';
+        toast.style.transform = 'translateX(0) scale(1)';
+      }, 10);
+      
+      // Animate out and remove
+      setTimeout(() => {
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100px) scale(0.8)';
+        setTimeout(() => toast.remove(), 400);
+      }, 3000);
     }
 
     // Add enhanced CSS for schedule styling
@@ -1202,54 +1187,55 @@ END:VCALENDAR`;
         color: white;
       }
 
-      .location-badge {
-        padding: 8px 16px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-      }
-
-      .location-badge.home {
-        background: linear-gradient(135deg, #28a745, #20c997);
-        color: white;
+      .location-indicator {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 8px;
-        box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
-        animation: pulse-home 2s ease-in-out infinite;
+        justify-content: center;
+        transition: all 0.3s ease;
       }
 
-      .location-badge.home::before {
-        content: "🏠";
-        font-size: 1.1em;
+      .location-indicator.home {
+        background: radial-gradient(circle, #FFB81C, #E6A500);
+        box-shadow: 0 0 20px rgba(255, 184, 28, 0.6), inset 0 2px 8px rgba(255, 255, 255, 0.3);
+        border: 3px solid #FFD700;
       }
 
-      .location-badge.away {
-        background: linear-gradient(135deg, #dc3545, #fd7e14);
-        color: white;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
-        animation: pulse-away 2s ease-in-out infinite;
+      .location-indicator.home::before {
+        content: '🏠';
+        font-size: 16px;
+        position: absolute;
+        opacity: 0.9;
       }
 
-      .location-badge.away::before {
-        content: "✈️";
-        font-size: 1.1em;
+      .location-indicator.home:hover {
+        transform: translateY(-2px) scale(1.1);
+        box-shadow: 0 0 30px rgba(255, 184, 28, 0.8), inset 0 2px 12px rgba(255, 255, 255, 0.5);
       }
 
-      @keyframes pulse-home {
-        0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3); }
-        50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(40, 167, 69, 0.5); }
+      .location-indicator.away {
+        background: radial-gradient(circle, #2d2d2d, #1a1a1a);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.7), inset 0 2px 8px rgba(255, 184, 28, 0.2);
+        border: 3px solid #FFB81C;
       }
 
-      @keyframes pulse-away {
-        0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3); }
-        50% { transform: scale(1.05); box-shadow: 0 6px 25px rgba(220, 53, 69, 0.5); }
+      .location-indicator.away::before {
+        content: '✈️';
+        font-size: 16px;
+        position: absolute;
+        opacity: 0.9;
       }
+
+      .location-indicator.away:hover {
+        transform: translateY(-2px) scale(1.1);
+        box-shadow: 0 0 30px rgba(255, 184, 28, 0.6), inset 0 2px 12px rgba(255, 184, 28, 0.4);
+        border-color: #FFD700;
+      }
+
+      /* Removed pulse animations in favor of hover effects */
 
       .calendar-options {
         display: flex;
@@ -1460,7 +1446,7 @@ END:VCALENDAR`;
           grid-row: 1 / span 2;
         }
 
-        .location-badge {
+        .location-indicator {
           grid-column: 1 / span 2;
           justify-self: start;
         }

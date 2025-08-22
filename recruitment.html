@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <link rel="stylesheet" href="css/recruitment.css" />
+  <link rel="stylesheet" href="css/styles.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
@@ -13,30 +13,17 @@
 </head>
 <body>
 
-  <!-- Epic Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-particles"></div>
-    <div class="loading-ring"></div>
-    <div class="loading-container">
-      <div class="epic-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Guys being Dudes since 1984</div>
-      <div class="epic-progress-container">
-        <div class="epic-progress-bar"></div>
-      </div>
-      <div class="loading-percentage">0%</div>
-    </div>
-  </div>
 
   <header id="hero-header">
     <img src="assets/images/gokarn.jpg" alt="UMBC Rugby Recruitment Header" class="header-image" />
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1>Join UMBC Rugby</h1>
-      <p>The Only Contact Sport at UMBC!</p>
+      <h1 class="hero-title animated-title">Join UMBC Rugby</h1>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle">The Only Contact Sport at UMBC!</p>
+        <p class="hero-description animated-description">Build Character. Build Brotherhood. Build Champions.</p>
+      </div>
       <a href="#recruitment-form" class="cta-button">Start Your Journey</a>
     </div>
   </header>
@@ -141,75 +128,6 @@
       once: true
     });
 
-    // Epic Loading Screen - Only on first visit
-    function initEpicLoadingScreen() {
-        const loadingScreen = document.getElementById('epic-loading-screen');
-        
-        // Check if this is the first visit in this session
-        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-        
-        if (hasVisited) {
-            // Not first visit - remove loading screen immediately
-            loadingScreen.remove();
-            return;
-        }
-        
-        // First visit - show loading screen
-        sessionStorage.setItem('umbcRugbyVisited', 'true');
-        
-        const progressBar = document.querySelector('.epic-progress-bar');
-        const percentageDisplay = document.querySelector('.loading-percentage');
-        const particlesContainer = document.querySelector('.loading-particles');
-        
-        // Prevent scrolling during loading
-        document.body.style.overflow = 'hidden';
-        
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 8 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            particlesContainer.appendChild(particle);
-            
-            setTimeout(() => particle.remove(), 8000);
-        }
-        
-        // Create more particles for epic effect
-        const particleInterval = setInterval(createParticle, 150);
-        
-        // Simulate loading progress
-        let progress = 0;
-        const loadingInterval = setInterval(() => {
-            // Random progress increments for realistic feel
-            const increment = Math.random() * 12 + 3;
-            progress = Math.min(progress + increment, 100);
-            
-            // Update progress bar and percentage
-            progressBar.style.width = progress + '%';
-            percentageDisplay.textContent = Math.floor(progress) + '%';
-            
-            // Complete loading when 100%
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
-                clearInterval(particleInterval);
-                
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    
-                    // Remove loading screen after transition
-                    setTimeout(() => {
-                        loadingScreen.remove();
-                    }, 1200);
-                }, 800);
-            }
-        }, 120);
-    }
-    
-    // Initialize loading screen
-    initEpicLoadingScreen();
 
     document.addEventListener('DOMContentLoaded', function() {
         // Dark Mode Toggle

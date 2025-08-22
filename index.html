@@ -29,28 +29,26 @@
   <meta name="twitter:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
 </head>
 <body>
-  <!-- Rugby Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-container">
-      <div class="rugby-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Building brotherhood since 1984</div>
+  <!-- UMBC Rugby Loading Screen -->
+  <div id="umbc-loading-screen" class="umbc-loading-screen">
+    <div class="loading-content">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="loading-logo">
+      <h1 class="loading-title">UMBC Rugby</h1>
+      <p class="loading-subtitle">Building Brotherhood Since 1984</p>
       
-      <!-- Rugby Field Progress Bar -->
-      <div class="rugby-field-container">
+      <div class="rugby-field-progress">
         <div class="field-lines">
-          <div class="yard-line" data-yards="0">0</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line center" data-yards="50">50</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line" data-yards="0">TRY!</div>
+          <div class="yard-line"></div>
+          <div class="yard-line"></div>
+          <div class="yard-line center"></div>
+          <div class="yard-line"></div>
+          <div class="yard-line"></div>
         </div>
         <div class="rugby-ball"></div>
       </div>
       
-      <div class="loading-percentage">0m</div>
+      <div class="progress-percentage">0%</div>
+      <div class="loading-status">Initializing...</div>
     </div>
   </div>
 
@@ -91,7 +89,10 @@
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
       <h1 class="hero-title">UMBC Rugby Club</h1>
-      <p class="hero-subtitle" style="color: white;">Building brotherhood since 1984</p>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle" style="color: white;">Building Brotherhood Since 1984</p>
+        <p class="hero-description animated-description">The Only Contact Sport at UMBC</p>
+      </div>
       <a href="#about" class="cta-button transparent-btn small-btn">Learn More</a>
     </div>
   </header>
@@ -193,12 +194,12 @@
 
     <!-- Testimonials Section -->
     <section id="testimonials" class="transparent-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-      <h2 class="typewriter-testimonial">What Our Players Say</h2>
-      <blockquote class="typewriter-quote">
+      <h2>What Our Players Say</h2>
+      <blockquote>
         "Rugby is the ultimate team sport! It combines the best of both sports I played growing up,
         football and soccer." – <strong>Kyle P</strong>.
       </blockquote>
-      <blockquote class="typewriter-quote">
+      <blockquote>
         "I played four Varsity sports in High School and have always been competitive. I decided
         to give rugby a try (pun intended) in Fall '23 and have fallen in love with the
         competitive nature of the game, the strategy behind it, and the brotherhood that
@@ -287,73 +288,6 @@
       }
     });
 
-    // Rugby Loading Screen - Rugby field progress animation
-    function initEpicLoadingScreen() {
-        const loadingScreen = document.getElementById('epic-loading-screen');
-        
-        // Check if this is the first visit in this session
-        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-        
-        if (hasVisited) {
-            // Not first visit - remove loading screen immediately
-            loadingScreen.remove();
-            return;
-        }
-        
-        // First visit - show loading screen
-        sessionStorage.setItem('umbcRugbyVisited', 'true');
-        
-        const rugbyBall = document.querySelector('.rugby-ball');
-        const percentageDisplay = document.querySelector('.loading-percentage');
-        const fieldContainer = document.querySelector('.rugby-field-container');
-        
-        // Prevent scrolling during loading
-        document.body.style.overflow = 'hidden';
-        
-        // Rugby field progress sequence: 0 → 22 → 50 → 22 → 100
-        const progressSequence = [0, 22, 50, 22, 100];
-        const yardLabels = ['0m', '22m', '50m', '22m', 'TRY!'];
-        let currentStep = 0;
-        
-        function updateRugbyProgress() {
-            const targetProgress = progressSequence[currentStep];
-            const targetLabel = yardLabels[currentStep];
-            
-            // Calculate ball position (0% = left, 100% = right)
-            const ballPosition = (targetProgress / 100) * (fieldContainer.offsetWidth - 20);
-            
-            // Animate ball movement
-            rugbyBall.style.left = ballPosition + 'px';
-            
-            // Update percentage display
-            percentageDisplay.textContent = targetLabel;
-            
-            // Move to next step
-            currentStep++;
-            
-            if (currentStep < progressSequence.length) {
-                // Continue to next step after delay
-                setTimeout(updateRugbyProgress, 800);
-            } else {
-                // Loading complete - show "TRY!" celebration briefly then finish
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    
-                    // Remove loading screen after transition
-                    setTimeout(() => {
-                        loadingScreen.remove();
-                    }, 1200);
-                }, 1000);
-            }
-        }
-        
-        // Start the rugby progress sequence
-        setTimeout(updateRugbyProgress, 500);
-    }
-    
-    // Initialize loading screen
-    initEpicLoadingScreen();
 
     // Enhanced Video Transition Handler
     function initVideoTransition() {
@@ -421,38 +355,7 @@
         type();
     }
     
-    // Initialize typewriter effects for About section
-    function initTypewriterEffects() {
-        const aboutTitle = document.querySelector('#about .section-title');
-        const aboutParagraphs = document.querySelectorAll('#about .about-text p');
-        
-        // Create intersection observer for triggering typewriter when section comes into view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Type out title first
-                    if (aboutTitle) {
-                        typeWriter(aboutTitle, 'About UMBC Rugby', 100);
-                    }
-                    
-                    // Type out paragraphs with delays
-                    aboutParagraphs.forEach((p, index) => {
-                        const originalText = p.textContent;
-                        setTimeout(() => {
-                            typeWriter(p, originalText, 30);
-                        }, 2000 + (index * 3000));
-                    });
-                    
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.3 });
-        
-        const aboutSection = document.getElementById('about');
-        if (aboutSection) {
-            observer.observe(aboutSection);
-        }
-    }
+    // Typewriter effects removed for better performance
 
 // Enhanced JavaScript for UMBC Rugby Website
 document.addEventListener('DOMContentLoaded', function() {
@@ -665,16 +568,19 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Enhanced Scroll-Controlled Catch the Kick Animation
+    // Centered Spinning Rugby Player with Scroll-Based Movement
     const playerImage = document.querySelector('.player-image');
     const playerSection = document.getElementById('scrolling-player-section');
     let lastScrollY = window.scrollY;
     let scrollDirection = 0; // -1 for up, 1 for down
+    let continuousRotation = 0; // For continuous spinning
     
     if (playerImage && playerSection) {
-        function updatePlayerAnimation() {
-            const rect = playerSection.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
+        // Center the player initially
+        playerImage.style.left = '50%';
+        playerImage.style.transform = 'translateX(-50%)';
+        
+        function updatePlayerMovement() {
             const currentScrollY = window.scrollY;
             
             // Detect scroll direction
@@ -685,68 +591,98 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             lastScrollY = currentScrollY;
             
-            // Calculate progress as section comes into view
-            let progress = 0;
+            // Get section position relative to viewport
+            const rect = playerSection.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            
+            // Only animate when section is visible
             if (rect.top < viewportHeight && rect.bottom > 0) {
-                progress = Math.max(0, Math.min(1, (viewportHeight - rect.top) / (viewportHeight + rect.height)));
-            }
-            
-            // Enhanced horizontal movement based on scroll
-            const baseTranslateX = window.innerWidth * -0.2; // Start position
-            const maxTranslateX = window.innerWidth * 0.8; // End position
-            const translateX = baseTranslateX + (progress * maxTranslateX);
-            
-            // Dynamic vertical movement based on scroll direction and progress
-            const baseY = Math.sin(progress * Math.PI * 1.5) * 30; // Base bouncing
-            const scrollInfluence = scrollDirection * 10; // Additional movement based on scroll
-            const translateY = baseY + scrollInfluence;
-            
-            // Enhanced scaling with scroll responsiveness
-            const baseScale = 0.6 + (progress * 0.6);
-            const scrollScale = Math.abs(scrollDirection) * 0.05;
-            const scale = baseScale + scrollScale;
-            
-            // Rotation based on movement direction and scroll
-            const rotation = (translateX / 20) + (scrollDirection * 2);
-            
-            // Apply enhanced transform with rotation
-            playerImage.style.transform = `translateX(${translateX}px) translateY(${translateY}px) scale(${scale}) rotate(${rotation}deg)`;
-            
-            // Enhanced opacity with scroll responsiveness
-            const baseOpacity = Math.max(0.2, progress * 1.2);
-            const scrollOpacity = Math.abs(scrollDirection) * 0.1;
-            playerImage.style.opacity = Math.min(1, baseOpacity + scrollOpacity);
-            
-            // Enhanced glow effect that responds to scrolling
-            const glowIntensity = Math.max(0, progress * 25 + Math.abs(scrollDirection) * 5);
-            if (progress > 0.1) {
-                playerImage.style.filter = `drop-shadow(0 0 ${glowIntensity}px rgba(255, 184, 28, 0.7)) brightness(${1 + scrollDirection * 0.1})`;
-            }
-            
-            // Add motion blur effect during fast scrolling
-            if (Math.abs(scrollDirection) > 0) {
-                const blur = Math.min(3, Math.abs(scrollDirection));
-                playerImage.style.filter += ` blur(${blur * 0.5}px)`;
+                // Calculate section visibility progress
+                const sectionProgress = Math.max(0, Math.min(1, 
+                    (viewportHeight - rect.top) / (viewportHeight + rect.height)
+                ));
+                
+                // Continuous spinning animation based on scroll
+                continuousRotation += scrollDirection * 8; // 8 degrees per scroll step
+                
+                // Vertical movement based on scroll direction
+                const scrollVerticalMovement = scrollDirection * 30; // Move up/down based on scroll
+                
+                // Base vertical position with bobbing
+                const baseBobbing = Math.sin(sectionProgress * Math.PI * 4) * 15; // More frequent bobbing
+                const finalVerticalPos = baseBobbing + scrollVerticalMovement;
+                
+                // Horizontal oscillation while staying centered
+                const horizontalOscillation = Math.sin(continuousRotation * 0.05) * 50; // Side to side movement
+                
+                // Scale based on section visibility with pulsing effect
+                const baseScale = 0.9 + (sectionProgress * 0.3);
+                const pulsingScale = baseScale + Math.sin(continuousRotation * 0.1) * 0.1;
+                
+                // Apply all transforms: center + oscillation, vertical movement, scale, continuous rotation
+                playerImage.style.transform = `
+                    translateX(calc(-50% + ${horizontalOscillation}px)) 
+                    translateY(${finalVerticalPos}px) 
+                    scale(${pulsingScale}) 
+                    rotate(${continuousRotation}deg)
+                `;
+                
+                // Opacity based on section visibility
+                playerImage.style.opacity = Math.max(0.4, sectionProgress * 1.3);
+                
+                // Add glow effect during spinning
+                const glowIntensity = Math.abs(scrollDirection) * 15 + 10;
+                playerImage.style.filter = `drop-shadow(0 0 ${glowIntensity}px rgba(255, 184, 28, 0.6)) brightness(${1 + Math.abs(scrollDirection) * 0.1})`;
             }
         }
         
-        // Throttled scroll event for better performance
+        // High-frequency animation for smooth spinning
         let ticking = false;
         function requestTick() {
             if (!ticking) {
                 requestAnimationFrame(() => {
-                    updatePlayerAnimation();
+                    updatePlayerMovement();
                     ticking = false;
                 });
                 ticking = true;
             }
         }
         
-        // Update on scroll with throttling
+        // Add scroll listener
         window.addEventListener('scroll', requestTick);
         
         // Initial call
-        updatePlayerAnimation();
+        updatePlayerMovement();
+        
+        // Continuous spinning animation even when not scrolling
+        setInterval(() => {
+            if (Math.abs(scrollDirection) < 0.1) { // If not actively scrolling
+                continuousRotation += 2; // Slow continuous spin
+                const rect = playerSection.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+                
+                if (rect.top < viewportHeight && rect.bottom > 0) {
+                    const sectionProgress = Math.max(0, Math.min(1, 
+                        (viewportHeight - rect.top) / (viewportHeight + rect.height)
+                    ));
+                    
+                    const horizontalOscillation = Math.sin(continuousRotation * 0.05) * 50;
+                    const baseBobbing = Math.sin(Date.now() * 0.002) * 10; // Time-based gentle bobbing
+                    const baseScale = 0.9 + (sectionProgress * 0.3);
+                    const pulsingScale = baseScale + Math.sin(continuousRotation * 0.1) * 0.05;
+                    
+                    playerImage.style.transform = `
+                        translateX(calc(-50% + ${horizontalOscillation}px)) 
+                        translateY(${baseBobbing}px) 
+                        scale(${pulsingScale}) 
+                        rotate(${continuousRotation}deg)
+                    `;
+                    
+                    playerImage.style.filter = `drop-shadow(0 0 15px rgba(255, 184, 28, 0.4)) brightness(1.05)`;
+                }
+            }
+            scrollDirection *= 0.95; // Gradually reduce scroll direction influence
+        }, 50); // 20 FPS for smooth continuous animation
     }
 
     // Enhanced Schedule Popup
@@ -960,9 +896,8 @@ END:VCALENDAR`;
     `;
     document.head.appendChild(style);
     
-    // Initialize video transition and typewriter effects
+    // Initialize video transition
     initVideoTransition();
-    initTypewriterEffects();
 });
 
 // Intersection Observer for Advanced Animations

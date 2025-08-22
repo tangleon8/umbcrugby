@@ -11,7 +11,9 @@
       "Bash(mv:*)",
       "Bash(true)",
       "Bash(mv *.js js/)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(python:*)"
     ],
     "deny": []
   }

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/alumni.css">
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
   <title>UMBC Rugby Alumni - Legacy of Excellence</title>
@@ -13,30 +12,6 @@
 </head>
 <body>
 
-  <!-- Rugby Loading Screen -->
-  <div id="epic-loading-screen">
-    <div class="loading-container">
-      <div class="rugby-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      </div>
-      <div class="loading-text">UMBC RUGBY</div>
-      <div class="loading-subtitle">Building brotherhood since 1984</div>
-      
-      <!-- Rugby Field Progress Bar -->
-      <div class="rugby-field-container">
-        <div class="field-lines">
-          <div class="yard-line" data-yards="0">0</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line center" data-yards="50">50</div>
-          <div class="yard-line" data-yards="22">22</div>
-          <div class="yard-line" data-yards="0">TRY!</div>
-        </div>
-        <div class="rugby-ball"></div>
-      </div>
-      
-      <div class="loading-percentage">0m</div>
-    </div>
-  </div>
 
   <!-- Back to Top Button -->
   <button id="back-to-top" class="alumni-back-top" title="Back to Top">
@@ -53,13 +28,18 @@
         <span>Est. 1992</span>
       </div>
       <h1 class="hero-title">
-        <span class="title-word" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">UMBC</span>
-        <span class="title-word" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">Rugby</span>
-        <span class="title-word golden" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">Alumni</span>
+        <span class="title-word animated-word-1" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">UMBC</span>
+        <span class="title-word animated-word-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">Rugby</span>
+        <span class="title-word golden animated-word-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">Alumni</span>
       </h1>
-      <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-quart">
-        Celebrating Tradition, Leadership, and Legacy
-      </p>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-quart">
+          Celebrating Tradition, Leadership, and Legacy
+        </p>
+        <p class="hero-description animated-description" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+          Where Champions Return Home
+        </p>
+      </div>
     </div>
     <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-back">
       <span class="mouse">
@@ -70,7 +50,12 @@
   </header>
 
   <!-- NAVIGATION -->
-  <nav id="navbar" class="hero-nav" role="navigation">
+  <nav id="navbar" role="navigation">
+    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="roster.html">Roster</a></li>
@@ -80,7 +65,7 @@
       <li><a href="alumni.html" class="active">Alumni</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode"><span class="theme-icon">DARK</span></button></li>
+      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
     </ul>
   </nav>
 
@@ -97,52 +82,121 @@
     </div>
   </div>
 
-  <!-- 3D Photo Gallery -->
-  <div class="gallery-3d-container" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-    <div class="gallery-3d-track">
-      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="100" data-aos-duration="800">
-        <img src="assets/images/rugby20.jpg" alt="Rugby Heritage">
-        <div class="slide-info">
-          <h3>Heritage</h3>
-          <p>Building on decades of tradition</p>
+  <!-- Enhanced Photo Gallery -->
+  <section id="gallery" class="gallery-section" data-aos="fade-up" data-aos-duration="1200">
+    <div class="gallery-header">
+      <h2 class="section-title" data-aos="zoom-in">
+        <span class="title-accent">Legacy</span>
+        <span class="title-main">Gallery</span>
+      </h2>
+      <p class="gallery-subtitle" data-aos="fade-up" data-aos-delay="200">
+        Capturing decades of rugby excellence and brotherhood
+      </p>
+    </div>
+    
+    <div class="gallery-container">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="100">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby20.jpg" alt="Rugby Heritage" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Heritage</h3>
+                <p>Building on decades of tradition</p>
+                <div class="slide-year">1984 - Present</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="200">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby21.jpg" alt="Championship Glory" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Champions</h3>
+                <p>Victory through teamwork and dedication</p>
+                <div class="slide-year">Championship Years</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="300">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby22.jpg" alt="Brotherhood" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Brotherhood</h3>
+                <p>Bonds that last a lifetime</p>
+                <div class="slide-year">Forever Connected</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="400">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby23.jpg" alt="Excellence" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Excellence</h3>
+                <p>Striving for greatness in every match</p>
+                <div class="slide-year">Every Season</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="500">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby24.jpg" alt="Legacy" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Legacy</h3>
+                <p>Inspiring future generations</p>
+                <div class="slide-year">Continuing Forward</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="600">
+          <div class="slide-wrapper">
+            <img src="assets/images/rugby25.jpg" alt="Team Spirit" loading="lazy">
+            <div class="slide-overlay">
+              <div class="slide-content">
+                <h3>Team Spirit</h3>
+                <p>United in passion and purpose</p>
+                <div class="slide-year">Always Together</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="gallery-3d-slide" data-tilt data-aos="flip-right" data-aos-delay="200" data-aos-duration="800">
-        <img src="assets/images/rugby21.jpg" alt="Championship Glory">
-        <div class="slide-info">
-          <h3>Champions</h3>
-          <p>Victory through teamwork</p>
-        </div>
-      </div>
-      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="300" data-aos-duration="800">
-        <img src="assets/images/rugby22.jpg" alt="Brotherhood">
-        <div class="slide-info">
-          <h3>Brotherhood</h3>
-          <p>Bonds that last a lifetime</p>
-        </div>
-      </div>
-      <div class="gallery-3d-slide" data-tilt data-aos="flip-right" data-aos-delay="400" data-aos-duration="800">
-        <img src="assets/images/rugby23.jpg" alt="Excellence">
-        <div class="slide-info">
-          <h3>Excellence</h3>
-          <p>Striving for greatness</p>
-        </div>
-      </div>
-      <div class="gallery-3d-slide" data-tilt data-aos="flip-left" data-aos-delay="500" data-aos-duration="800">
-        <img src="assets/images/rugby24.jpg" alt="Legacy">
-        <div class="slide-info">
-          <h3>Legacy</h3>
-          <p>Inspiring future generations</p>
-        </div>
+      
+      <button class="gallery-nav prev" aria-label="Previous Photo" data-aos="slide-right" data-aos-delay="300">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+        </svg>
+      </button>
+      
+      <button class="gallery-nav next" aria-label="Next Photo" data-aos="slide-left" data-aos-delay="300">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+        </svg>
+      </button>
+      
+      <div class="gallery-indicators" data-aos="fade-up" data-aos-delay="400">
+        <button class="indicator active" data-slide="0"></button>
+        <button class="indicator" data-slide="1"></button>
+        <button class="indicator" data-slide="2"></button>
+        <button class="indicator" data-slide="3"></button>
+        <button class="indicator" data-slide="4"></button>
+        <button class="indicator" data-slide="5"></button>
       </div>
     </div>
-    <button class="gallery-nav prev" aria-label="Previous" data-aos="slide-right" data-aos-delay="300" data-aos-duration="600">
-      <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-    </button>
-    <button class="gallery-nav next" aria-label="Next" data-aos="slide-left" data-aos-delay="300" data-aos-duration="600">
-      <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-    </button>
-  </div>
+  </section>
 
   <!-- MAIN CONTENT -->
   <main class="alumni-main">
@@ -153,7 +207,7 @@
         <div class="deco-circle" data-aos="zoom-in" data-aos-delay="400"></div>
         <div class="deco-line right" data-aos="slide-left" data-aos-delay="300"></div>
       </div>
-      <h2 class="section-title typewriter-section" data-text="Welcome to UMBC Rugby Alumni" data-aos="bounce-in" data-aos-delay="500" data-aos-duration="800">
+      <h2 class="section-title" data-aos="bounce-in" data-aos-delay="500" data-aos-duration="800">
         Welcome to UMBC Rugby Alumni
       </h2>
       <div class="intro-content">
@@ -183,48 +237,11 @@
           </div>
         </div>
         <p class="story-text">
-          Fast forward a decade plus and what started as a Saturday afternoon has become a weekend event that includes a Hall of Fame induction, presentation of the Haud Colluni Scholarship, a fantastic post game BBQ, the Best Damn Awards in all of Rugby and the presentation of the Alumni Cup.
+          Fast forward a decade plus and what started as a Saturday afternoon has become a weekend event that includes honoring our legends, presentation of the Haud Colluni Scholarship, a fantastic post game BBQ, the Best Damn Awards in all of Rugby and the presentation of the Alumni Cup.
         </p>
       </div>
     </section>
 
-    <!-- Alumni Video Section -->
-    <section id="video" class="alumni-video" data-aos="fade-up">
-      <div class="video-background">
-        <div class="video-pattern"></div>
-      </div>
-      <h2 class="section-title">
-        <span class="title-line">2008 Rugby</span>
-        <span class="title-highlight">Highlights</span>
-      </h2>
-      <div class="video-wrapper">
-        <div class="video-frame">
-          <video controls poster="rugby-poster.jpg" class="feature-video">
-            <source src="2008.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="video-overlay">
-            <button class="play-btn">
-              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            </button>
-          </div>
-        </div>
-        <div class="video-stats">
-          <div class="stat">
-            <span class="stat-icon">TROPHY</span>
-            <span class="stat-value">Championship Season</span>
-          </div>
-          <div class="stat">
-            <span class="stat-icon">STAR</span>
-            <span class="stat-value">Undefeated Record</span>
-          </div>
-          <div class="stat">
-            <span class="stat-icon">TARGET</span>
-            <span class="stat-value">Historic Victory</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Alumni Weekend Section -->
     <section id="weekend" class="alumni-weekend" data-aos="fade-up">
@@ -246,7 +263,7 @@
                 <p class="event-time">7:00 PM – 10:00 PM</p>
               </div>
               <div class="card-back">
-                <h3>Hall of Fame Induction</h3>
+                <h3>Legend Recognition</h3>
                 <p>Celebrate our rugby legends and their contributions to UMBC Rugby.</p>
                 <div class="event-details">
                   <span>LOCATION Alumni Hall</span>
@@ -369,28 +386,7 @@
           </div>
         </div>
 
-        <div class="fund-growth" data-aos="fade-up">
-          <h3 class="growth-title">Fund Growth Journey</h3>
-          <div class="growth-chart">
-            <div class="chart-bars">
-              <div class="bar" data-year="2008" data-amount="$7,406">
-                <div class="bar-fill" style="--height: 25%"></div>
-              </div>
-              <div class="bar" data-year="2009" data-amount="$25,910">
-                <div class="bar-fill" style="--height: 65%"></div>
-              </div>
-              <div class="bar" data-year="2010" data-amount="$30,742">
-                <div class="bar-fill" style="--height: 80%"></div>
-              </div>
-              <div class="bar" data-year="2011" data-amount="$32,459">
-                <div class="bar-fill" style="--height: 85%"></div>
-              </div>
-              <div class="bar current" data-year="Today" data-amount="Growing">
-                <div class="bar-fill" style="--height: 100%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- Fund Growth section removed -->
 
         <div class="scholarship-cta">
           <p class="cta-text">First awarded in 2012, continuing to support exceptional student-athletes</p>
@@ -404,7 +400,13 @@
 
     <!-- Alumni Teams Section -->
     <section id="teams" class="alumni-teams" data-aos="fade-up">
-      <h2 class="section-title">Alumni Teams</h2>
+      <div class="teams-header">
+        <h2 class="section-title">
+          <span class="title-accent">Alumni</span>
+          <span class="title-main">Teams</span>
+        </h2>
+        <p class="teams-subtitle">Where legends continue their rugby journey</p>
+      </div>
       <div class="teams-showcase">
         <div class="team-card arbutian" data-aos="fade-right">
           <div class="team-header">
@@ -495,49 +497,7 @@
     </section>
   </main>
 
-  <!-- Hall of Fame Modal -->
-  <div id="hall-of-fame-modal" class="hof-modal">
-    <div class="hof-content">
-      <button class="hof-close">&times;</button>
-      <h2 class="hof-title">Hall of Fame</h2>
-      <div class="hof-grid">
-        <!-- Hall of Fame members will be dynamically loaded -->
-      </div>
-    </div>
-  </div>
-
-  <!-- Alumni Game Popup -->
-  <div id="alumni-popup" class="game-popup">
-    <div class="popup-content">
-      <button id="close-popup" class="popup-close">&times;</button>
-      <div class="popup-header">
-        <img src="assets/images/alumday.jpg" alt="Alumni Day" class="popup-image" />
-        <div class="popup-badge">Save the Date!</div>
-      </div>
-      <h2 class="popup-title">Alumni Game 2025</h2>
-      <div class="popup-details">
-        <div class="detail-item">
-          <span class="detail-icon">DATE</span>
-          <span>May 3rd, 2025</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-icon">TIME</span>
-          <span>12:00 PM</span>
-        </div>
-        <div class="detail-item">
-          <span class="detail-icon">PLACE</span>
-          <span>Walker Avenue Field</span>
-        </div>
-      </div>
-      <p class="popup-text">
-        Join us for the annual UMBC Rugby Alumni Game. Reconnect with old teammates, meet the current squad, and relive the glory days!
-      </p>
-      <button id="add-to-calendar" class="calendar-btn">
-        <span>Add to Calendar</span>
-        <svg viewBox="0 0 24 24"><path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/></svg>
-      </button>
-    </div>
-  </div>
+  <!-- Popup sections removed -->
 
   <!-- Footer -->
   <footer class="alumni-footer">
@@ -581,92 +541,22 @@
       offset: 100
     });
 
-    // Epic Loading Screen - Only on first visit
-    function initEpicLoadingScreen() {
-        const loadingScreen = document.getElementById('epic-loading-screen');
-        
-        // Check if this is the first visit in this session
-        const hasVisited = sessionStorage.getItem('umbcRugbyVisited');
-        
-        if (hasVisited) {
-            // Not first visit - remove loading screen immediately
-            loadingScreen.remove();
-            return;
-        }
-        
-        // First visit - show loading screen
-        sessionStorage.setItem('umbcRugbyVisited', 'true');
-        
-        const progressBar = document.querySelector('.epic-progress-bar');
-        const percentageDisplay = document.querySelector('.loading-percentage');
-        const particlesContainer = document.querySelector('.loading-particles');
-        
-        // Prevent scrolling during loading
-        document.body.style.overflow = 'hidden';
-        
-        // Create floating particles
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 8 + 's';
-            particle.style.animationDuration = (Math.random() * 4 + 6) + 's';
-            particlesContainer.appendChild(particle);
-            
-            setTimeout(() => particle.remove(), 8000);
-        }
-        
-        // Create more particles for epic effect
-        const particleInterval = setInterval(createParticle, 150);
-        
-        // Simulate loading progress
-        let progress = 0;
-        const loadingInterval = setInterval(() => {
-            // Random progress increments for realistic feel
-            const increment = Math.random() * 12 + 3;
-            progress = Math.min(progress + increment, 100);
-            
-            // Update progress bar and percentage
-            progressBar.style.width = progress + '%';
-            percentageDisplay.textContent = Math.floor(progress) + '%';
-            
-            // Complete loading when 100%
-            if (progress >= 100) {
-                clearInterval(loadingInterval);
-                clearInterval(particleInterval);
-                
-                setTimeout(() => {
-                    loadingScreen.classList.add('hidden');
-                    document.body.style.overflow = '';
-                    
-                    // Remove loading screen after transition
-                    setTimeout(() => {
-                        loadingScreen.remove();
-                    }, 1200);
-                }, 800);
-            }
-        }, 120);
-    }
-    
-    // Initialize loading screen
-    initEpicLoadingScreen();
 
     // Dark Mode Toggle
     document.addEventListener('DOMContentLoaded', function() {
         const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = themeToggle.querySelector('.theme-icon');
         const body = document.body;
         const currentTheme = localStorage.getItem('theme') || 'light';
         
         // Set initial theme
         body.setAttribute('data-theme', currentTheme);
-        themeIcon.textContent = currentTheme === 'dark' ? 'LIGHT' : 'DARK';
+        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
         
         themeToggle.addEventListener('click', () => {
             const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
             body.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
-            themeIcon.textContent = newTheme === 'dark' ? 'LIGHT' : 'DARK';
+            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
         });
     });
 
@@ -678,20 +568,31 @@
       "max-glare": 0.5,
     });
 
-    // Gallery Navigation Functionality
+    // Enhanced Gallery Navigation
     document.addEventListener('DOMContentLoaded', function() {
-      const galleryTrack = document.querySelector('.gallery-3d-track');
-      const slides = document.querySelectorAll('.gallery-3d-slide');
+      const galleryTrack = document.querySelector('.gallery-track');
+      const slides = document.querySelectorAll('.gallery-slide');
       const prevBtn = document.querySelector('.gallery-nav.prev');
       const nextBtn = document.querySelector('.gallery-nav.next');
+      const indicators = document.querySelectorAll('.indicator');
       
       let currentIndex = 0;
-      const slideWidth = 440; // slide width + gap
       const totalSlides = slides.length;
       
       function updateSlidePosition() {
-        const translateX = -currentIndex * slideWidth;
-        galleryTrack.style.transform = `translateX(${translateX}px)`;
+        const translateX = -currentIndex * 100;
+        galleryTrack.style.transform = `translateX(${translateX}%)`;
+        
+        // Update indicators
+        indicators.forEach((indicator, index) => {
+          indicator.classList.toggle('active', index === currentIndex);
+        });
+        
+        // Add slide change animation
+        slides.forEach((slide, index) => {
+          slide.style.opacity = index === currentIndex ? '1' : '0.7';
+          slide.style.transform = index === currentIndex ? 'scale(1)' : 'scale(0.95)';
+        });
       }
       
       function nextSlide() {
@@ -704,99 +605,185 @@
         updateSlidePosition();
       }
       
-      // Event listeners for navigation buttons
-      if (nextBtn) {
-        nextBtn.addEventListener('click', nextSlide);
+      function goToSlide(index) {
+        currentIndex = index;
+        updateSlidePosition();
       }
       
-      if (prevBtn) {
-        prevBtn.addEventListener('click', prevSlide);
-      }
+      // Event listeners
+      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
       
-      // Auto-advance slides every 5 seconds
-      setInterval(nextSlide, 5000);
+      // Indicator clicks
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => goToSlide(index));
+      });
+      
+      // Auto-advance with pause on hover
+      let autoSlide = setInterval(nextSlide, 6000);
+      
+      const galleryContainer = document.querySelector('.gallery-container');
+      if (galleryContainer) {
+        galleryContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
+        galleryContainer.addEventListener('mouseleave', () => {
+          autoSlide = setInterval(nextSlide, 6000);
+        });
+      }
       
       // Keyboard navigation
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') {
-          prevSlide();
-        } else if (e.key === 'ArrowRight') {
-          nextSlide();
+        if (e.key === 'ArrowLeft') prevSlide();
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+      
+      // Touch/swipe support
+      let startX = 0;
+      let endX = 0;
+      
+      galleryContainer?.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+      
+      galleryContainer?.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+      });
+      
+      galleryContainer?.addEventListener('touchend', () => {
+        const diff = startX - endX;
+        if (Math.abs(diff) > 50) {
+          if (diff > 0) nextSlide();
+          else prevSlide();
         }
       });
       
-      // Enhanced hover effects for stats
-      const statNumbers = document.querySelectorAll('.stat-number');
-      statNumbers.forEach(stat => {
-        stat.addEventListener('mouseenter', function() {
-          this.style.transform = 'scale(1.2) rotate(5deg)';
-          this.style.textShadow = '0 0 30px var(--umbc-gold)';
-        });
-        
-        stat.addEventListener('mouseleave', function() {
-          this.style.transform = 'scale(1) rotate(0deg)';
-          this.style.textShadow = '0 5px 15px rgba(255, 184, 28, 0.3)';
-        });
-      });
+      // Initialize
+      updateSlidePosition();
       
-      // Dynamic particle effect for hero
-      function createParticle() {
+      // Enhanced animations and interactions
+      const sections = document.querySelectorAll('section');
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      }, observerOptions);
+      
+      sections.forEach(section => sectionObserver.observe(section));
+      
+      // Dynamic particle effects for hero
+      function createHeroParticle() {
+        const heroParticles = document.querySelector('.hero-particles');
+        if (!heroParticles) return;
+        
         const particle = document.createElement('div');
         particle.className = 'floating-particle';
         particle.style.cssText = `
           position: absolute;
-          width: ${Math.random() * 6 + 2}px;
-          height: ${Math.random() * 6 + 2}px;
-          background: rgba(255, 184, 28, ${Math.random() * 0.7 + 0.3});
+          width: ${Math.random() * 8 + 3}px;
+          height: ${Math.random() * 8 + 3}px;
+          background: radial-gradient(circle, rgba(255, 184, 28, ${Math.random() * 0.8 + 0.2}), transparent);
           border-radius: 50%;
           left: ${Math.random() * 100}%;
           top: 100%;
-          animation: floatUp ${Math.random() * 10 + 15}s linear infinite;
+          animation: floatUp ${Math.random() * 12 + 18}s linear infinite;
           pointer-events: none;
+          box-shadow: 0 0 10px rgba(255, 184, 28, 0.3);
         `;
         
-        document.querySelector('.hero-particles').appendChild(particle);
+        heroParticles.appendChild(particle);
         
         setTimeout(() => {
           particle.remove();
-        }, 25000);
+        }, 30000);
       }
       
-      // Create particles periodically
-      setInterval(createParticle, 800);
+      // Create hero particles
+      setInterval(createHeroParticle, 1200);
       
-      // Add floating animation to CSS
+      // Interactive timeline dots
+      document.querySelectorAll('.timeline-dot').forEach((dot, index) => {
+        dot.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.8) rotate(180deg)';
+          this.style.boxShadow = '0 0 25px var(--umbc-gold)';
+          this.style.background = 'var(--umbc-gold)';
+        });
+        
+        dot.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1) rotate(0deg)';
+          this.style.boxShadow = '';
+          if (!this.classList.contains('active')) {
+            this.style.background = 'transparent';
+          }
+        });
+      });
+      
+      // Enhanced scroll animations
       const style = document.createElement('style');
       style.textContent = `
         @keyframes floatUp {
           0% {
-            transform: translateY(0) rotate(0deg);
+            transform: translateY(0) rotate(0deg) scale(0);
             opacity: 0;
           }
-          10% {
+          5% {
             opacity: 1;
+            transform: scale(1);
           }
-          90% {
+          95% {
             opacity: 1;
           }
           100% {
-            transform: translateY(-100vh) rotate(360deg);
+            transform: translateY(-100vh) rotate(720deg) scale(0.5);
             opacity: 0;
           }
         }
         
-        .gallery-3d-slide:hover {
-          transform: scale(1.05) !important;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+        @keyframes pulse {
+          0%, 100% {
+            box-shadow: 0 0 5px rgba(255, 184, 28, 0.3);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(255, 184, 28, 0.8), 0 0 30px rgba(255, 184, 28, 0.4);
+          }
         }
         
-        .timeline-dot {
-          transition: all 0.3s ease;
+        section.animate-in {
+          animation: sectionSlideIn 1s ease-out;
         }
         
-        .timeline-dot:hover {
-          transform: scale(1.5);
-          box-shadow: 0 0 20px var(--umbc-gold);
+        @keyframes sectionSlideIn {
+          from {
+            opacity: 0;
+            transform: translateY(50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        .timeline-dot.active {
+          animation: pulse 2s infinite;
+        }
+        
+        .event-card:hover .card-inner {
+          transform: rotateY(180deg) scale(1.05);
+        }
+        
+        .trophy-item:hover {
+          transform: translateX(10px) scale(1.05);
+          color: var(--umbc-gold);
+        }
+        
+        .stat-box:hover {
+          transform: translateY(-10px) scale(1.1);
+          box-shadow: 0 15px 30px rgba(255, 184, 28, 0.3);
         }
       `;
       document.head.appendChild(style);
