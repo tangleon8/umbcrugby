@@ -16,9 +16,15 @@
   <style>
     /* FAQ Specific Styling */
     .faq-section {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 60px auto;
-      padding: 0 20px;
+      padding: 50px 30px;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      position: relative;
+      z-index: 10;
     }
     
     .section-header {
@@ -27,7 +33,7 @@
     }
     
     .section-header h2 {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 5vw, 2.8rem);
       color: var(--umbc-gold, #FFB81C);
       font-weight: 800;
       margin-bottom: 15px;
@@ -35,16 +41,18 @@
     
     .faq-item {
       background: rgba(255, 255, 255, 0.95);
-      border-radius: 15px;
+      border-radius: 16px;
       margin-bottom: 20px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       overflow: hidden;
       transition: all 0.3s ease;
+      border: 1px solid rgba(255, 184, 28, 0.1);
     }
     
     .faq-item:hover {
       box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
       transform: translateY(-2px);
+      border-color: rgba(255, 184, 28, 0.3);
     }
     
     .faq-question {
@@ -53,7 +61,7 @@
       border: none;
       padding: 25px 30px;
       text-align: left;
-      font-size: 1.1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
       font-weight: 600;
       color: #333;
       cursor: pointer;
@@ -80,25 +88,26 @@
     
     .faq-question:hover {
       background: rgba(255, 184, 28, 0.05);
+      color: #333;
     }
     
     .faq-answer {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.4s ease, padding 0.4s ease;
+      transition: max-height 0.5s ease, padding 0.5s ease;
       background: #f8f9fa;
     }
     
     .faq-item.active .faq-answer {
-      max-height: 300px;
+      max-height: 400px;
       padding: 25px 30px;
     }
     
     .faq-answer p {
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.7;
       color: #555;
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
     }
     
     .faq-answer a {
@@ -114,44 +123,181 @@
     /* Intro section styling */
     .faq-intro {
       background: linear-gradient(135deg, rgba(255, 184, 28, 0.1), rgba(255, 184, 28, 0.05));
-      padding: 60px 20px;
+      padding: 80px 20px;
       text-align: center;
       margin-bottom: 60px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
     }
     
     .intro-title {
-      font-size: 3rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
       color: var(--umbc-gold, #FFB81C);
       font-weight: 900;
       margin-bottom: 20px;
     }
     
     .intro-description {
-      font-size: 1.2rem;
+      font-size: clamp(1rem, 3vw, 1.3rem);
       color: #666;
-      max-width: 600px;
+      max-width: 700px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.7;
     }
     
-    /* Mobile responsiveness */
+    /* Enhanced Mobile responsiveness */
     @media (max-width: 768px) {
+      .faq-section {
+        margin: 20px 15px;
+        padding: 35px 20px;
+        border-radius: 16px;
+      }
+      
+      .faq-intro {
+        margin: 20px 15px 40px;
+        padding: 50px 20px;
+        border-radius: 16px;
+      }
+      
       .faq-question {
-        padding: 20px;
-        font-size: 1rem;
+        padding: 20px 20px;
+        font-size: clamp(0.95rem, 3vw, 1.1rem);
+        line-height: 1.4;
+      }
+      
+      .faq-question::after {
+        font-size: 1.3rem;
+        margin-left: 15px;
       }
       
       .faq-item.active .faq-answer {
-        padding: 20px;
+        padding: 20px 20px;
+        max-height: 500px;
+      }
+      
+      .faq-answer p {
+        font-size: clamp(0.85rem, 2.5vw, 1rem);
+        line-height: 1.6;
       }
       
       .section-header h2 {
-        font-size: 2rem;
+        font-size: clamp(1.6rem, 6vw, 2.2rem);
+        margin-bottom: 20px;
       }
       
       .intro-title {
-        font-size: 2.2rem;
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        margin-bottom: 15px;
       }
+      
+      .intro-description {
+        font-size: clamp(0.9rem, 4vw, 1.1rem);
+        padding: 0 15px;
+      }
+      
+      .faq-item {
+        margin-bottom: 15px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .faq-question {
+        padding: 15px 12px;
+        font-size: 0.9rem;
+        text-align: left;
+        display: block;
+        word-wrap: break-word;
+      }
+      
+      .faq-question::after {
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 15px 12px;
+        max-height: 400px;
+      }
+      
+      .faq-answer p {
+        font-size: 0.85rem;
+      }
+      
+      .section-header h2 {
+        font-size: 1.5rem;
+      }
+      
+      .intro-title {
+        font-size: 1.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .faq-section {
+        margin: 15px 10px;
+        padding: 25px 15px;
+      }
+      
+      .faq-intro {
+        margin: 15px 10px 30px;
+        padding: 40px 15px;
+      }
+      
+      .faq-question {
+        padding: 16px 15px;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 16px 15px;
+      }
+      
+      .faq-question::after {
+        right: 12px;
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Video Section Styling */
+    .video-section {
+      text-align: center;
+      margin: 60px auto;
+      padding: 40px 20px;
+      max-width: 900px;
+      position: relative;
+    }
+    
+    .video-container h3 {
+      font-size: 2rem;
+      color: var(--umbc-gold, #FFB81C);
+      margin-bottom: 30px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .video-container video {
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .video-container video:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(255, 184, 28, 0.2) !important;
+    }
+
+    .video-container::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 184, 28, 0.1) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      animation: particleFloat 8s ease-in-out infinite;
+      z-index: 0;
     }
   </style>
 </head>
@@ -170,31 +316,46 @@
     <div class="hero-overlay faq-overlay"></div>
 
     <!-- Hero Content -->
-    <div class="hero-content faq-hero-content" data-aos="fade-up" data-aos-duration="1200">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo faq-logo" data-aos="zoom-in" data-aos-delay="200" />
-      <h1 class="hero-title animated-title faq-title" data-aos="fade-up" data-aos-delay="400">FAQs</h1>
-      <div class="hero-animated-text faq-text-wrapper">
-        <p class="hero-subtitle animated-subtitle faq-subtitle" data-aos="fade-up" data-aos-delay="600" style="color: white;">Everything you need to know about joining UMBC Rugby</p>
-      </div>
-      <div class="faq-cta-wrapper" data-aos="zoom-in" data-aos-delay="800">
-        <a href="#faq-content" class="cta-button faq-cta-primary">Get Answers</a>
+    <div class="hero-content" data-aos="fade-up">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1 class="hero-title animated-title">FAQs</h1>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle animated-subtitle">Frequently Asked Questions</p>
+        <p class="hero-description animated-description">Get answers to common questions about UMBC Rugby Club.</p>
       </div>
     </div>
   </header>
 
   <!-- Navigation -->
   <nav id="navbar" class="hero-nav" role="navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html" class="active">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
+        <li><a href="donate.html" class="nav-link">Donate</a></li>
+        <li><a href="faq.html" class="nav-link active">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -208,6 +369,7 @@
         </p>
       </div>
     </section>
+
 
     <!-- FAQ Sections -->
    <section class="faq-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
@@ -393,7 +555,7 @@
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="rugby-ready.html">Rugby Ready</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="faq.html">FAQs</a></li>
       </ul>
@@ -409,52 +571,94 @@
     // Initialize AOS
     AOS.init();
 
+    // Mobile Menu Initialization - Same as working index.html version
+    function initMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      const menuOverlay = document.querySelector('.mobile-menu-overlay');
+      const navbar = document.getElementById('navbar');
+      
+      if (!menuToggle || !navMenu || !menuOverlay) return;
 
-    // FAQ Accordion Functionality
-    document.addEventListener("DOMContentLoaded", () => {
-      // Dark Mode Toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-      const currentTheme = localStorage.getItem('theme') || 'light';
+      // Toggle mobile menu
+      function toggleMenu() {
+        const isOpen = navbar.classList.contains('mobile-open');
+        
+        navbar.classList.toggle('mobile-open');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        document.body.classList.toggle('menu-open');
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isOpen ? 'hidden' : '';
+      }
+
+      // Close mobile menu
+      function closeMenu() {
+        navbar.classList.remove('mobile-open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
+      }
+
+      // Event listeners
+      menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+      });
       
-      // Set initial theme
-      body.setAttribute('data-theme', currentTheme);
-      themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-      
-      themeToggle.addEventListener('click', () => {
-          const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-          body.setAttribute('data-theme', newTheme);
-          localStorage.setItem('theme', newTheme);
-          themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+      menuOverlay.addEventListener('click', closeMenu);
+
+      // Close menu when clicking on navigation links
+      const navLinks = navMenu.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
       });
 
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
+          closeMenu();
+        }
+      });
 
-      const faqQuestions = document.querySelectorAll(".faq-question");
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          closeMenu();
+        }
+      });
+    }
 
-      faqQuestions.forEach((question) => {
-        question.addEventListener("click", () => {
-          const faqItem = question.closest('.faq-item');
-          const answer = faqItem.querySelector('.faq-answer');
-          const isOpen = faqItem.classList.contains('active');
+    // Initialize mobile menu
+    initMobileMenu();
 
-          // Close all other answers
-          document.querySelectorAll(".faq-item").forEach((otherItem) => {
-            if (otherItem !== faqItem) {
-              otherItem.classList.remove('active');
-            }
+    // FAQ Functionality
+    function initFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const faqItem = this.parentElement;
+          const isActive = faqItem.classList.contains('active');
+          
+          // Close all other FAQ items
+          document.querySelectorAll('.faq-item').forEach(item => {
+            item.classList.remove('active');
           });
-
-          // Toggle current answer
-          if (isOpen) {
-            faqItem.classList.remove('active');
-          } else {
+          
+          // Toggle current item if it wasn't active
+          if (!isActive) {
             faqItem.classList.add('active');
           }
         });
       });
-    });
+    }
 
-    // Typewriter effect removed for better performance
+    // Initialize FAQ after DOM is loaded
+    document.addEventListener('DOMContentLoaded', initFAQ);
   </script>
 </body>
 </html>

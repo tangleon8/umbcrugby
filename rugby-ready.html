@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/styles.css" />
 
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
+  <script src="js/scripts.js" defer></script>
 
   <!-- AOS library & Google Fonts -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <button id="back-to-top" title="Back to Top">↑</button>
 
   <!-- Header -->
- <header id="hero-header">
+ <header id="hero-header" class="rugby-ready-hero">
   <img src="assets/images/IMG_4635.jpg" alt="Header Background" id="header-image" />
   <div class="hero-overlay"></div>
   <div class="hero-content" data-aos="fade-up">
@@ -47,23 +48,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     <!-- Navigation -->
-  <nav id="navbar" role="navigation">
-    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html" class="active">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
+  <nav id="navbar" class="hero-nav" role="navigation">
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link active">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
+        <li><a href="donate.html" class="nav-link">Donate</a></li>
+        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
+    </div>
   </nav>
 
   <!-- Main Content -->
@@ -179,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="rugby-ready.html">Rugby Ready</a></li>
       <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
     </ul>
@@ -191,37 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- AOS Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    AOS.init();
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // Set initial theme
-        body.setAttribute('data-theme', currentTheme);
-        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
-
-    });
-
-    // "Back to Top" Button
-    const backToTopBtn = document.getElementById("back-to-top");
-    window.addEventListener("scroll", () => {
-      backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
-    });
-
-    backToTopBtn.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    AOS.init({\n      duration: 1200,\n      once: true,\n      offset: 100\n    });\n\n    // Mobile Menu Initialization\n    function initMobileMenu() {\n      const menuToggle = document.querySelector('.mobile-menu-toggle');\n      const navMenu = document.querySelector('.nav-menu');\n      const menuOverlay = document.querySelector('.mobile-menu-overlay');\n      const navbar = document.getElementById('navbar');\n      \n      if (!menuToggle || !navMenu || !menuOverlay) return;\n\n      // Toggle mobile menu\n      function toggleMenu() {\n        const isOpen = navbar.classList.contains('mobile-open');\n        \n        navbar.classList.toggle('mobile-open');\n        menuToggle.classList.toggle('active');\n        menuToggle.setAttribute('aria-expanded', !isOpen);\n        document.body.classList.toggle('menu-open');\n        \n        // Prevent body scroll when menu is open\n        document.body.style.overflow = !isOpen ? 'hidden' : '';\n      }\n\n      // Close mobile menu\n      function closeMenu() {\n        navbar.classList.remove('mobile-open');\n        menuToggle.classList.remove('active');\n        menuToggle.setAttribute('aria-expanded', 'false');\n        document.body.classList.remove('menu-open');\n        document.body.style.overflow = '';\n      }\n\n      // Event listeners\n      menuToggle.addEventListener('click', (e) => {\n        e.preventDefault();\n        e.stopPropagation();\n        toggleMenu();\n      });\n      \n      menuOverlay.addEventListener('click', closeMenu);\n\n      // Close menu when clicking on navigation links\n      const navLinks = navMenu.querySelectorAll('.nav-link');\n      navLinks.forEach(link => {\n        link.addEventListener('click', closeMenu);\n      });\n\n      // Close menu on escape key\n      document.addEventListener('keydown', (e) => {\n        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {\n          closeMenu();\n        }\n      });\n\n      // Handle window resize\n      window.addEventListener('resize', () => {\n        if (window.innerWidth > 768) {\n          closeMenu();\n        }\n      });\n    }\n\n    // Initialize mobile menu\n    initMobileMenu();
   </script>
 </body>
 </html>

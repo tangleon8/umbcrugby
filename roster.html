@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
+  <script src="js/scripts.js" defer></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
     rel="stylesheet"
@@ -19,7 +20,7 @@
   <!-- Back to Top Button -->
   <button id="back-to-top" title="Back to Top">↑</button>
   <!-- HEADER -->
-  <header id="hero-header">
+  <header id="hero-header" class="roster-hero">
     <!-- Background Image -->
     <img
       src="assets/images/jeff.jpg"
@@ -39,24 +40,42 @@
           Discover the players, their stories, and what drives them on and off
           the field.
         </p>
-        <p class="hero-description animated-description">Champions on the Field. Leaders in Life.</p>
       </div>
       <a href="#roster-screen" class="cta-button">Explore the Roster</a>
     </div>
   </header>
 
   <nav id="navbar" class="hero-nav" role="navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html" class="active">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <a href="index.html">
+          <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
+        </a>
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link active">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
+        <li><a href="donate.html" class="nav-link">Donate</a></li>
+        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
+    </div>
   </nav>
 
   <!-- Roster Section -->
@@ -631,13 +650,10 @@
 
   <section id="coaches-section" class="info-section coaches-section" data-aos="fade-up">
   <h2 class="section-title">Coaches</h2>
-  <p style="text-align: center; font-size: 1.2rem; margin-bottom: 40px;">
-    Meet the dedicated coaching staff leading UMBC Rugby to excellence
-  </p>
   <div class="coaches-container">
     <!-- Head Coach -->
     <div class="coach-card" data-aos="flip-left" data-aos-delay="200">
-      <div class="coach-icon">🏆</div>
+      <div class="coach-icon">HC</div>
       <h3 class="coach-name">Richard Tavai</h3>
       <p class="coach-role">Head Coach</p>
       <p class="coach-hometown">Hometown: <strong>New Zealand</strong></p>
@@ -648,7 +664,7 @@
 
     <!-- Assistant Coach -->
     <div class="coach-card" data-aos="flip-right" data-aos-delay="400">
-      <div class="coach-icon">⚡</div>
+      <div class="coach-icon">AC</div>
       <h3 class="coach-name">Rusty Cross</h3>
       <p class="coach-role">Assistant Coach</p>
       <p class="coach-hometown">Hometown: <strong>Ireland</strong></p>
@@ -677,7 +693,7 @@
       <li><a href="schedule.html">Schedule</a></li>
       <li><a href="rugby-ready.html">Rugby Ready</a></li>
       <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
       <li><a href="donate.html">Donate</a></li>
       <li><a href="faq.html">FAQs</a></li>
     </ul>
@@ -691,226 +707,139 @@
 <script>
   AOS.init();
 
-</script>
+  // Mobile Menu Initialization - Same as working index.html version
+  function initMobileMenu() {
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    const menuOverlay = document.querySelector('.mobile-menu-overlay');
+    const navbar = document.getElementById('navbar');
+    
+    if (!menuToggle || !navMenu || !menuOverlay) return;
 
-<!-- JavaScript -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      // Dark Mode Toggle
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
+    // Toggle mobile menu
+    function toggleMenu() {
+      const isOpen = navbar.classList.contains('mobile-open');
       
-      if (themeToggle) {
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // Set initial theme
-        body.setAttribute('data-theme', currentTheme);
-        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
-      }
+      navbar.classList.toggle('mobile-open');
+      menuToggle.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', !isOpen);
+      document.body.classList.toggle('menu-open');
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
+    }
 
+    // Close mobile menu
+    function closeMenu() {
+      navbar.classList.remove('mobile-open');
+      menuToggle.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+    }
 
-      // View Toggle Functionality
-      const viewBtns = document.querySelectorAll('.view-btn');
-      const rosterList = document.getElementById('rosterList');
+    // Event listeners
+    menuToggle.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleMenu();
+    });
+    
+    menuOverlay.addEventListener('click', closeMenu);
 
-      if (viewBtns.length > 0 && rosterList) {
-        viewBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Remove active class from all buttons
-                viewBtns.forEach(b => b.classList.remove('active'));
-                // Add active class to clicked button
-                btn.classList.add('active');
-                
-                // Remove all view classes from roster list
-                rosterList.classList.remove('list-view', 'card-view', 'table-view');
-                // Add new view class
-                rosterList.classList.add(btn.dataset.view);
-            });
-        });
-      }
+    // Close menu when clicking on navigation links
+    const navLinks = navMenu.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
 
-      const rosterItems = document.querySelectorAll(".roster-item");
-      const backToTopBtn = document.getElementById("back-to-top");
-
-      // Collapsible logic
-      if (rosterItems.length > 0) {
-        rosterItems.forEach((item) => {
-          const summary = item.querySelector(".roster-summary");
-          if (summary) {
-            summary.addEventListener("click", () => {
-              item.classList.toggle("expanded");
-            });
-          }
-        });
-      }
-
-      // Sorting logic
-      const sortSelect = document.getElementById("sortSelect");
-
-      if (sortSelect && rosterList && rosterItems.length > 0) {
-        // Custom order for 'year'
-        const yearOrder = {
-          "Freshman": 1,
-          "Sophomore": 2,
-          "Junior": 3,
-          "Senior": 4,
-          "Graduate": 5,
-          "6th Year Senior": 6
-        };
-
-        function sortRoster(sortValue) {
-          // Convert NodeList to Array for sorting
-          const itemsArray = Array.from(rosterItems);
-
-          itemsArray.sort((a, b) => {
-            let aVal, bVal;
-
-            if (sortValue === "name") {
-              aVal = (a.dataset.name || '').toLowerCase();
-              bVal = (b.dataset.name || '').toLowerCase();
-              return aVal.localeCompare(bVal);
-
-            } else if (sortValue === "year") {
-              aVal = yearOrder[a.dataset.year] || 999;
-              bVal = yearOrder[b.dataset.year] || 999;
-              return aVal - bVal;
-
-            } else if (sortValue === "height") {
-              aVal = parseInt(a.dataset.height, 10) || 0;
-              bVal = parseInt(b.dataset.height, 10) || 0;
-              return aVal - bVal;
-
-            } else if (sortValue === "position") {
-              aVal = (a.dataset.position || '').toLowerCase();
-              bVal = (b.dataset.position || '').toLowerCase();
-              return aVal.localeCompare(bVal);
-            }
-          });
-
-          // Re-append in the new order
-          itemsArray.forEach((item) => rosterList.appendChild(item));
-        }
-
-        // Default to sorting by name on load
-        sortRoster("name");
-        // Also set the dropdown to "Name"
-        sortSelect.value = "name";
-
-        // Listen to changes on the dropdown
-        sortSelect.addEventListener("change", (e) => {
-          sortRoster(e.target.value);
-        });
-      }
-
-      // Back to Top Button functionality
-      if (backToTopBtn) {
-        window.addEventListener("scroll", () => {
-          if (window.pageYOffset > 300) {
-            backToTopBtn.style.display = "block";
-          } else {
-            backToTopBtn.style.display = "none";
-          }
-        });
-
-        backToTopBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      }
-
-      // Enhanced Roster Interactions
-      const addEnhancedInteractions = () => {
-        // Add stagger animation to roster items
-        rosterItems.forEach((item, index) => {
-          item.style.animationDelay = `${index * 0.1}s`;
-          
-          // Enhanced hover effects for list view
-          item.addEventListener('mouseenter', () => {
-            if (rosterList.classList.contains('list-view')) {
-              item.style.transform = 'translateY(-8px) scale(1.01)';
-            }
-          });
-          
-          item.addEventListener('mouseleave', () => {
-            if (rosterList.classList.contains('list-view') && !item.classList.contains('expanded')) {
-              item.style.transform = 'translateY(0) scale(1)';
-            }
-          });
-        });
-        
-        // Add click sound effect (optional)
-        viewBtns.forEach(btn => {
-          btn.addEventListener('click', () => {
-            btn.style.transform = 'scale(0.95)';
-            setTimeout(() => {
-              btn.style.transform = '';
-            }, 150);
-          });
-        });
-        
-        // Enhanced sorting feedback
-        if (sortSelect) {
-          sortSelect.addEventListener('change', () => {
-            // Add loading state
-            rosterList.style.opacity = '0.7';
-            rosterList.style.transform = 'scale(0.98)';
-            
-            setTimeout(() => {
-              rosterList.style.opacity = '1';
-              rosterList.style.transform = 'scale(1)';
-            }, 300);
-          });
-        }
-      };
-
-      // Initialize enhanced interactions
-      if (rosterItems.length > 0) {
-        addEnhancedInteractions();
-      }
-
-      // Stats Counter Animation
-      const statsElements = document.querySelectorAll('.stat-number');
-      if (statsElements.length > 0) {
-        const animateStats = () => {
-          statsElements.forEach(stat => {
-            const finalNumber = parseInt(stat.textContent);
-            let currentNumber = 0;
-            const increment = finalNumber / 30;
-            
-            const timer = setInterval(() => {
-              currentNumber += increment;
-              if (currentNumber >= finalNumber) {
-                stat.textContent = finalNumber;
-                clearInterval(timer);
-              } else {
-                stat.textContent = Math.floor(currentNumber);
-              }
-            }, 50);
-          });
-        };
-        
-        // Trigger stats animation when section is visible
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              animateStats();
-              observer.disconnect();
-            }
-          });
-        });
-        
-        statsElements.forEach(el => observer.observe(el));
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
+        closeMenu();
       }
     });
-  </script>
+
+    // Handle window resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        closeMenu();
+      }
+    });
+  }
+
+  // Initialize mobile menu
+  initMobileMenu();
+
+  // Roster View and Sort Functionality
+  function initRosterFunctionality() {
+    const viewButtons = document.querySelectorAll('.view-btn');
+    const rosterList = document.getElementById('rosterList');
+    const sortSelect = document.getElementById('sortSelect');
+    const rosterItems = Array.from(document.querySelectorAll('.roster-item'));
+
+    // View switching functionality
+    viewButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        viewButtons.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        // Get the view type
+        const viewType = btn.getAttribute('data-view');
+        
+        // Remove all view classes
+        rosterList.classList.remove('list-view', 'card-view', 'table-view');
+        
+        // Add the selected view class
+        rosterList.classList.add(viewType);
+        
+        console.log(`Switched to ${viewType}`);
+      });
+    });
+
+    // Sort functionality
+    function sortRoster(criteria) {
+      const sortedItems = [...rosterItems].sort((a, b) => {
+        let aValue = a.getAttribute(`data-${criteria}`);
+        let bValue = b.getAttribute(`data-${criteria}`);
+        
+        // Handle numeric sorting for height
+        if (criteria === 'height') {
+          aValue = parseInt(aValue);
+          bValue = parseInt(bValue);
+          return bValue - aValue; // Descending for height
+        }
+        
+        // Handle year sorting (Senior > Junior > Sophomore > Freshman)
+        if (criteria === 'year') {
+          const yearOrder = { 'Senior': 4, 'Junior': 3, 'Sophomore': 2, 'Freshman': 1 };
+          return (yearOrder[bValue] || 0) - (yearOrder[aValue] || 0);
+        }
+        
+        // Alphabetical sorting for name and position
+        return aValue.localeCompare(bValue);
+      });
+      
+      // Clear the roster list and append sorted items
+      rosterList.innerHTML = '';
+      sortedItems.forEach(item => rosterList.appendChild(item));
+      
+      console.log(`Sorted by ${criteria}`);
+    }
+
+    // Sort select event listener
+    sortSelect.addEventListener('change', (e) => {
+      sortRoster(e.target.value);
+    });
+
+    // Initialize with default sort
+    sortRoster('name');
+  }
+
+  // Initialize roster functionality
+  initRosterFunctionality();
+</script>
 </body>
 </html>

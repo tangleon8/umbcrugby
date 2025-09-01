@@ -6,6 +6,7 @@
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
   <link rel="stylesheet" href="css/styles.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="js/scripts.js" defer></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
   <title>Join UMBC Rugby | Recruitment</title>
@@ -14,39 +15,56 @@
 <body>
 
 
-  <header id="hero-header">
-    <img src="assets/images/gokarn.jpg" alt="UMBC Rugby Recruitment Header" class="header-image" />
+  <header id="hero-header" class="recruitment-hero">
+    <img src="assets/images/umbuc9.JPG" alt="UMBC Rugby Recruitment Header" class="header-image" />
     <div class="hero-overlay"></div>
     <div class="hero-content" data-aos="fade-up">
       <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
       <h1 class="hero-title animated-title">Join UMBC Rugby</h1>
       <div class="hero-animated-text">
         <p class="hero-subtitle animated-subtitle">The Only Contact Sport at UMBC!</p>
-        <p class="hero-description animated-description">Build Character. Build Brotherhood. Build Champions.</p>
       </div>
       <a href="#recruitment-form" class="cta-button">Start Your Journey</a>
     </div>
   </header>
 
   <nav id="navbar" class="hero-nav" role="navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html" class="active">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link active">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
+        <li><a href="donate.html" class="nav-link">Donate</a></li>
+        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
+    </div>
   </nav>
 
-  <section class="recruitment-form-section" data-aos="fade-up">
+  <main>
+    <section class="recruitment-form-section" data-aos="fade-up">
     <h2>Ready to Join?</h2>
     <p>Take the first step towards becoming part of UMBC Rugby's legacy.</p>
 
-    <form id="recruitment-form" action="#" method="POST">
+    <form id="recruitment-form" action="https://formspree.io/f/xqaagkjn" method="POST">
       <div class="form-row">
         <label for="name">Full Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your full name" required>
@@ -64,8 +82,26 @@
         <input type="text" id="year" name="year" placeholder="e.g., Freshman, Sophomore, etc.">
       </div>
       <div class="form-row">
-        <label for="experience">Rugby Experience</label>
-        <textarea id="experience" name="experience" rows="4" placeholder="Tell us about any previous rugby experience"></textarea>
+        <label for="how-found">How did you find out about UMBC Rugby?</label>
+        <select id="how-found" name="how-found" required>
+          <option value="">Select an option...</option>
+          <option value="friend">Friend or teammate</option>
+          <option value="social-media">Social media</option>
+          <option value="website">UMBC website</option>
+          <option value="campus-event">Campus event/fair</option>
+          <option value="flyer">Flyer or poster</option>
+          <option value="class">In class</option>
+          <option value="coach-contact">Coach contacted me</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="athletic-experience">Athletic Experience</label>
+        <textarea id="athletic-experience" name="athletic-experience" rows="4" placeholder="Tell us about your athletic background, sports you've played, fitness level, etc."></textarea>
+      </div>
+      <div class="form-row">
+        <label for="rugby-experience">Rugby Experience</label>
+        <textarea id="rugby-experience" name="rugby-experience" rows="4" placeholder="Tell us about any previous rugby experience (if none, just write 'None')"></textarea>
       </div>
 
       <button type="submit">Join the Team</button>
@@ -77,7 +113,7 @@
     </div>
   </section>
 
-  <section class="contact-info-section" data-aos="fade-up">
+    <section class="contact-info-section" data-aos="fade-up">
     <h2>Get In Touch</h2>
     <p>Have questions? Want to learn more? We're here to help.</p>
 
@@ -99,6 +135,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer>
     <div class="footer-logo">
@@ -113,7 +150,7 @@
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="rugby-ready.html">Rugby Ready</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="faq.html">FAQs</a></li>
       </ul>
@@ -128,46 +165,69 @@
       once: true
     });
 
+    // Mobile Menu Initialization
+    function initMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      const menuOverlay = document.querySelector('.mobile-menu-overlay');
+      const navbar = document.getElementById('navbar');
+      
+      if (!menuToggle || !navMenu || !menuOverlay) return;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // Dark Mode Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme') || 'light';
+      // Toggle mobile menu
+      function toggleMenu() {
+        const isOpen = navbar.classList.contains('mobile-open');
         
-        // Set initial theme
-        body.setAttribute('data-theme', currentTheme);
-        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        navbar.classList.toggle('mobile-open');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        document.body.classList.toggle('menu-open');
         
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isOpen ? 'hidden' : '';
+      }
 
-    });
+      // Close mobile menu
+      function closeMenu() {
+        navbar.classList.remove('mobile-open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
+      }
 
-    // Handle form submission
-    const form = document.getElementById('recruitment-form');
-    const successMessage = document.getElementById('success-message');
+      // Event listeners
+      menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+      });
+      
+      menuOverlay.addEventListener('click', closeMenu);
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+      // Close menu when clicking on navigation links
+      const navLinks = navMenu.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
 
-      // Simulate form submission
-      setTimeout(function() {
-        form.style.display = 'none';
-        successMessage.style.display = 'block';
-      }, 1000);
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
+          closeMenu();
+        }
+      });
 
-      // Reset form after a delay
-      setTimeout(function() {
-        form.reset();
-        form.style.display = 'block';
-        successMessage.style.display = 'none';
-      }, 5000);
-    });
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          closeMenu();
+        }
+      });
+    }
+
+    // Initialize mobile menu
+    initMobileMenu();
   </script>
 </body>
 </html>

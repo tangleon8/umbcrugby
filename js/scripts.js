@@ -552,23 +552,106 @@ class MobileNavigation {
     constructor() {
         this.navbar = document.getElementById('navbar');
         this.mobileToggle = document.querySelector('.mobile-menu-toggle');
+        this.navMenu = document.querySelector('.nav-menu');
+        this.overlay = document.querySelector('.mobile-menu-overlay');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        this.isOpen = false;
         this.init();
     }
 
     init() {
         if (this.mobileToggle) {
-            this.mobileToggle.addEventListener('click', () => {
-                this.navbar.classList.toggle('mobile-open');
-                this.mobileToggle.classList.toggle('active');
+            // Toggle menu on hamburger click/touch
+            this.mobileToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMenu();
             });
 
-            // Close mobile menu when clicking outside
-            document.addEventListener('click', (e) => {
-                if (!this.navbar.contains(e.target) && !this.mobileToggle.contains(e.target)) {
-                    this.navbar.classList.remove('mobile-open');
-                    this.mobileToggle.classList.remove('active');
+            // Add touch support for mobile
+            this.mobileToggle.addEventListener('touchend', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                this.toggleMenu();
+            });
+
+            // Close menu when clicking overlay
+            if (this.overlay) {
+                this.overlay.addEventListener('click', () => {
+                    this.closeMenu();
+                });
+            }
+
+            // Close menu when clicking nav links
+            this.navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    this.closeMenu();
+                });
+            });
+
+            // Close menu on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.isOpen) {
+                    this.closeMenu();
                 }
             });
+
+            // Handle window resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 768 && this.isOpen) {
+                    this.closeMenu();
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (this.isOpen && 
+                    !this.navbar.contains(e.target) && 
+                    !this.mobileToggle.contains(e.target)) {
+                    this.closeMenu();
+                }
+            });
+        }
+    }
+
+    toggleMenu() {
+        if (this.isOpen) {
+            this.closeMenu();
+        } else {
+            this.openMenu();
+        }
+    }
+
+    openMenu() {
+        this.navbar.classList.add('mobile-open');
+        this.mobileToggle.classList.add('active');
+        document.body.classList.add('menu-open');
+        if (this.overlay) {
+            this.overlay.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+        this.isOpen = true;
+        
+        // Trigger menu animation
+        setTimeout(() => {
+            if (this.navMenu) {
+                this.navMenu.style.opacity = '1';
+            }
+        }, 100);
+    }
+
+    closeMenu() {
+        this.navbar.classList.remove('mobile-open');
+        this.mobileToggle.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        if (this.overlay) {
+            this.overlay.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+        this.isOpen = false;
+        
+        if (this.navMenu) {
+            this.navMenu.style.opacity = '0.9';
         }
     }
 }
@@ -687,8 +770,129 @@ class UMBCLoadingScreen {
     }
 }
 
+// Video Transition Manager
+class VideoTransitionManager {
+    constructor() {
+        this.video1 = document.getElementById('header-video-1');
+        this.video2 = document.getElementById('header-video-2');
+        this.transitionStarted = false;
+        this.init();
+    }
+
+    init() {
+        if (this.video1 && this.video2) {
+            // Make first video play faster
+            this.video1.playbackRate = 1.5;
+            
+            // Set initial states - video2 starts hidden
+            this.video2.style.opacity = '0';
+            
+            // Start cycling after 4 seconds
+            setTimeout(() => {
+                this.transitionToSecondVideo();
+            }, 4000);
+        }
+    }
+
+    transitionToSecondVideo() {
+        if (this.transitionStarted) return;
+        this.transitionStarted = true;
+
+        // Start second video first
+        this.video2.currentTime = 0;
+        this.video2.play();
+
+        // Fade transition
+        this.video1.style.transition = 'opacity 1s ease-out';
+        this.video2.style.transition = 'opacity 1s ease-in';
+        
+        this.video1.style.opacity = '0';
+        this.video1.classList.remove('active');
+        
+        this.video2.style.opacity = '1';
+        this.video2.classList.add('active');
+
+        // Cycle back to first video after 6 seconds
+        setTimeout(() => {
+            this.transitionToFirstVideo();
+        }, 6000);
+    }
+
+    transitionToFirstVideo() {
+        // Start first video
+        this.video1.currentTime = 0;
+        this.video1.play();
+
+        // Fade transition
+        this.video2.style.opacity = '0';
+        this.video2.classList.remove('active');
+        
+        this.video1.style.opacity = '1';
+        this.video1.classList.add('active');
+
+        this.transitionStarted = false;
+        
+        // Cycle to second video again after 4 seconds
+        setTimeout(() => {
+            this.transitionToSecondVideo();
+        }, 4000);
+    }
+}
+
+// Mobile Navigation Scroll Detection
+class MobileNavScroll {
+    constructor() {
+        this.navbar = document.getElementById('navbar');
+        this.lastScrollY = 0;
+        this.scrollThreshold = 100;
+        this.isMobile = window.innerWidth <= 768;
+        this.init();
+    }
+
+    init() {
+        if (!this.isMobile || !this.navbar) return;
+        
+        // Hide navbar initially on mobile
+        this.navbar.classList.remove('show-nav');
+        
+        window.addEventListener('scroll', this.handleScroll.bind(this));
+        window.addEventListener('resize', this.handleResize.bind(this));
+    }
+
+    handleScroll() {
+        const currentScrollY = window.pageYOffset;
+        
+        // Show nav when scrolling up or at top of page
+        if (currentScrollY < this.lastScrollY || currentScrollY < this.scrollThreshold) {
+            this.navbar.classList.add('show-nav');
+        } else {
+            // Hide nav when scrolling down
+            this.navbar.classList.remove('show-nav');
+        }
+        
+        this.lastScrollY = currentScrollY;
+    }
+
+    handleResize() {
+        this.isMobile = window.innerWidth <= 768;
+        
+        if (!this.isMobile) {
+            // Reset navbar for desktop
+            this.navbar.classList.remove('show-nav');
+            this.navbar.style.transform = '';
+        }
+    }
+}
+
 // Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
+    
+    // Initialize mobile nav scroll detection
+    new MobileNavScroll();
+    
+    // Initialize video transition manager
+    new VideoTransitionManager();
+    
     // Initialize loading screen first
     new UMBCLoadingScreen();
     
@@ -701,8 +905,44 @@ document.addEventListener('DOMContentLoaded', () => {
     new SchedulePopup();
     new ScrollingPlayer();
 
-    const carouselContainer = document.querySelector('.carousel-container');
-    if (carouselContainer) new EnhancedCarousel(carouselContainer);
+    // Robust carousel initialization with retry mechanism
+    function initCarousel() {
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            try {
+                new EnhancedCarousel(carouselContainer);
+                console.log('Carousel initialized successfully');
+            } catch (error) {
+                console.error('Carousel initialization failed:', error);
+                // Retry after a short delay
+                setTimeout(() => {
+                    try {
+                        new EnhancedCarousel(carouselContainer);
+                        console.log('Carousel initialized on retry');
+                    } catch (retryError) {
+                        console.error('Carousel retry failed:', retryError);
+                    }
+                }, 500);
+            }
+        } else {
+            // Retry finding the carousel container after a delay
+            setTimeout(() => {
+                const retryContainer = document.querySelector('.carousel-container');
+                if (retryContainer) {
+                    try {
+                        new EnhancedCarousel(retryContainer);
+                        console.log('Carousel initialized after DOM retry');
+                    } catch (error) {
+                        console.error('Carousel DOM retry failed:', error);
+                    }
+                }
+            }, 100);
+        }
+    }
+    
+    // Initialize carousel immediately and also on window load as fallback
+    initCarousel();
+    window.addEventListener('load', initCarousel);
 
     const parallax = new ParallaxScroll();
     animationController.register('parallax', parallax);
@@ -765,4 +1005,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     `;
     document.head.appendChild(animStyle);
+    initMobileMenu();
 });

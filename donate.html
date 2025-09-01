@@ -328,16 +328,18 @@
     }
 
     .donation-method.venmo {
-      background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-      color: white;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      color: #333;
+      border: 2px solid rgba(59, 131, 246, 0.2);
     }
 
     /* Venmo Section Styling */
     #venmo-donation {
-      background: linear-gradient(135deg, #1a1a1a 0%, #000000 100%);
-      color: white;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      color: #333;
       position: relative;
       overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
 
     #venmo-donation::before {
@@ -388,7 +390,7 @@
     }
 
     #venmo-donation p {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(51, 51, 51, 0.9);
       font-size: 1.3rem;
       margin-bottom: 30px;
     }
@@ -698,7 +700,7 @@
   <a href="#donation-form" class="floating-donate">Donate</a>
 
   <!-- HEADER -->
-  <header id="hero-header">
+  <header id="hero-header" class="donate-hero">
     <!-- Background Image -->
     <img src="assets/images/gran.jpg" alt="UMBC Rugby Header Image" id="header-image" />
 
@@ -711,24 +713,40 @@
       <h1 class="animated-title">Support UMBC Rugby</h1>
       <div class="hero-animated-text">
         <p class="animated-subtitle">Your support builds the future of UMBC Rugby and its student-athletes.</p>
-        <p class="animated-description">Invest in Excellence. Invest in Brotherhood. Invest in Champions.</p>
       </div>
     </div>
   </header>
 
   <!-- NAVIGATION BELOW THE HEADER -->
   <nav id="navbar" class="hero-nav" role="navigation">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html">Alumni</a></li>
-      <li><a href="donate.html" class="active">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
+      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
+        <li><a href="donate.html" class="nav-link active">Donate</a></li>
+        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
+    </div>
   </nav>
 
   <!-- MAIN CONTENT -->
@@ -871,7 +889,7 @@
         <li><a href="schedule.html">Schedule</a></li>
         <li><a href="rugby-ready.html">Rugby Ready</a></li>
         <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="alumni.html">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
         <li><a href="donate.html">Donate</a></li>
         <li><a href="faq.html">FAQs</a></li>
       </ul>
@@ -892,347 +910,69 @@
       easing: 'ease-out-cubic'
     });
 
-
-    // Dark Mode Toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // Set initial theme
-        body.setAttribute('data-theme', currentTheme);
-        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
-    });
-
-    // Enhanced JavaScript for Donate Page
-    document.addEventListener('DOMContentLoaded', function() {
-
-      // Enhanced Navbar Scroll Effects
+    // Mobile Menu Initialization - Same as working index.html version
+    function initMobileMenu() {
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const navMenu = document.querySelector('.nav-menu');
+      const menuOverlay = document.querySelector('.mobile-menu-overlay');
       const navbar = document.getElementById('navbar');
-      let lastScroll = 0;
+      
+      if (!menuToggle || !navMenu || !menuOverlay) return;
 
-      window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-
-        // Add scrolled class for navbar styling
-        if (currentScroll > 50) {
-          navbar.classList.add('scrolled');
-        } else {
-          navbar.classList.remove('scrolled');
-        }
-
-        // Hide/show navbar on scroll
-        if (currentScroll > lastScroll && currentScroll > 500) {
-          navbar.style.transform = 'translateY(-100%)';
-        } else {
-          navbar.style.transform = 'translateY(0)';
-        }
-
-        lastScroll = currentScroll;
-      });
-
-      // Back to Top Button Logic
-      const backToTopBtn = document.getElementById("back-to-top");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-          backToTopBtn.style.display = "block";
-        } else {
-          backToTopBtn.style.display = "none";
-        }
-      });
-
-      backToTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      });
-
-      // Enhanced Parallax Effect for Header
-      const headerImage = document.getElementById('header-image');
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallax = scrolled * 0.6;
-        headerImage.style.transform = `translate(-50%, -50%) scale(1.1) translateY(${parallax}px)`;
-      });
-
-      // Smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            const offsetTop = target.offsetTop - 100;
-            window.scrollTo({
-              top: offsetTop,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Enhanced card interactions
-      const statCards = document.querySelectorAll('.stat-card');
-      const wayCards = document.querySelectorAll('.way-card');
-
-      // Stat cards animation
-      statCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-15px) scale(1.05) rotateY(5deg)';
-
-          const number = this.querySelector('.stat-number');
-          number.style.transform = 'scale(1.2)';
-          number.style.textShadow = '0 10px 30px rgba(255, 184, 28, 0.6)';
-        });
-
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1) rotateY(0deg)';
-
-          const number = this.querySelector('.stat-number');
-          number.style.transform = 'scale(1)';
-          number.style.textShadow = '0 5px 15px rgba(255, 184, 28, 0.3)';
-        });
-      });
-
-      // Way cards animation
-      wayCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-15px) scale(1.05)';
-
-          const icon = this.querySelector('.way-icon');
-          icon.style.transform = 'scale(1.3) rotateZ(15deg)';
-          icon.style.filter = 'drop-shadow(0 15px 30px rgba(255, 184, 28, 0.5))';
-        });
-
-        card.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1)';
-
-          const icon = this.querySelector('.way-icon');
-          icon.style.transform = 'scale(1) rotateZ(0deg)';
-          icon.style.filter = 'none';
-        });
-      });
-
-      // Number counter animation for stats
-      function animateNumbers() {
-        const statNumbers = document.querySelectorAll('.stat-number');
-
-        statNumbers.forEach(stat => {
-          const finalNumber = stat.textContent;
-          const isNumber = /^\d+/.test(finalNumber);
-
-          if (isNumber) {
-            const number = parseInt(finalNumber.match(/\d+/)[0]);
-            const suffix = finalNumber.replace(/\d+/, '');
-            let current = 0;
-            const increment = number / 50;
-
-            const timer = setInterval(() => {
-              current += increment;
-              if (current >= number) {
-                stat.textContent = number + suffix;
-                clearInterval(timer);
-              } else {
-                stat.textContent = Math.floor(current) + suffix;
-              }
-            }, 30);
-          }
-        });
+      // Toggle mobile menu
+      function toggleMenu() {
+        const isOpen = navbar.classList.contains('mobile-open');
+        
+        navbar.classList.toggle('mobile-open');
+        menuToggle.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', !isOpen);
+        document.body.classList.toggle('menu-open');
+        
+        // Prevent body scroll when menu is open
+        document.body.style.overflow = !isOpen ? 'hidden' : '';
       }
 
-      // Trigger number animation when stats section is visible
-      const statsSection = document.querySelector('.impact-stats');
-      const statsObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            animateNumbers();
-            statsObserver.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.5 });
-
-      if (statsSection) {
-        statsObserver.observe(statsSection);
+      // Close mobile menu
+      function closeMenu() {
+        navbar.classList.remove('mobile-open');
+        menuToggle.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
       }
 
-      // Enhanced button interactions
-      const ctaButtons = document.querySelectorAll('.cta-button');
-      ctaButtons.forEach(button => {
-        button.addEventListener('mouseenter', function() {
-          this.style.transform = 'translateY(-8px) scale(1.08)';
-          this.style.letterSpacing = '4px';
-        });
+      // Event listeners
+      menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleMenu();
+      });
+      
+      menuOverlay.addEventListener('click', closeMenu);
 
-        button.addEventListener('mouseleave', function() {
-          this.style.transform = 'translateY(0) scale(1)';
-          this.style.letterSpacing = '2px';
-        });
-
-        // Click effect
-        button.addEventListener('mousedown', function() {
-          this.style.transform = 'translateY(-5px) scale(1.05)';
-        });
-
-        button.addEventListener('mouseup', function() {
-          this.style.transform = 'translateY(-8px) scale(1.08)';
-        });
+      // Close menu when clicking on navigation links
+      const navLinks = navMenu.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
       });
 
-      // Floating donate button scroll effect
-      const floatingDonate = document.querySelector('.floating-donate');
-      window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        if (scrolled > 500) {
-          floatingDonate.style.opacity = '1';
-          floatingDonate.style.visibility = 'visible';
-        } else {
-          floatingDonate.style.opacity = '0';
-          floatingDonate.style.visibility = 'hidden';
+      // Close menu on escape key
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
+          closeMenu();
         }
       });
 
-      // Enhanced iframe interaction
-      const iframe = document.querySelector('#donation-form iframe');
-      const iframeContainer = document.querySelector('.donation-container');
-
-      iframeContainer.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.02)';
-        iframe.style.borderColor = 'rgba(255, 184, 28, 0.6)';
-      });
-
-      iframeContainer.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-        iframe.style.borderColor = 'rgba(255, 184, 28, 0.2)';
-      });
-
-      // Add dynamic text effects
-      const titleElements = document.querySelectorAll('.section-title');
-      titleElements.forEach((title, index) => {
-        setTimeout(() => {
-          title.style.animation = `titlePulse 3s ease-in-out infinite`;
-          title.style.animationDelay = `${index * 0.5}s`;
-        }, 1000 + (index * 200));
-      });
-
-      // Mouse tracking for enhanced 3D effects
-      document.addEventListener('mousemove', (e) => {
-        const cursor = { x: e.clientX, y: e.clientY };
-
-        // 3D effect for stat cards
-        statCards.forEach(card => {
-          const rect = card.getBoundingClientRect();
-          const cardCenter = {
-            x: rect.left + rect.width / 2,
-            y: rect.top + rect.height / 2
-          };
-
-          const distance = Math.sqrt(
-            Math.pow(cursor.x - cardCenter.x, 2) +
-            Math.pow(cursor.y - cardCenter.y, 2)
-          );
-
-          if (distance < 300) {
-            const intensity = 1 - (distance / 300);
-            const rotateX = (cursor.y - cardCenter.y) / 10;
-            const rotateY = (cursor.x - cardCenter.x) / 10;
-
-            card.style.transform = `
-              translateY(-${intensity * 20}px)
-              rotateX(${rotateX * intensity}deg)
-              rotateY(${rotateY * intensity}deg)
-              scale(${1 + intensity * 0.05})
-            `;
-          }
-        });
-      });
-
-      // Reset card positions when mouse leaves
-      document.addEventListener('mouseleave', () => {
-        statCards.forEach(card => {
-          card.style.transform = 'translateY(0) rotateX(0deg) rotateY(0deg) scale(1)';
-        });
-      });
-
-      // Enhanced scroll animations
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.transform = 'translateY(0)';
-            entry.target.style.opacity = '1';
-
-            // Add stagger effect for child elements
-            const children = entry.target.querySelectorAll('.stat-card, .way-card');
-            children.forEach((child, index) => {
-              setTimeout(() => {
-                child.style.transform = 'translateY(0)';
-                child.style.opacity = '1';
-              }, index * 150);
-            });
-          }
-        });
-      }, observerOptions);
-
-      // Observe all animated elements
-      document.querySelectorAll('section, .stat-card, .way-card').forEach(el => {
-        observer.observe(el);
-      });
-
-    });
-
-    // Add CSS for additional animations
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes titlePulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.02); }
-      }
-
-      /* Enhanced hover states */
-      .stat-card,
-      .way-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      .floating-donate {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-      }
-
-      /* Mobile touch improvements */
-      @media (hover: none) {
-        .stat-card:active,
-        .way-card:active,
-        .cta-button:active {
-          transform: scale(0.98);
+      // Handle window resize
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+          closeMenu();
         }
-      }
+      });
+    }
 
-      /* Performance optimizations */
-      .stat-card,
-      .way-card,
-      .cta-button,
-      #header-image {
-        will-change: transform;
-      }
-
-      /* Smooth transitions for all interactive elements */
-      * {
-        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      }
-    `;
-    document.head.appendChild(style);
-
+    // Initialize mobile menu
+    initMobileMenu();
   </script>
 </body>
 </html>

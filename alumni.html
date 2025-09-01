@@ -2,494 +2,92 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
-  <title>UMBC Rugby Alumni - Legacy of Excellence</title>
   <script src="js/scripts.js" defer></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <title>UMBC Rugby Shop - Redirecting...</title>
+  <script>
+    // Redirect to the shop URL in a new tab
+    window.open("https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product", "_blank");
+    // Also update current page to show redirect message
+  </script>
 </head>
 <body>
 
-
   <!-- Back to Top Button -->
-  <button id="back-to-top" class="alumni-back-top" title="Back to Top">
-    <span class="arrow-up">↑</span>
-  </button>
+  <button id="back-to-top" title="Back to Top">↑</button>
 
-  <!-- HEADER -->
-  <header id="alumni-hero" class="alumni-hero">
-    <div class="hero-particles" id="particles"></div>
-    <img src="assets/images/1987.jpg" alt="UMBC Rugby Alumni Banner" class="hero-bg-image">
-    <div class="hero-overlay"></div>
-    <div class="hero-content" data-aos="zoom-in">
-      <div class="hero-badge" data-aos="fade-down" data-aos-delay="300">
-        <span>Est. 1992</span>
+  <!-- NAVIGATION -->
+  <nav id="navbar" class="hero-nav" role="navigation">
+    <div class="nav-container">
+      <!-- Mobile Menu Toggle -->
+      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      
+      <!-- Navigation Logo (for mobile) -->
+      <div class="nav-logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
       </div>
-      <h1 class="hero-title">
-        <span class="title-word animated-word-1" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">UMBC</span>
-        <span class="title-word animated-word-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">Rugby</span>
-        <span class="title-word golden animated-word-3" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">Alumni</span>
-      </h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle animated-subtitle" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-quart">
-          Celebrating Tradition, Leadership, and Legacy
-        </p>
-        <p class="hero-description animated-description" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
-          Where Champions Return Home
-        </p>
-      </div>
+      
+      <!-- Navigation Menu -->
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="roster.html" class="nav-link">Roster</a></li>
+        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link active">Shop</a></li>
+        <li><a href="donate.html" class="nav-link">Donate</a></li>
+        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+      </ul>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay"></div>
     </div>
-    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <span class="mouse">
-        <span class="wheel"></span>
-      </span>
-      <span class="scroll-text">Scroll to Explore</span>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero-header">
+    <img src="assets/images/1987.jpg" alt="UMBC Rugby Shop" id="header-image" />
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
+      <h1 class="hero-title">UMBC Rugby Shop</h1>
+      <div class="hero-animated-text">
+        <p class="hero-subtitle">Redirecting to Shop...</p>
+        <p class="hero-description">You will be automatically redirected to our official merchandise store.</p>
+      </div>
     </div>
   </header>
 
-  <!-- NAVIGATION -->
-  <nav id="navbar" role="navigation">
-    <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="alumni.html" class="active">Alumni</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-      <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">🌙</button></li>
-    </ul>
-  </nav>
-
-  <!-- Timeline Navigation -->
-  <div class="timeline-nav" data-aos="slide-right" data-aos-duration="1000" data-aos-delay="300">
-    <div class="timeline-progress"></div>
-    <div class="timeline-dots">
-      <span class="timeline-dot active" data-section="intro" data-aos="zoom-in" data-aos-delay="400"></span>
-      <span class="timeline-dot" data-section="gallery" data-aos="zoom-in" data-aos-delay="500"></span>
-      <span class="timeline-dot" data-section="video" data-aos="zoom-in" data-aos-delay="600"></span>
-      <span class="timeline-dot" data-section="weekend" data-aos="zoom-in" data-aos-delay="700"></span>
-      <span class="timeline-dot" data-section="scholarship" data-aos="zoom-in" data-aos-delay="800"></span>
-      <span class="timeline-dot" data-section="teams" data-aos="zoom-in" data-aos-delay="900"></span>
-    </div>
-  </div>
-
-  <!-- Enhanced Photo Gallery -->
-  <section id="gallery" class="gallery-section" data-aos="fade-up" data-aos-duration="1200">
-    <div class="gallery-header">
-      <h2 class="section-title" data-aos="zoom-in">
-        <span class="title-accent">Legacy</span>
-        <span class="title-main">Gallery</span>
-      </h2>
-      <p class="gallery-subtitle" data-aos="fade-up" data-aos-delay="200">
-        Capturing decades of rugby excellence and brotherhood
-      </p>
-    </div>
-    
-    <div class="gallery-container">
-      <div class="gallery-track" id="galleryTrack">
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="100">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby20.jpg" alt="Rugby Heritage" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Heritage</h3>
-                <p>Building on decades of tradition</p>
-                <div class="slide-year">1984 - Present</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="200">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby21.jpg" alt="Championship Glory" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Champions</h3>
-                <p>Victory through teamwork and dedication</p>
-                <div class="slide-year">Championship Years</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="300">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby22.jpg" alt="Brotherhood" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Brotherhood</h3>
-                <p>Bonds that last a lifetime</p>
-                <div class="slide-year">Forever Connected</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="400">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby23.jpg" alt="Excellence" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Excellence</h3>
-                <p>Striving for greatness in every match</p>
-                <div class="slide-year">Every Season</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="500">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby24.jpg" alt="Legacy" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Legacy</h3>
-                <p>Inspiring future generations</p>
-                <div class="slide-year">Continuing Forward</div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="gallery-slide" data-aos="zoom-in" data-aos-delay="600">
-          <div class="slide-wrapper">
-            <img src="assets/images/rugby25.jpg" alt="Team Spirit" loading="lazy">
-            <div class="slide-overlay">
-              <div class="slide-content">
-                <h3>Team Spirit</h3>
-                <p>United in passion and purpose</p>
-                <div class="slide-year">Always Together</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <button class="gallery-nav prev" aria-label="Previous Photo" data-aos="slide-right" data-aos-delay="300">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-        </svg>
-      </button>
-      
-      <button class="gallery-nav next" aria-label="Next Photo" data-aos="slide-left" data-aos-delay="300">
-        <svg viewBox="0 0 24 24" fill="currentColor">
-          <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-        </svg>
-      </button>
-      
-      <div class="gallery-indicators" data-aos="fade-up" data-aos-delay="400">
-        <button class="indicator active" data-slide="0"></button>
-        <button class="indicator" data-slide="1"></button>
-        <button class="indicator" data-slide="2"></button>
-        <button class="indicator" data-slide="3"></button>
-        <button class="indicator" data-slide="4"></button>
-        <button class="indicator" data-slide="5"></button>
-      </div>
-    </div>
-  </section>
-
   <!-- MAIN CONTENT -->
-  <main class="alumni-main">
-    <!-- Alumni Introduction Section -->
-    <section id="intro" class="alumni-intro" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-      <div class="section-decoration" data-aos="zoom-in" data-aos-delay="200">
-        <div class="deco-line left" data-aos="slide-right" data-aos-delay="300"></div>
-        <div class="deco-circle" data-aos="zoom-in" data-aos-delay="400"></div>
-        <div class="deco-line right" data-aos="slide-left" data-aos-delay="300"></div>
-      </div>
-      <h2 class="section-title" data-aos="bounce-in" data-aos-delay="500" data-aos-duration="800">
-        Welcome to UMBC Rugby Alumni
-      </h2>
-      <div class="intro-content">
-        <p class="lead-text">
-          It all started in November 1992 with the playing of the very first UMBC Alumni Game. It was cold that day, it snowed during the game and yes the field slanted uphill both ways.
-        </p>
-        <div class="history-timeline">
-          <div class="timeline-item" data-aos="flip-up" data-aos-delay="100" data-aos-duration="800">
-            <span class="year">1992</span>
-            <span class="event">First Alumni Game</span>
-            <div class="timeline-glow"></div>
-          </div>
-          <div class="timeline-item" data-aos="flip-up" data-aos-delay="200" data-aos-duration="800">
-            <span class="year">1996</span>
-            <span class="event">Annual Tradition Begins</span>
-            <div class="timeline-glow"></div>
-          </div>
-          <div class="timeline-item" data-aos="flip-up" data-aos-delay="300" data-aos-duration="800">
-            <span class="year">1998</span>
-            <span class="event">Formal Organization</span>
-            <div class="timeline-glow"></div>
-          </div>
-          <div class="timeline-item" data-aos="flip-up" data-aos-delay="400" data-aos-duration="800">
-            <span class="year">Today</span>
-            <span class="event">Weekend Celebration</span>
-            <div class="timeline-glow active"></div>
-          </div>
-        </div>
-        <p class="story-text">
-          Fast forward a decade plus and what started as a Saturday afternoon has become a weekend event that includes honoring our legends, presentation of the Haud Colluni Scholarship, a fantastic post game BBQ, the Best Damn Awards in all of Rugby and the presentation of the Alumni Cup.
-        </p>
-      </div>
-    </section>
-
-
-    <!-- Alumni Weekend Section -->
-    <section id="weekend" class="alumni-weekend" data-aos="fade-up">
-      <h2 class="section-title">
-        <span class="title-accent">Alumni</span> Weekend Events
-      </h2>
-      <div class="weekend-timeline">
-        <div class="timeline-path">
-          <svg class="path-svg" viewBox="0 0 800 400">
-            <path class="timeline-line" d="M 50 200 Q 200 100 400 200 T 750 200" />
-          </svg>
-        </div>
-        <div class="event-cards">
-          <div class="event-card friday" data-aos="zoom-in" data-aos-delay="100">
-            <div class="card-inner">
-              <div class="card-front">
-                <div class="event-icon">HALL</div>
-                <h3>Friday Night</h3>
-                <p class="event-time">7:00 PM – 10:00 PM</p>
-              </div>
-              <div class="card-back">
-                <h3>Legend Recognition</h3>
-                <p>Celebrate our rugby legends and their contributions to UMBC Rugby.</p>
-                <div class="event-details">
-                  <span>LOCATION Alumni Hall</span>
-                  <span>ENTRY Free Entry</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="event-card saturday" data-aos="zoom-in" data-aos-delay="200">
-            <div class="card-inner">
-              <div class="card-front">
-                <div class="event-icon">RUGBY</div>
-                <h3>Saturday Matches</h3>
-                <p class="event-time">12:00 PM</p>
-              </div>
-              <div class="card-back">
-                <h3>Rugby Showdown</h3>
-                <p>Join us on Walker Avenue Field for thrilling matches!</p>
-                <div class="event-details">
-                  <span>LOCATION Walker Field</span>
-                  <span>ACTION Live Action</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="event-card bbq" data-aos="zoom-in" data-aos-delay="300">
-            <div class="card-inner">
-              <div class="card-front">
-                <div class="event-icon">BBQ</div>
-                <h3>Post-Game BBQ</h3>
-                <p class="event-time">1:30 PM – Twilight</p>
-              </div>
-              <div class="card-back">
-                <h3>Celebration Time</h3>
-                <p>Enjoy BBQ, awards, and great company!</p>
-                <div class="event-details">
-                  <span>LOCATION Field Pavilion</span>
-                  <span>WELCOME All Welcome</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Haud Collumni Scholarship Section -->
-    <section id="scholarship" class="scholarship-section" data-aos="fade-up">
-      <div class="scholarship-bg">
-        <div class="bg-pattern"></div>
-      </div>
-      <div class="scholarship-content">
-        <h2 class="section-title">
-          <span class="latin">Haud Collumni</span>
-          <span class="subtitle">Scholarship</span>
-        </h2>
-        <div class="scholarship-intro">
-          <div class="intro-badge">Est. 2005</div>
-          <p class="intro-text">
-            The first and only club sports scholarship at UMBC. "Haud Collumni," meaning steadfast and resilient, reflects the spirit of the rugby community.
-          </p>
-        </div>
-
-        <div class="scholarship-grid">
-          <div class="criteria-card" data-aos="flip-left" data-aos-delay="100">
-            <div class="card-header">
-              <div class="icon-wrap">
-                <span class="icon">BOOK</span>
-              </div>
-              <h3>Academic Excellence</h3>
-            </div>
-            <div class="card-content">
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>Minimum GPA of 3.25</span>
-              </div>
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>Academic achievement</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="criteria-card" data-aos="flip-left" data-aos-delay="200">
-            <div class="card-header">
-              <div class="icon-wrap">
-                <span class="icon">RUGBY</span>
-              </div>
-              <h3>Rugby Commitment</h3>
-            </div>
-            <div class="card-content">
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>2+ years active participation</span>
-              </div>
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>Team dedication</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="criteria-card" data-aos="flip-left" data-aos-delay="300">
-            <div class="card-header">
-              <div class="icon-wrap">
-                <span class="icon">STAR</span>
-              </div>
-              <h3>Leadership</h3>
-            </div>
-            <div class="card-content">
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>On-field leadership</span>
-              </div>
-              <div class="requirement">
-                <span class="req-icon">CHECK</span>
-                <span>Community involvement</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Fund Growth section removed -->
-
-        <div class="scholarship-cta">
-          <p class="cta-text">First awarded in 2012, continuing to support exceptional student-athletes</p>
-          <a href="donate.html" class="cta-button">
-            <span>Support the Scholarship</span>
-            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Alumni Teams Section -->
-    <section id="teams" class="alumni-teams" data-aos="fade-up">
-      <div class="teams-header">
-        <h2 class="section-title">
-          <span class="title-accent">Alumni</span>
-          <span class="title-main">Teams</span>
-        </h2>
-        <p class="teams-subtitle">Where legends continue their rugby journey</p>
-      </div>
-      <div class="teams-showcase">
-        <div class="team-card arbutian" data-aos="fade-right">
-          <div class="team-header">
-            <div class="team-logo-wrapper">
-              <img src="assets/images/arbutian.png" alt="Arbutian Revolution" class="team-logo">
-              <div class="logo-glow"></div>
-            </div>
-            <h3 class="team-name">The Arbutian Revolution</h3>
-            <div class="team-badge">Est. 2010</div>
-          </div>
-          <div class="team-content">
-            <p class="team-description">
-              A dynamic group of UMBC alumni competing in 7's tournaments, continuing their rugby legacy with passion and excellence.
+  <main>
+    <!-- Redirect Message Section -->
+    <section class="about-section">
+      <div class="container">
+        <h2 class="section-title">UMBC Rugby Shop</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <p>
+              You are being redirected to our official UMBC Rugby merchandise store. 
+              If you are not automatically redirected, please click the button below.
             </p>
-            <div class="achievements">
-              <h4>Trophy Cabinet</h4>
-              <div class="trophy-list">
-                <div class="trophy-item">
-                  <span class="trophy-icon">GOLD</span>
-                  <span>Bowl Victory 2015</span>
-                </div>
-                <div class="trophy-item">
-                  <span class="trophy-icon">SILVER</span>
-                  <span>Tennessee Final 2015</span>
-                </div>
-                <div class="trophy-item">
-                  <span class="trophy-icon">TROPHY</span>
-                  <span>Multiple Top 5 Finishes</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-box">
-                <span class="stat-value">50+</span>
-                <span class="stat-label">Active Players</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-value">15+</span>
-                <span class="stat-label">Tournaments</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-card rocky" data-aos="fade-left">
-          <div class="team-header">
-            <div class="team-logo-wrapper">
-              <img src="assets/images/rockygorge.png" alt="Rocky Gorge Rugby" class="team-logo">
-              <div class="logo-glow"></div>
-            </div>
-            <h3 class="team-name">Rocky Gorge Rugby</h3>
-            <div class="team-badge">Premier Club</div>
-          </div>
-          <div class="team-content">
-            <p class="team-description">
-              Many UMBC Rugby alumni extend their careers with Rocky Gorge RFC, a premier team in the Mid-Atlantic region.
+            <p>
+              Shop for official UMBC Rugby gear, apparel, and accessories to show your support for the team!
             </p>
-            <div class="achievements">
-              <h4>Excellence & Tradition</h4>
-              <div class="trophy-list">
-                <div class="trophy-item">
-                  <span class="trophy-icon">STAR</span>
-                  <span>National Championships</span>
-                </div>
-                <div class="trophy-item">
-                  <span class="trophy-icon">SHINE</span>
-                  <span>Regional Dominance</span>
-                </div>
-                <div class="trophy-item">
-                  <span class="trophy-icon">STRONG</span>
-                  <span>Elite Development</span>
-                </div>
-              </div>
-            </div>
-            <div class="team-stats">
-              <div class="stat-box">
-                <span class="stat-value">40+</span>
-                <span class="stat-label">Years Strong</span>
-              </div>
-              <div class="stat-box">
-                <span class="stat-value">200+</span>
-                <span class="stat-label">Members</span>
-              </div>
+            <div style="text-align: center; margin-top: 30px;">
+              <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" 
+                 target="_blank"
+                 class="cta-button" 
+                 style="display: inline-block; padding: 15px 30px; background: var(--umbc-gold); color: black; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                Visit Shop Now →
+              </a>
             </div>
           </div>
         </div>
@@ -497,297 +95,43 @@
     </section>
   </main>
 
-  <!-- Popup sections removed -->
-
   <!-- Footer -->
-  <footer class="alumni-footer">
-    <div class="footer-content">
-      <div class="footer-logos">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-        <img src="assets/images/ncr.png" alt="NCR Logo" />
-        <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
-      </div>
-      <nav class="footer-nav">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="roster.html">Roster</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="rugby-ready.html">Rugby Ready</a></li>
-          <li><a href="recruitment.html">Recruitment</a></li>
-          <li><a href="alumni.html">Alumni</a></li>
-          <li><a href="donate.html">Donate</a></li>
-          <li><a href="faq.html">FAQs</a></li>
-        </ul>
-      </nav>
-      <div class="footer-bottom">
-        <p>&copy; 2025 UMBC Rugby Alumni. All rights reserved.</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook">f</a>
-          <a href="#" aria-label="Twitter">t</a>
-          <a href="#" aria-label="Instagram">i</a>
-        </div>
-      </div>
+  <footer>
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+      <img src="assets/images/ncr.png" alt="NCR Logo">
+      <img src="assets/images/umbclogo.png" alt="UMBC Logo">
     </div>
+
+    <!-- Footer Navigation Links -->
+    <nav class="footer-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="roster.html">Roster</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="rugby-ready.html">Rugby Ready</a></li>
+        <li><a href="recruitment.html">Recruitment</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
+        <li><a href="donate.html">Donate</a></li>
+        <li><a href="faq.html">FAQs</a></li>
+      </ul>
+    </nav>
+
+    <!-- Copyright -->
+    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- AOS Library -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
   <script>
-    // Initialize AOS
     AOS.init({
-      duration: 1000,
+      duration: 800,
+      easing: 'ease-out-cubic',
       once: true,
       offset: 100
     });
-
-
-    // Dark Mode Toggle
-    document.addEventListener('DOMContentLoaded', function() {
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const currentTheme = localStorage.getItem('theme') || 'light';
-        
-        // Set initial theme
-        body.setAttribute('data-theme', currentTheme);
-        themeToggle.textContent = currentTheme === 'dark' ? '☀️' : '🌙';
-        
-        themeToggle.addEventListener('click', () => {
-            const newTheme = body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            body.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
-        });
-    });
-
-    // Initialize Vanilla Tilt for 3D effects
-    VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
-      max: 25,
-      speed: 400,
-      glare: true,
-      "max-glare": 0.5,
-    });
-
-    // Enhanced Gallery Navigation
-    document.addEventListener('DOMContentLoaded', function() {
-      const galleryTrack = document.querySelector('.gallery-track');
-      const slides = document.querySelectorAll('.gallery-slide');
-      const prevBtn = document.querySelector('.gallery-nav.prev');
-      const nextBtn = document.querySelector('.gallery-nav.next');
-      const indicators = document.querySelectorAll('.indicator');
-      
-      let currentIndex = 0;
-      const totalSlides = slides.length;
-      
-      function updateSlidePosition() {
-        const translateX = -currentIndex * 100;
-        galleryTrack.style.transform = `translateX(${translateX}%)`;
-        
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-          indicator.classList.toggle('active', index === currentIndex);
-        });
-        
-        // Add slide change animation
-        slides.forEach((slide, index) => {
-          slide.style.opacity = index === currentIndex ? '1' : '0.7';
-          slide.style.transform = index === currentIndex ? 'scale(1)' : 'scale(0.95)';
-        });
-      }
-      
-      function nextSlide() {
-        currentIndex = (currentIndex + 1) % totalSlides;
-        updateSlidePosition();
-      }
-      
-      function prevSlide() {
-        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-        updateSlidePosition();
-      }
-      
-      function goToSlide(index) {
-        currentIndex = index;
-        updateSlidePosition();
-      }
-      
-      // Event listeners
-      if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-      if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-      
-      // Indicator clicks
-      indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => goToSlide(index));
-      });
-      
-      // Auto-advance with pause on hover
-      let autoSlide = setInterval(nextSlide, 6000);
-      
-      const galleryContainer = document.querySelector('.gallery-container');
-      if (galleryContainer) {
-        galleryContainer.addEventListener('mouseenter', () => clearInterval(autoSlide));
-        galleryContainer.addEventListener('mouseleave', () => {
-          autoSlide = setInterval(nextSlide, 6000);
-        });
-      }
-      
-      // Keyboard navigation
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'ArrowLeft') prevSlide();
-        if (e.key === 'ArrowRight') nextSlide();
-      });
-      
-      // Touch/swipe support
-      let startX = 0;
-      let endX = 0;
-      
-      galleryContainer?.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-      });
-      
-      galleryContainer?.addEventListener('touchmove', (e) => {
-        endX = e.touches[0].clientX;
-      });
-      
-      galleryContainer?.addEventListener('touchend', () => {
-        const diff = startX - endX;
-        if (Math.abs(diff) > 50) {
-          if (diff > 0) nextSlide();
-          else prevSlide();
-        }
-      });
-      
-      // Initialize
-      updateSlidePosition();
-      
-      // Enhanced animations and interactions
-      const sections = document.querySelectorAll('section');
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-      
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-in');
-          }
-        });
-      }, observerOptions);
-      
-      sections.forEach(section => sectionObserver.observe(section));
-      
-      // Dynamic particle effects for hero
-      function createHeroParticle() {
-        const heroParticles = document.querySelector('.hero-particles');
-        if (!heroParticles) return;
-        
-        const particle = document.createElement('div');
-        particle.className = 'floating-particle';
-        particle.style.cssText = `
-          position: absolute;
-          width: ${Math.random() * 8 + 3}px;
-          height: ${Math.random() * 8 + 3}px;
-          background: radial-gradient(circle, rgba(255, 184, 28, ${Math.random() * 0.8 + 0.2}), transparent);
-          border-radius: 50%;
-          left: ${Math.random() * 100}%;
-          top: 100%;
-          animation: floatUp ${Math.random() * 12 + 18}s linear infinite;
-          pointer-events: none;
-          box-shadow: 0 0 10px rgba(255, 184, 28, 0.3);
-        `;
-        
-        heroParticles.appendChild(particle);
-        
-        setTimeout(() => {
-          particle.remove();
-        }, 30000);
-      }
-      
-      // Create hero particles
-      setInterval(createHeroParticle, 1200);
-      
-      // Interactive timeline dots
-      document.querySelectorAll('.timeline-dot').forEach((dot, index) => {
-        dot.addEventListener('mouseenter', function() {
-          this.style.transform = 'scale(1.8) rotate(180deg)';
-          this.style.boxShadow = '0 0 25px var(--umbc-gold)';
-          this.style.background = 'var(--umbc-gold)';
-        });
-        
-        dot.addEventListener('mouseleave', function() {
-          this.style.transform = 'scale(1) rotate(0deg)';
-          this.style.boxShadow = '';
-          if (!this.classList.contains('active')) {
-            this.style.background = 'transparent';
-          }
-        });
-      });
-      
-      // Enhanced scroll animations
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes floatUp {
-          0% {
-            transform: translateY(0) rotate(0deg) scale(0);
-            opacity: 0;
-          }
-          5% {
-            opacity: 1;
-            transform: scale(1);
-          }
-          95% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateY(-100vh) rotate(720deg) scale(0.5);
-            opacity: 0;
-          }
-        }
-        
-        @keyframes pulse {
-          0%, 100% {
-            box-shadow: 0 0 5px rgba(255, 184, 28, 0.3);
-          }
-          50% {
-            box-shadow: 0 0 20px rgba(255, 184, 28, 0.8), 0 0 30px rgba(255, 184, 28, 0.4);
-          }
-        }
-        
-        section.animate-in {
-          animation: sectionSlideIn 1s ease-out;
-        }
-        
-        @keyframes sectionSlideIn {
-          from {
-            opacity: 0;
-            transform: translateY(50px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        .timeline-dot.active {
-          animation: pulse 2s infinite;
-        }
-        
-        .event-card:hover .card-inner {
-          transform: rotateY(180deg) scale(1.05);
-        }
-        
-        .trophy-item:hover {
-          transform: translateX(10px) scale(1.05);
-          color: var(--umbc-gold);
-        }
-        
-        .stat-box:hover {
-          transform: translateY(-10px) scale(1.1);
-          box-shadow: 0 15px 30px rgba(255, 184, 28, 0.3);
-        }
-      `;
-      document.head.appendChild(style);
-    });
   </script>
+
 </body>
 </html>
