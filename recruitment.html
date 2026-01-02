@@ -1,233 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="js/scripts.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
-  <title>Join UMBC Rugby | Recruitment</title>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join UMBC Rugby - Recruitment</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
+  <!-- Back to Top Button -->
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
-  <header id="hero-header" class="recruitment-hero">
-    <img src="assets/images/umbuc9.JPG" alt="UMBC Rugby Recruitment Header" class="header-image" />
-    <div class="hero-overlay"></div>
-    <div class="hero-content" data-aos="fade-up">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title animated-title">Join UMBC Rugby</h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle animated-subtitle">The Only Contact Sport at UMBC!</p>
-      </div>
-      <a href="#recruitment-form" class="cta-button">Start Your Journey</a>
-    </div>
-  </header>
-
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link active">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link active">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link">FAQs</a></li>
       </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link">Roster</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link active">Recruitment</a>
+      <a href="alumni.html" class="nav__link">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
     </div>
   </nav>
 
-  <main>
-    <section class="recruitment-form-section" data-aos="fade-up">
-    <h2>Ready to Join?</h2>
-    <p>Take the first step towards becoming part of UMBC Rugby's legacy.</p>
-
-    <form id="recruitment-form" action="https://formspree.io/f/xqaagkjn" method="POST">
-      <div class="form-row">
-        <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-      </div>
-      <div class="form-row">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
-      </div>
-      <div class="form-row">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
-      </div>
-      <div class="form-row">
-        <label for="year">Academic Year</label>
-        <input type="text" id="year" name="year" placeholder="e.g., Freshman, Sophomore, etc.">
-      </div>
-      <div class="form-row">
-        <label for="how-found">How did you find out about UMBC Rugby?</label>
-        <select id="how-found" name="how-found" required>
-          <option value="">Select an option...</option>
-          <option value="friend">Friend or teammate</option>
-          <option value="social-media">Social media</option>
-          <option value="website">UMBC website</option>
-          <option value="campus-event">Campus event/fair</option>
-          <option value="flyer">Flyer or poster</option>
-          <option value="class">In class</option>
-          <option value="coach-contact">Coach contacted me</option>
-          <option value="other">Other</option>
-        </select>
-      </div>
-      <div class="form-row">
-        <label for="athletic-experience">Athletic Experience</label>
-        <textarea id="athletic-experience" name="athletic-experience" rows="4" placeholder="Tell us about your athletic background, sports you've played, fitness level, etc."></textarea>
-      </div>
-      <div class="form-row">
-        <label for="rugby-experience">Rugby Experience</label>
-        <textarea id="rugby-experience" name="rugby-experience" rows="4" placeholder="Tell us about any previous rugby experience (if none, just write 'None')"></textarea>
-      </div>
-
-      <button type="submit">Join the Team</button>
-    </form>
-
-    <div class="success-message" id="success-message">
-      <h3>Welcome to the Team!</h3>
-      <p>Thank you for your interest in UMBC Rugby. We'll be in touch soon with more information.</p>
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/umbuc9.JPG" alt="UMBC Rugby Recruitment" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">Join UMBC Rugby</h1>
+      <p class="page-hero__subtitle">The only contact sport at UMBC - Start your journey today</p>
     </div>
-  </section>
+  </header>
 
-    <section class="contact-info-section" data-aos="fade-up">
-    <h2>Get In Touch</h2>
-    <p>Have questions? Want to learn more? We're here to help.</p>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Recruitment Form Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Sign Up</span>
+          <h2 class="section-title">Ready to Join?</h2>
+          <p class="section-subtitle">Take the first step towards becoming part of UMBC Rugby's legacy</p>
+        </div>
 
-    <div class="contact-grid">
-      <div class="contact-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="contact-icon">EMAIL</div>
-        <h3>Email Us</h3>
-        <p>umbcmensrugby@gmail.com</p>
+        <form id="recruitment-form" class="form" data-animate action="https://formspree.io/f/xqaagkjn" method="POST">
+          <div class="form__grid">
+            <div class="form__group">
+              <label for="name" class="form__label">Full Name *</label>
+              <input type="text" id="name" name="name" class="form__input" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form__group">
+              <label for="email" class="form__label">Email Address *</label>
+              <input type="email" id="email" name="email" class="form__input" placeholder="Enter your email address" required>
+            </div>
+
+            <div class="form__group">
+              <label for="phone" class="form__label">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form__input" placeholder="Enter your phone number" required>
+            </div>
+
+            <div class="form__group">
+              <label for="year" class="form__label">Academic Year</label>
+              <input type="text" id="year" name="year" class="form__input" placeholder="e.g., Freshman, Sophomore, etc.">
+            </div>
+
+            <div class="form__group form__group--full">
+              <label for="how-found" class="form__label">How did you find out about UMBC Rugby? *</label>
+              <select id="how-found" name="how-found" class="form__select" required>
+                <option value="">Select an option...</option>
+                <option value="friend">Friend or teammate</option>
+                <option value="social-media">Social media</option>
+                <option value="website">UMBC website</option>
+                <option value="campus-event">Campus event/fair</option>
+                <option value="flyer">Flyer or poster</option>
+                <option value="class">In class</option>
+                <option value="coach-contact">Coach contacted me</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form__group form__group--full">
+              <label for="athletic-experience" class="form__label">Athletic Experience</label>
+              <textarea id="athletic-experience" name="athletic-experience" class="form__textarea" rows="4" placeholder="Tell us about your athletic background, sports you've played, fitness level, etc."></textarea>
+            </div>
+
+            <div class="form__group form__group--full">
+              <label for="rugby-experience" class="form__label">Rugby Experience</label>
+              <textarea id="rugby-experience" name="rugby-experience" class="form__textarea" rows="4" placeholder="Tell us about any previous rugby experience (if none, just write 'None')"></textarea>
+            </div>
+          </div>
+
+          <div class="form__actions">
+            <button type="submit" class="btn btn--primary btn--large">Join the Team</button>
+          </div>
+        </form>
+
+        <div class="form__success" id="success-message">
+          <h3>Welcome to the Team!</h3>
+          <p>Thank you for your interest in UMBC Rugby. We'll be in touch soon with more information.</p>
+        </div>
       </div>
-      <div class="contact-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="contact-icon">SOCIAL</div>
-        <h3>Follow Us</h3>
-        <p>@umbcmensrugby</p>
+    </section>
+
+    <!-- Contact Info Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Contact</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">Have questions? Want to learn more? We're here to help.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">EMAIL</div>
+            <h3 class="contact-card__title">Email Us</h3>
+            <p class="contact-card__text">umbcmensrugby@gmail.com</p>
+          </div>
+
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">SOCIAL</div>
+            <h3 class="contact-card__title">Follow Us</h3>
+            <p class="contact-card__text">@umbcmensrugby</p>
+          </div>
+
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">VISIT</div>
+            <h3 class="contact-card__title">Visit Practice</h3>
+            <p class="contact-card__text">Walker Field, UMBC<br>Tue/Thu/Fri 4-6 PM</p>
+          </div>
+        </div>
       </div>
-      <div class="contact-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="contact-icon">VISIT</div>
-        <h3>Visit Practice</h3>
-        <p>Walker Field, UMBC<br>Tue/Thu/Fri 4-6 PM</p>
-      </div>
-    </div>
-  </section>
+    </section>
   </main>
 
-  <footer>
-    <div class="footer-logo">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="assets/images/ncr.png" alt="NCR Logo" />
-      <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="footer__logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo" class="footer__logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo" class="footer__logo">
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
+
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
     </div>
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="roster.html">Roster</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="rugby-ready.html">Rugby Ready</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul>
-    </nav>
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1200,
-      once: true
-    });
-
-    // Mobile Menu Initialization
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      const menuOverlay = document.querySelector('.mobile-menu-overlay');
-      const navbar = document.getElementById('navbar');
-      
-      if (!menuToggle || !navMenu || !menuOverlay) return;
-
-      // Toggle mobile menu
-      function toggleMenu() {
-        const isOpen = navbar.classList.contains('mobile-open');
-        
-        navbar.classList.toggle('mobile-open');
-        menuToggle.classList.toggle('active');
-        menuToggle.setAttribute('aria-expanded', !isOpen);
-        document.body.classList.toggle('menu-open');
-        
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = !isOpen ? 'hidden' : '';
-      }
-
-      // Close mobile menu
-      function closeMenu() {
-        navbar.classList.remove('mobile-open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-        document.body.style.overflow = '';
-      }
-
-      // Event listeners
-      menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-      });
-      
-      menuOverlay.addEventListener('click', closeMenu);
-
-      // Close menu when clicking on navigation links
-      const navLinks = navMenu.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
-          closeMenu();
-        }
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          closeMenu();
-        }
-      });
-    }
-
-    // Initialize mobile menu
-    initMobileMenu();
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

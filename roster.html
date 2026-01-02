@@ -1,845 +1,666 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <script src="js/scripts.js" defer></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Roster - UMBC Rugby</title>
-
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" title="Back to Top">↑</button>
-  <!-- HEADER -->
-  <header id="hero-header" class="roster-hero">
-    <!-- Background Image -->
-    <img
-      src="assets/images/jeff.jpg"
-      alt="UMBC Rugby Roster Header Image"
-      id="header-image"
-    />
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
-    <!-- Gradient Overlay -->
-    <div class="hero-overlay"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content" data-aos="fade-up">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title animated-title">Meet the UMBC Rugby Team</h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle animated-subtitle">
-          Discover the players, their stories, and what drives them on and off
-          the field.
-        </p>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link active">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link">FAQs</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
       </div>
-      <a href="#roster-screen" class="cta-button">Explore the Roster</a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link active">Roster</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link">Recruitment</a>
+      <a href="alumni.html" class="nav__link">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/jeff.jpg" alt="UMBC Rugby Team" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">Team Roster</h1>
+      <p class="page-hero__subtitle">Meet the players who make UMBC Rugby great</p>
     </div>
   </header>
 
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <a href="index.html">
-          <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-        </a>
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link active">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link">FAQs</a></li>
-      </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
-    </div>
-  </nav>
-
-  <!-- Roster Section -->
-  <section id="roster-screen" class="info-section" data-aos="fade-up">
-    <h2 class="section-title">Team Roster</h2>
-    <p style="text-align: center; font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px;">
-      Explore the players of UMBC Rugby and learn their stories!
-    </p>
-
-    <!-- MODERN CONTROLS CONTAINER -->
-    <div class="controls-container">
-      <!-- VIEW CONTROLS -->
-      <div class="view-controls">
-        <button class="view-btn active" data-view="list-view">List View</button>
-        <button class="view-btn" data-view="card-view">Card View</button>
-        <button class="view-btn" data-view="table-view">Table View</button>
-      </div>
-
-      <!-- SORT CONTROLS -->
-      <div class="sort-controls">
-        <label for="sortSelect" class="sort-label">Sort By:</label>
-        <select id="sortSelect">
-          <option value="name">Name</option>
-          <option value="year">Year</option>
-          <option value="height">Height</option>
-          <option value="position">Position</option>
-        </select>
-      </div>
-    </div>
-
-    <!-- Roster List -->
-      <!-- data-height stored in inches for easier numeric sorting -->
-      <!-- [ ... The roster items remain the same ... ] -->
-
-      <!-- Roster List -->
-    <div class="roster-list list-view" id="rosterList">
-      <!-- data-height stored in inches for easier numeric sorting -->
-
-      <div class="roster-item"
-           data-name="Kyle Poudyal"
-           data-position="Flanker"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Kyle Poudyal</h3>
-          <p><strong>Position:</strong> Flanker</p>
-          <p><strong>Year:</strong> Sophomore</p>
-          <p><strong>Height/Weight:</strong> 5’10 / 205 lbs</p>
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Roster Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Team</span>
+          <h2 class="section-title">Players</h2>
+          <p class="section-subtitle">Explore the players of UMBC Rugby and learn their stories</p>
         </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Damascus, Maryland</p>
-          <p><strong>Previous Clubs:</strong> None</p>
-          <p><strong>Experience:</strong> Joined UMBC rugby in Fall 2024</p>
-          <p><strong>Why I Play Rugby:</strong> Rugby is the ultimate team sport! It combines the best of both sports I played growing up, football and soccer.</p>
-          <p><strong>Fun Fact:</strong> I have been to more countries than states.</p>
-        </div>
-      </div>
 
-      <div class="roster-item"
-           data-name="Pierce Beach"
-           data-position="Lock"
-           data-year="Junior"
-           data-height="77">
-        <div class="roster-summary">
-          <h3>Pierce Beach</h3>
-          <p><strong>Position:</strong> Lock</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 6'5 / 220 lbs</p>
+        <!-- Controls -->
+        <div class="roster-controls">
+          <div class="roster-controls__views">
+            <button class="roster-controls__btn roster-controls__btn--active" data-view="card-view">Cards</button>
+            <button class="roster-controls__btn" data-view="list-view">List</button>
+          </div>
+          <div class="roster-controls__sort">
+            <label for="sortSelect">Sort by:</label>
+            <select id="sortSelect" class="roster-controls__select">
+              <option value="name">Name</option>
+              <option value="year">Year</option>
+              <option value="height">Height</option>
+              <option value="position">Position</option>
+            </select>
+          </div>
         </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Biological Science</p>
-          <p><strong>Hometown:</strong> Rockville, Maryland</p>
-          <p><strong>Previous Clubs:</strong> None</p>
-          <p><strong>Experience:</strong> Joined UMBC rugby in Fall 2024</p>
-          <p><strong>Why I Play Rugby:</strong> It's Fun!</p>
-        </div>
-      </div>
 
-       <div class="roster-item"
-           data-name="Troy Lovell"
-           data-position="Wing"
-           data-year="Senior"
-           data-height="72">
-        <div class="roster-summary">
-          <h3>Troy Lovell</h3>
-          <p><strong>Position:</strong> Wing</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 6'0 / 180 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Mechanical Engineering</p>
-          <p><strong>Hometown:</strong> Ellicott City, Maryland</p>
-          <p><strong>Experience:</strong> 1 Year</p>
-          <p><strong>Why I Play Rugby:</strong> For the Culture.</p>
-          <p><strong>Fun Fact:</strong> I’m Diamond 1 in Rainbow Six Siege.</p>
+        <!-- Roster Grid -->
+        <div class="roster-grid card-view" id="rosterList">
 
-        </div>
-      </div>
+          <div class="roster-card" data-name="Nate Cullen" data-position="Flyhalf" data-year="Senior" data-height="76">
+            <div class="roster-card__header">
+              <span class="roster-card__badge roster-card__badge--president">President</span>
+            </div>
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Nate Cullen</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Flyhalf</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'4 / 225 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Psychology</p>
+                <p><strong>Hometown:</strong> Odenton, MD</p>
+                <p><strong>Previous Clubs:</strong> Mount Saint Joseph HS Rugby</p>
+                <p><strong>Experience:</strong> 7 Years</p>
+                <p><strong>Why I Play Rugby:</strong> I play rugby because of the incredible community and because it gives me an opportunity to overcome hardship with my closest friends</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Nathan Bodis"
-           data-position="Lock"
-           data-year="Senior"
-           data-height="76">
-        <div class="roster-summary">
-          <h3>Nathan Bodis <span class="role-badge treasurer">Treasurer</span></h3>
-          <p><strong>Position:</strong> Lock</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'4 / 195 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Mechanical Engineering</p>
-          <p><strong>Hometown:</strong> Fallston, Maryland</p>
-          <p><strong>Previous Clubs:</strong> North Bay</p>
-          <p><strong>Experience:</strong> 1 Semester</p>
-          <p><strong>Why I Play Rugby:</strong> The camaraderie with my teammates.</p>
-          <p><strong>Fun Fact:</strong> I also play Volleyball.</p>
+          <div class="roster-card" data-name="Jose Orellana-Guzman" data-position="Scrum Half" data-year="Senior" data-height="69">
+            <div class="roster-card__header">
+              <span class="roster-card__badge roster-card__badge--vp">Vice President</span>
+            </div>
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Jose Orellana-Guzman</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Scrum Half</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 5'9 / 185 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Hometown:</strong> Baltimore, MD</p>
+                <p><strong>Previous Clubs:</strong> Baltimore Poly</p>
+                <p><strong>Experience:</strong> Playing since 13...</p>
+                <p><strong>Why I Play Rugby:</strong> Rugby has shaped who I am today mentally and physically. The brotherhood and relationships have been life changing.</p>
+              </div>
+            </div>
+          </div>
 
-        </div>
-      </div>
+          <div class="roster-card" data-name="Nathan Bodis" data-position="Lock" data-year="Senior" data-height="76">
+            <div class="roster-card__header">
+              <span class="roster-card__badge roster-card__badge--treasurer">Treasurer</span>
+            </div>
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Nathan Bodis</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Lock</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'4 / 195 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Hometown:</strong> Fallston, Maryland</p>
+                <p><strong>Previous Clubs:</strong> North Bay</p>
+                <p><strong>Experience:</strong> 1 Semester</p>
+                <p><strong>Why I Play Rugby:</strong> The camaraderie with my teammates.</p>
+                <p><strong>Fun Fact:</strong> I also play Volleyball.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Noah Kawecki" data-position="Fullback" data-year="Senior" data-height="70">
+            <div class="roster-card__header">
+              <span class="roster-card__badge">Shed Manager</span>
+            </div>
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Noah Kawecki</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Inside Center/Fullback</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 160 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Annapolis, MD</p>
+                <p><strong>Experience:</strong> 1 Semester</p>
+                <p><strong>Why I Play Rugby:</strong> It's a great way to meet new people and hit people.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Kyle Poudyal" data-position="Flanker" data-year="Sophomore" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Kyle Poudyal</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Flanker</p>
+                <p><strong>Year:</strong> Sophomore</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 205 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Damascus, Maryland</p>
+                <p><strong>Experience:</strong> Joined UMBC rugby in Fall 2024</p>
+                <p><strong>Why I Play Rugby:</strong> Rugby is the ultimate team sport! It combines football and soccer.</p>
+                <p><strong>Fun Fact:</strong> I have been to more countries than states.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Thaman Chiroori"
-           data-position="Forward"
-           data-year="Senior"
-           data-height="69">
-        <div class="roster-summary">
-          <h3>Thaman Chiroori</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Sophomore</p>
-          <p><strong>Height/Weight:</strong> 5'9 / 210 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Hyderabad, India</p>
-          <p><strong>Experience:</strong> 1 Semester</p>
-          <p><strong>Why I Play Rugby:</strong> I play because it's fun, everyone around me motivates me to be better and I like that environment.</p>
-          <p><strong>Fun Fact:</strong> I’ve easily watched over 1000 hours of anime, and I usually watch at 2x speed so that's… a lot.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Pierce Beach" data-position="Lock" data-year="Junior" data-height="77">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Pierce Beach</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Lock</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 6'5 / 220 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Biological Science</p>
+                <p><strong>Hometown:</strong> Rockville, Maryland</p>
+                <p><strong>Experience:</strong> Joined UMBC rugby in Fall 2024</p>
+                <p><strong>Why I Play Rugby:</strong> It's Fun!</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Troy Lovell" data-position="Wing" data-year="Junior" data-height="72">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Troy Lovell</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Wing</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 6'0 / 180 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Hometown:</strong> Ellicott City, Maryland</p>
+                <p><strong>Experience:</strong> 1 Year</p>
+                <p><strong>Why I Play Rugby:</strong> For the Culture.</p>
+                <p><strong>Fun Fact:</strong> I'm Diamond 1 in Rainbow Six Siege.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Thaman Chiroori" data-position="Forward" data-year="Sophomore" data-height="69">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Thaman Chiroori</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Sophomore</p>
+                <p><strong>Height/Weight:</strong> 5'9 / 210 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Hyderabad, India</p>
+                <p><strong>Experience:</strong> 1 Semester</p>
+                <p><strong>Why I Play Rugby:</strong> Everyone motivates me to be better and I like that environment.</p>
+                <p><strong>Fun Fact:</strong> I've watched over 1000 hours of anime at 2x speed.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Gokarn Singh Dhaliwal" data-position="Wing/Fullback" data-year="Sophomore" data-height="68">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Gokarn Singh Dhaliwal</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Wing/Fullback</p>
+                <p><strong>Year:</strong> Sophomore</p>
+                <p><strong>Height/Weight:</strong> 5'8 / 160 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Financial Economics</p>
+                <p><strong>Hometown:</strong> Abingdon, MD</p>
+                <p><strong>Previous Clubs:</strong> North Bay, UMBC</p>
+                <p><strong>Experience:</strong> High School at North Bay & UMBC</p>
+                <p><strong>Why I Play Rugby:</strong> It's about community and building lifelong brothers.</p>
+                <p><strong>Fun Fact:</strong> Garlic Parmesan wings are my favorite.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Rafael Zelidon" data-position="Forward/Lock" data-year="Senior" data-height="77">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Rafael Zelidon</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward/Lock</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'5 / 225 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Catonsville, MD</p>
+                <p><strong>Experience:</strong> 1 semester</p>
+                <p><strong>Why I Play Rugby:</strong> Great way to stay active.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Gokarn Singh Dhaliwal"
-           data-position="Wing/Fullback"
-           data-year="Senior"
-           data-height="68">
-        <div class="roster-summary">
-          <h3>Gokarn Singh Dhaliwal</h3>
-          <p><strong>Position:</strong> Wing/Fullback</p>
-          <p><strong>Year:</strong> Sophomore</p>
-          <p><strong>Height/Weight:</strong> 5'8 / 160 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Financial Economics</p>
-          <p><strong>Hometown:</strong> Abingdon, MD</p>
-          <p><strong>Previous Clubs:</strong> North Bay, UMBC</p>
-          <p><strong>Experience:</strong> High School at North Bay & UMBC</p>
-          <p><strong>Why I Play Rugby:</strong> I play rugby because it’s so much more than just a game to me. It gives me amazing social opportunities, where I get to meet people from all walks of life and build lasting friendships. It keeps me in great physical health, pushing my limits and keeping me strong and agile. Rugby is about community—a sense of belonging and shared purpose that’s hard to find elsewhere. On top of that, I’ve built lifelong brothers with my teammates, guys I know will always have my back. And what I love most is the equal opportunities—everyone gets their moment with the ball, no matter the position, making it a sport that’s truly for everyone.</p>
-          <p><strong>Fun Fact:</strong> Garlic Parmesan wings are my favorite.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Grant Gumbel" data-position="Hooker/Prop" data-year="Senior" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Grant Gumbel</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Hooker/Prop</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 260 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Hometown:</strong> Elkridge, MD</p>
+                <p><strong>Previous Clubs:</strong> Mount Saint Joseph HS Varsity Rugby</p>
+                <p><strong>Experience:</strong> 3 years</p>
+                <p><strong>Why I Play Rugby:</strong> Fitness & community</p>
+                <p><strong>Fun Fact:</strong> I once believed I'd never play rugby!</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Ty Schwartz" data-position="Forward/Prop" data-year="Sophomore" data-height="69">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Ty Schwartz</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward/Prop</p>
+                <p><strong>Year:</strong> Sophomore</p>
+                <p><strong>Height/Weight:</strong> 5'9 / 240 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Mechanical Engineering</p>
+                <p><strong>Hometown:</strong> Pasadena, MD</p>
+                <p><strong>Experience:</strong> 1 Semester</p>
+                <p><strong>Why I Play Rugby:</strong> The mentorship and brotherhood are unmatched.</p>
+                <p><strong>Fun Fact:</strong> I have broken 20 bones in my body.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Jaden Gomez" data-position="Wing" data-year="Junior" data-height="69">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Jaden Gomez</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Wing</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 5'9 / 165 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Information Systems</p>
+                <p><strong>Hometown:</strong> PG County</p>
+                <p><strong>Experience:</strong> 1 Semester</p>
+                <p><strong>Why I Play Rugby:</strong> To stay in shape.</p>
+                <p><strong>Fun Fact:</strong> I have titanium in 4 different places.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Jonathan Hightower" data-position="Wing" data-year="Junior" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Jonathan Hightower</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Back/Wing</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 145 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Biological Sciences</p>
+                <p><strong>Hometown:</strong> White Plains, MD</p>
+                <p><strong>Experience:</strong> 1 year</p>
+                <p><strong>Why I Play Rugby:</strong> It's fun</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Rafael Zelidon"
-           data-position="Forward/Lock"
-           data-year="Senior"
-           data-height="77">
-        <div class="roster-summary">
-          <h3>Rafael Zelidon</h3>
-          <p><strong>Position:</strong> Forward/Lock</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'5 / 225 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Catonsville, MD</p>
-          <p><strong>Experience:</strong> 1 semester</p>
-          <p><strong>Why I Play Rugby:</strong> Great way to stay active.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Paul OyeBade Adejayan" data-position="Outside Center" data-year="Junior" data-height="73">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Paul OyeBade Adejayan</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Outside Center</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 6'1 / 215 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Damascus, MD</p>
+                <p><strong>Experience:</strong> 2 years</p>
+                <p><strong>Why I Play Rugby:</strong> It challenges me and the bond with teammates feels like a second family.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Grant Gumbel"
-           data-position="Hooker/Prop"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Grant Gumbel</h3>
-          <p><strong>Position:</strong> Hooker/Prop</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 260 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Mechanical Engineering</p>
-          <p><strong>Hometown:</strong> Elkridge, MD</p>
-          <p><strong>Previous Clubs:</strong> Mount Saint Joseph HS Varsity Rugby</p>
-          <p><strong>Experience:</strong> 3 years</p>
-          <p><strong>Why I Play Rugby:</strong> Fitness & community</p>
-          <p><strong>Fun Fact:</strong> I once believed I'd never play rugby!</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Jude Nedruda" data-position="Hooker" data-year="Junior" data-height="68">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Jude Nedruda</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Hooker, Flanker, Scrum-Half</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 5'8 / 220 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Pre-Nursing</p>
+                <p><strong>Hometown:</strong> Perry Hall, MD</p>
+                <p><strong>Experience:</strong> 1.5 years at UMBC</p>
+                <p><strong>Why I Play Rugby:</strong> Rugging alongside guys I would do anything for is the best thing I could have ever found myself doing.</p>
+                <p><strong>Fun Fact:</strong> My favorite types of games are the muddy ones.</p>
+              </div>
+            </div>
+          </div>
 
-       <div class="roster-item"
-           data-name="Ty Schwartz"
-           data-position="Forward/Prop"
-           data-year="Senior"
-           data-height="69">
-        <div class="roster-summary">
-          <h3>Ty Schwartz</h3>
-          <p><strong>Position:</strong> Forward/Prop</p>
-          <p><strong>Year:</strong> Sophomore</p>
-          <p><strong>Height/Weight:</strong> 5'9 / 240 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Mechanical Engineering</p>
-          <p><strong>Hometown:</strong> Pasadena, MD</p>
-          <p><strong>Experience:</strong> 1 Semester</p>
-          <p><strong>Why I Play Rugby:</strong> The mentorship and brotherhood are unmatched. It's also a healthy was to unload stress by crushing other dudes.</p>
-          <p><strong>Fun Fact:</strong> i have broken 20 bones in my body.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Jason Brodie" data-position="Prop" data-year="Junior" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Jason Brodie</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Prop</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 225 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Engineering</p>
+                <p><strong>Hometown:</strong> Rosedale, MD</p>
+                <p><strong>Experience:</strong> 1 year</p>
+                <p><strong>Why I Play Rugby:</strong> For fun</p>
+                <p><strong>Fun Fact:</strong> I had a baby tooth till I was 23.</p>
+              </div>
+            </div>
+          </div>
 
-  <div class="roster-item"
-           data-name="Jaden Gomez"
-           data-position="Wing"
-           data-year="Senior"
-           data-height="69">
-        <div class="roster-summary">
-          <h3>Jaden Gomez</h3>
-          <p><strong>Position:</strong> Wing</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 5'9 / 165 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Information Systems</p>
-          <p><strong>Hometown:</strong> PG County</p>
-          <p><strong>Experience:</strong> 1 Semester</p>
-          <p><strong>Why I Play Rugby:</strong> To stay in shape.</p>
-          <p><strong>Fun Fact:</strong> I have titanium in 4 different places throughout myself</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Fode Seck" data-position="Lock" data-year="Junior" data-height="79">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Fode Seck</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Lock</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 6'7 / 190 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Information Systems</p>
+                <p><strong>Hometown:</strong> Towson, MD</p>
+                <p><strong>Experience:</strong> 1.5 year</p>
+                <p><strong>Why I Play Rugby:</strong> To stay active</p>
+                <p><strong>Fun Fact:</strong> I love playing video games.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Jonathan Hightower"
-           data-position="Wing"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Jonanthan Hightower</h3>
-          <p><strong>Position:</strong> Back/Wing</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 145 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Biological Sciences</p>
-          <p><strong>Hometown:</strong> White Plains, MD</p>
-          <p><strong>Experience:</strong> 1 year</p>
-          <p><strong>Why I Play Rugby:</strong> It’s fun</p>
-          <p><strong>Fun Fact:</strong> I was once given a black eye by my brother.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Onosetale Okojie" data-position="8-Man" data-year="Junior" data-height="74">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Onosetale Okojie</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> 8-Man</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 6'2 / 220 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Biological Sciences</p>
+                <p><strong>Hometown:</strong> Reisterstown, MD</p>
+                <p><strong>Experience:</strong> 4 years; Played every scrum role except hooker</p>
+                <p><strong>Why I Play Rugby:</strong> It's fun</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Paul OyeBade Adejayan"
-           data-position="Outside Center"
-           data-year="Senior"
-           data-height="73">
-        <div class="roster-summary">
-          <h3>Paul OyeBade Adejayan</h3>
-          <p><strong>Position:</strong> Outside Center</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 6'1 / 215 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Damascus, MD</p>
-          <p><strong>Experience:</strong> 2 year</p>
-          <p><strong>Why I Play Rugby:</strong> I play rugby because it challenges me to be better, both physically and mentally. There’s nothing quite like the bond I’ve built with my teammates it’s not just a sport, it feels like being part of a second family.</p>
-          <p><strong>Fun Fact:</strong> A fun fact about me is that I’m a rugby player who started just two years ago.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Leon Tang" data-position="Flanker" data-year="Senior" data-height="72">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Leon Tang</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Flanker</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'0 / 200 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Information Systems</p>
+                <p><strong>Hometown:</strong> Annapolis, MD</p>
+                <p><strong>Previous Clubs:</strong> West Potomac RFC</p>
+                <p><strong>Experience:</strong> 3 years</p>
+                <p><strong>Why I Play Rugby:</strong> Great way to have community and competitiveness while balancing academics.</p>
+                <p><strong>Fun Fact:</strong> I have met 2 Chainz, Governor Wes Moore, & Lamar Jackson!</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Ashraf Kawooya" data-position="Fullback" data-year="Senior" data-height="71">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Ashraf Kawooya</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Fullback</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 5'11 / 170 lbs</p>
+              </div>
+              <div class="roster-card__details">
+                <p><strong>Major:</strong> Computer Science</p>
+                <p><strong>Hometown:</strong> Rockville, Maryland</p>
+                <p><strong>Experience:</strong> 5 Years</p>
+                <p><strong>Why I Play Rugby:</strong> I love and live for the game.</p>
+                <p><strong>Fun Fact:</strong> I have a metal plate in my cheek.</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Noah Kawecki"
-           data-position="Fullback"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Noah Kawecki <span class="role-badge shed-manager">Shed Manager</span></h3>
-          <p><strong>Position:</strong> Inside Center/Fullback</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 160 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Annapolis , MD</p>
-          <p><strong>Experience:</strong> 1 Semester</p>
-          <p><strong>Why I Play Rugby:</strong> It’s a great way to meet a bunch of new people and it’s just a really fun sport where you get to hit people.</p>
-          <p><strong>Fun Fact:</strong> I wasn’t 5 feet tall until 8th grade and I wasn’t 100 pounds until halfway through 9th grade.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Earl Gilliam" data-position="Forward" data-year="Freshman" data-height="69">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Earl Gilliam</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Freshman</p>
+                <p><strong>Height/Weight:</strong> 5'9 / 185 lbs</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Javier Cornejo" data-position="Forward" data-year="Sophomore" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Javier Cornejo</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Sophomore</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 180 lbs</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Jude Nedrudra"
-           data-position="Hooker"
-           data-year="Senior"
-           data-height="68">
-        <div class="roster-summary">
-          <h3>Jude Nedruda</h3>
-          <p><strong>Position:</strong> Hooker, Flanker, Scrum-Half</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 5'8 / 220 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Pre-Nursing</p>
-          <p><strong>Hometown:</strong> Perry Hall, MD</p>
-          <p><strong>Experience:</strong> 1.5 years at UMBC, Summer tournament with Arbution Revolution</p>
-          <p><strong>Why I Play Rugby:</strong> The thought of rugging alongside guys I would do anything for is the best thing I could have ever found myself doing. I learn new things, grow as a person, and experience great things on and off the field with my brothers.</p>
-          <p><strong>Fun Fact:</strong> My favorite types of games are the muddy ones. To me there is no better feeling than slamming a guy into the mud.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Greg Behrendt" data-position="Forward" data-year="Senior" data-height="76">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Greg Behrendt</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'4 / 215 lbs</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Jason Brodie"
-           data-position="Prop"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Jason Brodie</h3>
-          <p><strong>Position:</strong> Prop</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 225 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Engineering</p>
-          <p><strong>Hometown:</strong> Rosedale , MD</p>
-          <p><strong>Experience:</strong> 1 year</p>
-          <p><strong>Why I Play Rugby:</strong> For fun</p>
-          <p><strong>Fun Fact:</strong> I had a baby tooth till I was 23.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Harrison Roth" data-position="Forward" data-year="Junior" data-height="71">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Harrison Roth</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Junior</p>
+                <p><strong>Height/Weight:</strong> 5'11 / 190 lbs</p>
+              </div>
+            </div>
+          </div>
 
-       <div class="roster-item"
-           data-name="Fode Seck"
-           data-position="Lock"
-           data-year="Senior"
-           data-height="79">
-        <div class="roster-summary">
-          <h3>Fode Seck</h3>
-          <p><strong>Position:</strong> Lock</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 6'7 / 190 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Information Systems</p>
-          <p><strong>Hometown:</strong> Towson, MD</p>
-          <p><strong>Experience:</strong> 1.5 year</p>
-          <p><strong>Why I Play Rugby:</strong> To stay active</p>
-          <p><strong>Fun Fact:</strong> I love playing video games.</p>
-        </div>
-      </div>
+          <div class="roster-card" data-name="Michael Kirby" data-position="Forward" data-year="Senior" data-height="70">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Michael Kirby</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 5'10 / 165 lbs</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="roster-card" data-name="Darrell Davis" data-position="Forward" data-year="Senior" data-height="76">
+            <div class="roster-card__body">
+              <h3 class="roster-card__name">Darrell Davis</h3>
+              <div class="roster-card__info">
+                <p><strong>Position:</strong> Forward</p>
+                <p><strong>Year:</strong> Senior</p>
+                <p><strong>Height/Weight:</strong> 6'4 / 210 lbs</p>
+              </div>
+            </div>
+          </div>
 
-      <div class="roster-item"
-           data-name="Onosetale Okojie"
-           data-position="8-Man"
-           data-year="Senior"
-           data-height="74">
-        <div class="roster-summary">
-          <h3>Onosetale Okojie</h3>
-          <p><strong>Position:</strong> 8-Man</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 6'2 / 220 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Biological Sciences</p>
-          <p><strong>Hometown:</strong> Reisterstown , MD</p>
-          <p><strong>Experience:</strong> 4 years; Played every role in the scrum except hooker</p>
-          <p><strong>Why I Play Rugby:</strong> It’s fun 👍</p>
-          <p><strong>Fun Fact:</strong> I play games 🎮</p>
-        </div>
-      </div>
-
-
-
-      <div class="roster-item"
-           data-name="Leon Tang"
-           data-position="Flanker"
-           data-year="Senior"
-           data-height="72">
-        <div class="roster-summary">
-          <h3>Leon Tang</h3>
-          <p><strong>Position:</strong> Flanker</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'0 / 200 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Information Systems</p>
-          <p><strong>Hometown:</strong> Annapolis, MD</p>
-          <p><strong>Previous Clubs:</strong> West Potomac RFC</p>
-          <p><strong>Experience:</strong> 3 years</p>
-          <p><strong>Why I Play Rugby:</strong> Great way for me to have a community and competitiveness while also balancing academics.</p>
-          <p><strong>Fun Fact:</strong> I have met 2 Chainz, Governor Wes Moore, & Lamar Jackson! Also, I am the president of the Information Systems Security Association at UMBC.  </p>
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Earl Gilliam"
-           data-position="Forward"
-           data-year="Freshman"
-           data-height="69">
-        <div class="roster-summary">
-          <h3>Earl Gilliam</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Freshman</p>
-          <p><strong>Height/Weight:</strong> 5'9 / 185 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Ashraf Kawooya"
-           data-position="Fullback"
-           data-year="Senior"
-           data-height="71">
-        <div class="roster-summary">
-          <h3>Ashraf Kawooya</h3>
-          <p><strong>Position:</strong> Fullback</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 5'11 / 170 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Computer Science</p>
-          <p><strong>Hometown:</strong> Rockville, Maryland</p>
-          <p><strong>Experience:</strong> 5 Years</p>
-          <p><strong>Why I Play Rugby:</strong> I love and live for the game.</p>
-          <p><strong>Fun Fact:</strong> I have a metal plate in my cheek.</p>
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Nate Cullen"
-           data-position="Flyhalf"
-           data-year="Senior"
-           data-height="76">
-        <div class="roster-summary">
-          <h3>Nate Cullen <span class="role-badge president">President</span></h3>
-          <p><strong>Position:</strong> Flyhalf</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'4 / 225 lbs</p>
-        </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Psychology</p>
-          <p><strong>Hometown:</strong> Odenton, MD</p>
-          <p><strong>Previous Clubs:</strong> Mount Saint Joseph HS Rugby</p>
-          <p><strong>Experience:</strong> 7 Years</p>
-          <p><strong>Why I Play Rugby:</strong> I play rugby because of the incredible community and because it gives me an opportunity to overcome hardship with my closest friends</p>
-          <p><strong>Fun Fact:</strong> I wet the bed until age 17!</p>
         </div>
       </div>
+    </section>
 
-      <div class="roster-item"
-           data-name="Jose Orellana-Guzman"
-           data-position="Scrum Half"
-           data-year="Senior"
-           data-height="69">
-        <div class="roster-summary">
-          <h3>Jose Orellana-Guzman <span class="role-badge vp">Vice President</span></h3>
-          <p><strong>Position:</strong> Scrum Half</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 5'9 / 185 lbs</p>
+    <!-- Coaches Section -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Leadership</span>
+          <h2 class="section-title">Coaching Staff</h2>
+          <p class="section-subtitle">Led by experienced coaches with international backgrounds</p>
         </div>
-        <div class="roster-details">
-          <p><strong>Major:</strong> Mechanical Engineering</p>
-          <p><strong>Hometown:</strong> Baltimore, MD</p>
-          <p><strong>Previous Clubs:</strong> Baltimore Poly</p>
-          <p><strong>Experience:</strong> Playing since 13...</p>
-          <p><strong>Why I Play Rugby:</strong> I play rugby because it has shaped who I am today mentally and physically. I have met some incredible people through this sport who have inspired me to not only continue playing, but reach goals I would not have thought of. The brotherhood and relationships that rugby has given me has been life changing and motivates me to always give back to my team to be the best I can be on the field and as a friend. Rugby has shown me that no matter your background or experience, we can come together as a team and focus on our goals of winning and improving each other as players and people.</p>
-          <p><strong>Fun Fact:</strong> I have traveled to about 15 states in the US.</p>
+
+        <div class="coaches-grid">
+          <div class="coach-card" data-animate>
+            <div class="coach-card__icon">HC</div>
+            <h3 class="coach-card__name">Richard Tavai</h3>
+            <p class="coach-card__role">Head Coach</p>
+            <p class="coach-card__hometown">New Zealand</p>
+            <span class="coach-card__badge">USA Rugby Certified</span>
+          </div>
+
+          <div class="coach-card" data-animate>
+            <div class="coach-card__icon">AC</div>
+            <h3 class="coach-card__name">Rusty Cross</h3>
+            <p class="coach-card__role">Assistant Coach</p>
+            <p class="coach-card__hometown">Ireland</p>
+            <span class="coach-card__badge">International Experience</span>
+          </div>
         </div>
       </div>
-
-      <div class="roster-item"
-           data-name="Javier Cornejo"
-           data-position="Forward"
-           data-year="Sophomore"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Javier Cornejo</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Sophomore</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 180 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Greg Behrendt"
-           data-position="Forward"
-           data-year="Senior"
-           data-height="76">
-        <div class="roster-summary">
-          <h3>Greg Behrendt</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'4 / 215 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Harrison Roth"
-           data-position="Forward"
-           data-year="Junior"
-           data-height="71">
-        <div class="roster-summary">
-          <h3>Harrison Roth</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Junior</p>
-          <p><strong>Height/Weight:</strong> 5'11 / 190 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Michael Kirby"
-           data-position="Forward"
-           data-year="Senior"
-           data-height="70">
-        <div class="roster-summary">
-          <h3>Michael Kirby</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 5'10 / 165 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-
-      <div class="roster-item"
-           data-name="Darrell Davis"
-           data-position="Forward"
-           data-year="Senior"
-           data-height="76">
-        <div class="roster-summary">
-          <h3>Darrell Davis</h3>
-          <p><strong>Position:</strong> Forward</p>
-          <p><strong>Year:</strong> Senior</p>
-          <p><strong>Height/Weight:</strong> 6'4 / 210 lbs</p>
-        </div>
-        <div class="roster-details">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="coaches-section" class="info-section coaches-section" data-aos="fade-up">
-  <h2 class="section-title">Coaches</h2>
-  <div class="coaches-container">
-    <!-- Head Coach -->
-    <div class="coach-card" data-aos="flip-left" data-aos-delay="200">
-      <div class="coach-icon">HC</div>
-      <h3 class="coach-name">Richard Tavai</h3>
-      <p class="coach-role">Head Coach</p>
-      <p class="coach-hometown">Hometown: <strong>New Zealand</strong></p>
-      <div class="coach-achievements">
-        <span class="achievement-badge">USA Rugby Certified</span>
-      </div>
-    </div>
-
-    <!-- Assistant Coach -->
-    <div class="coach-card" data-aos="flip-right" data-aos-delay="400">
-      <div class="coach-icon">AC</div>
-      <h3 class="coach-name">Rusty Cross</h3>
-      <p class="coach-role">Assistant Coach</p>
-      <p class="coach-hometown">Hometown: <strong>Ireland</strong></p>
-      <div class="coach-achievements">
-        <span class="achievement-badge">International Experience</span>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-  <!-- Logo -->
-  <div class="footer-logo">
-    <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-    <img src="assets/images/ncr.png" alt="NCR Logo" />
-    <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="footer__logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo" class="footer__logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo" class="footer__logo">
+      </div>
 
-  </div>
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
 
-  <!-- Navigation Links -->
-  <nav class="footer-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-    </ul>
-  </nav>
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
+    </div>
+  </footer>
 
-  <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
-</footer>
+  <script src="js/scripts.js"></script>
+  <script>
+    // Roster View Switching and Sorting
+    (function() {
+      const viewButtons = document.querySelectorAll('.roster-controls__btn');
+      const rosterGrid = document.getElementById('rosterList');
+      const sortSelect = document.getElementById('sortSelect');
+      const rosterCards = Array.from(document.querySelectorAll('.roster-card'));
 
-<!-- AOS Library -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init();
+      // View switching
+      viewButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          viewButtons.forEach(b => b.classList.remove('roster-controls__btn--active'));
+          btn.classList.add('roster-controls__btn--active');
 
-  // Mobile Menu Initialization - Same as working index.html version
-  function initMobileMenu() {
-    const menuToggle = document.querySelector('.mobile-menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    const menuOverlay = document.querySelector('.mobile-menu-overlay');
-    const navbar = document.getElementById('navbar');
-    
-    if (!menuToggle || !navMenu || !menuOverlay) return;
-
-    // Toggle mobile menu
-    function toggleMenu() {
-      const isOpen = navbar.classList.contains('mobile-open');
-      
-      navbar.classList.toggle('mobile-open');
-      menuToggle.classList.toggle('active');
-      menuToggle.setAttribute('aria-expanded', !isOpen);
-      document.body.classList.toggle('menu-open');
-      
-      // Prevent body scroll when menu is open
-      document.body.style.overflow = !isOpen ? 'hidden' : '';
-    }
-
-    // Close mobile menu
-    function closeMenu() {
-      navbar.classList.remove('mobile-open');
-      menuToggle.classList.remove('active');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      document.body.classList.remove('menu-open');
-      document.body.style.overflow = '';
-    }
-
-    // Event listeners
-    menuToggle.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleMenu();
-    });
-    
-    menuOverlay.addEventListener('click', closeMenu);
-
-    // Close menu when clicking on navigation links
-    const navLinks = navMenu.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      link.addEventListener('click', closeMenu);
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
-        closeMenu();
-      }
-    });
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        closeMenu();
-      }
-    });
-  }
-
-  // Initialize mobile menu
-  initMobileMenu();
-
-  // Roster View and Sort Functionality
-  function initRosterFunctionality() {
-    const viewButtons = document.querySelectorAll('.view-btn');
-    const rosterList = document.getElementById('rosterList');
-    const sortSelect = document.getElementById('sortSelect');
-    const rosterItems = Array.from(document.querySelectorAll('.roster-item'));
-
-    // View switching functionality
-    viewButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // Remove active class from all buttons
-        viewButtons.forEach(b => b.classList.remove('active'));
-        // Add active class to clicked button
-        btn.classList.add('active');
-        
-        // Get the view type
-        const viewType = btn.getAttribute('data-view');
-        
-        // Remove all view classes
-        rosterList.classList.remove('list-view', 'card-view', 'table-view');
-        
-        // Add the selected view class
-        rosterList.classList.add(viewType);
-        
-        console.log(`Switched to ${viewType}`);
+          const viewType = btn.getAttribute('data-view');
+          rosterGrid.classList.remove('card-view', 'list-view');
+          rosterGrid.classList.add(viewType);
+        });
       });
-    });
 
-    // Sort functionality
-    function sortRoster(criteria) {
-      const sortedItems = [...rosterItems].sort((a, b) => {
-        let aValue = a.getAttribute(`data-${criteria}`);
-        let bValue = b.getAttribute(`data-${criteria}`);
-        
-        // Handle numeric sorting for height
-        if (criteria === 'height') {
-          aValue = parseInt(aValue);
-          bValue = parseInt(bValue);
-          return bValue - aValue; // Descending for height
-        }
-        
-        // Handle year sorting (Senior > Junior > Sophomore > Freshman)
-        if (criteria === 'year') {
-          const yearOrder = { 'Senior': 4, 'Junior': 3, 'Sophomore': 2, 'Freshman': 1 };
-          return (yearOrder[bValue] || 0) - (yearOrder[aValue] || 0);
-        }
-        
-        // Alphabetical sorting for name and position
-        return aValue.localeCompare(bValue);
-      });
-      
-      // Clear the roster list and append sorted items
-      rosterList.innerHTML = '';
-      sortedItems.forEach(item => rosterList.appendChild(item));
-      
-      console.log(`Sorted by ${criteria}`);
-    }
+      // Sorting
+      function sortRoster(criteria) {
+        const sorted = [...rosterCards].sort((a, b) => {
+          let aVal = a.getAttribute(`data-${criteria}`);
+          let bVal = b.getAttribute(`data-${criteria}`);
 
-    // Sort select event listener
-    sortSelect.addEventListener('change', (e) => {
-      sortRoster(e.target.value);
-    });
+          if (criteria === 'height') {
+            return parseInt(bVal) - parseInt(aVal);
+          }
 
-    // Initialize with default sort
-    sortRoster('name');
-  }
+          if (criteria === 'year') {
+            const order = { 'Senior': 4, 'Junior': 3, 'Sophomore': 2, 'Freshman': 1 };
+            return (order[bVal] || 0) - (order[aVal] || 0);
+          }
 
-  // Initialize roster functionality
-  initRosterFunctionality();
-</script>
+          return aVal.localeCompare(bVal);
+        });
+
+        rosterGrid.innerHTML = '';
+        sorted.forEach(card => rosterGrid.appendChild(card));
+      }
+
+      sortSelect.addEventListener('change', (e) => sortRoster(e.target.value));
+      sortRoster('name');
+    })();
+  </script>
 </body>
 </html>

@@ -1,823 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <script src="js/scripts.js" defer></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <title>UMBC Rugby | Schedule</title>
-
-  <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="UMBC Rugby Schedule" />
-  <meta property="og:description" content="Practice times, game schedules, and upcoming events for UMBC Rugby Club." />
-  <meta property="og:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
-  <meta property="og:url" content="https://umbcrugby.com/schedule.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="UMBC Rugby Club" />
-
-  <!-- Twitter Card Meta Tags -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="UMBC Rugby Schedule" />
-  <meta name="twitter:description" content="Practice times, game schedules, and upcoming events for UMBC Rugby Club." />
-  <meta name="twitter:image" content="https://ugc.production.linktr.ee/d38ecb41-e2ef-461c-8d63-687e073c054d_DSC-3383.jpeg?io=true&size=avatar-v3_0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule | UMBC Rugby</title>
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-
-  <!-- Back to Top Button -->
-  <button id="back-to-top" title="Back to Top" aria-label="Back to Top">↑</button>
-
-  <!-- HEADER -->
-  <header id="hero-header" class="schedule-hero">
-    <!-- Background Image -->
-    <img src="assets/images/DSC_3573.jpg" alt="UMBC Rugby Header Image" id="header-image" />
-
-    <!-- Gradient Overlay -->
-    <div class="hero-overlay"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content" data-aos="fade-up">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title animated-title">2025 Schedule</h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle animated-subtitle">Games, Practice & Events</p>
-        <p class="hero-description animated-description">Every Match Matters. Every Practice Builds Character.</p>
-      </div>
-      <div class="schedule-status">
-        <h3>Fall 2025 Season</h3>
-        <p>View games and add to your calendar!</p>
-      </div>
-    </div>
-  </header>
-
-  <!-- NAVIGATION BELOW THE HEADER -->
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <a href="index.html">
-          <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-        </a>
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link active">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link active">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link">FAQs</a></li>
       </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link">Roster</a>
+      <a href="schedule.html" class="nav__link active">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link">Recruitment</a>
+      <a href="alumni.html" class="nav__link">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
     </div>
   </nav>
 
-  <!-- MAIN CONTENT -->
-  <main>
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/DSC_3573.jpg" alt="UMBC Rugby Game" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="page-hero__logo">
+      <h1 class="page-hero__title">2025 Schedule</h1>
+      <p class="page-hero__subtitle">Games, practices, and events for the Fall 2025 season.</p>
+    </div>
+  </header>
 
-    <!-- PRACTICE SCHEDULE -->
-    <section class="practice-info" data-aos="fade-up">
-      <h2 style="text-align: center; margin-bottom: 20px;">Practice Schedule</h2>
-      <p style="text-align: center; font-size: 1.3rem; color: var(--text-light); max-width: 700px; margin: 0 auto 40px;">
-        Join us for regular training sessions to build skills, fitness, and team chemistry at Walker Field.
-      </p>
-
-      <div class="practice-grid">
-        <div class="practice-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="practice-day">Tuesday</div>
-          <div class="practice-time">4–6 PM</div>
-          <div class="practice-location">Walker Field</div>
+  <main id="main">
+    <!-- Practice Schedule -->
+    <section class="section section--elevated">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Training</span>
+          <h2 class="section-title">Practice Schedule</h2>
+          <p class="section-subtitle">Join us at Walker Field to build skills, fitness, and team chemistry.</p>
         </div>
 
-        <div class="practice-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="practice-day">Thursday</div>
-          <div class="practice-time">4–6 PM</div>
-          <div class="practice-location">Walker Field</div>
-        </div>
-
-        <div class="practice-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="practice-day">Friday</div>
-          <div class="practice-time">4–6 PM</div>
-          <div class="practice-location">Walker Field</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- GAME SCHEDULE -->
-    <section class="game-schedule enhanced-schedule" data-aos="fade-up" data-aos-duration="1000">
-      <div class="schedule-header" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
-        <div class="header-badge" data-aos="bounce-in" data-aos-delay="100">
-          <span>2025 Season</span>
-        </div>
-        <h2 class="section-title" data-aos="slide-down" data-aos-delay="300" data-aos-duration="800">
-          <span class="title-highlight">Game</span> Schedule
-        </h2>
-        <p class="section-subtitle" data-aos="fade-in" data-aos-delay="500" data-aos-duration="600">
-          <span class="highlight-text">Click any game</span> to add to your calendar
-        </p>
-      </div>
-      
-      <!-- Game Location Guide -->
-      <div class="location-legend" data-aos="fade-up" style="text-align: center; margin: 30px auto 40px; max-width: 500px; padding: 20px; background: rgba(255, 255, 255, 0.8); border-radius: 15px; border: 1px solid rgba(0, 0, 0, 0.1);">
-        <h4 style="margin-bottom: 20px; color: #333; font-size: 1.2rem; font-weight: 600;">Location Guide</h4>
-        <div style="display: flex; justify-content: center; gap: 40px; align-items: center; flex-wrap: wrap;">
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div class="location-indicator home" style="position: static;"></div>
-            <span style="color: #333; font-weight: 500;">Home Games</span>
+        <div class="practice-grid">
+          <div class="practice-card">
+            <div class="practice-card__day">Tuesday</div>
+            <div class="practice-card__time">4-6 PM</div>
+            <div class="practice-card__location">Walker Field</div>
           </div>
-          <div style="display: flex; align-items: center; gap: 12px;">
-            <div class="location-indicator away" style="position: static;"></div>
-            <span style="color: #333; font-weight: 500;">Away Games</span>
+          <div class="practice-card">
+            <div class="practice-card__day">Thursday</div>
+            <div class="practice-card__time">4-6 PM</div>
+            <div class="practice-card__location">Walker Field</div>
           </div>
-        </div>
-      </div>
-      
-      <div class="games-timeline" data-aos="fade-up" data-aos-delay="300">
-        <div class="timeline-line"></div>
-      </div>
-      
-      <div class="games-container enhanced-games">
-        <!-- American Game -->
-        <div class="game-card home enhanced" data-aos="zoom-in-up" data-aos-delay="100" data-game-info='{"opponent": "American", "date": "2025-08-30", "time": "11:00 AM", "type": "Scrimmage", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Aug</span>
-              <span class="day">30</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">American University</h3>
-              <p class="game-time">11:00 AM</p>
-              <p class="game-type">Scrimmage</p>
-              <div class="game-score" style="margin-top: 8px; padding: 6px 12px; background: linear-gradient(135deg, #28a745, #20c997); color: white; border-radius: 15px; font-weight: 700; font-size: 0.9rem; display: inline-block; box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);">
-                <span style="font-size: 1.1em;">🏆</span> FINAL: UMBC 86-7
-              </div>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/American_Eagles_logo.svg.png" alt="American University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Villanova Game (Home) -->
-        <div class="game-card home" data-aos="slide-up" data-aos-delay="200" data-game-info='{"opponent": "Villanova", "date": "2025-09-06", "time": "12:00 PM", "type": "Scrimmage", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Sep</span>
-              <span class="day">06</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Villanova University</h3>
-              <p class="game-time">12:00 PM</p>
-              <p class="game-type">Scrimmage</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Georgetown Game -->
-        <div class="game-card home" data-aos="slide-up" data-aos-delay="300" data-game-info='{"opponent": "Georgetown", "date": "2025-09-13", "time": "TBD", "type": "MARC Game", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Sep</span>
-              <span class="day">13</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Georgetown University</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/Georgetown_Hoyas_logo.svg.png" alt="Georgetown University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- CNU Game -->
-        <div class="game-card home" data-aos="slide-up" data-aos-delay="400" data-game-info='{"opponent": "CNU", "date": "2025-09-20", "time": "TBD", "type": "Scrimmage", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Sep</span>
-              <span class="day">20</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Christopher Newport University</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">Scrimmage</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/CNULogoSmall.png" alt="CNU Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Villanova Game (Away) - Second Game -->
-        <div class="game-card away" data-aos="slide-up" data-aos-delay="500" data-game-info='{"opponent": "Villanova", "date": "2025-09-27", "time": "TBD", "type": "MARC Game", "location": "away"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Sep</span>
-              <span class="day">27</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Villanova University</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator away"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Towson Game -->
-        <div class="game-card home" data-aos="slide-up" data-aos-delay="600" data-game-info='{"opponent": "Towson", "date": "2025-10-04", "time": "TBD", "type": "MARC Game", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Oct</span>
-              <span class="day">04</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Towson University</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/tigerhead-transparentbkgd-ic.png" alt="Towson University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Potential Game -->
-        <div class="game-card home potential" data-aos="slide-up" data-aos-delay="700" data-game-info='{"opponent": "Potential Game", "date": "2025-10-11", "time": "TBD", "type": "N/A", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Oct</span>
-              <span class="day">11</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Potential Game</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">TBD</p>
-            </div>
-            <div class="opponent-logo potential-logo">❓</div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Salisbury Game (Away) -->
-        <div class="game-card away" data-aos="slide-up" data-aos-delay="800" data-game-info='{"opponent": "Salisbury", "date": "2025-10-18", "time": "TBD", "type": "MARC Game", "location": "away"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Oct</span>
-              <span class="day">18</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">Salisbury University</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo">
-              <img src="assets/images/Salisbury_Seagulls_logo.svg.png" alt="Salisbury University Logo" onerror="this.style.display='none'">
-            </div>
-            <div class="location-indicator away"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- MARC Quarterfinals -->
-        <div class="game-card home championship" data-aos="slide-up" data-aos-delay="900" data-game-info='{"opponent": "MARC QF", "date": "2025-10-25", "time": "TBD", "type": "MARC Game", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Oct</span>
-              <span class="day">25</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">MARC Quarterfinals</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- MARC Semifinals -->
-        <div class="game-card home championship" data-aos="slide-up" data-aos-delay="1000" data-game-info='{"opponent": "MARC SF", "date": "2025-11-01", "time": "TBD", "type": "MARC Game", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Nov</span>
-              <span class="day">01</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">MARC Semifinals</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- MARC Finals -->
-        <div class="game-card home championship" data-aos="slide-up" data-aos-delay="1100" data-game-info='{"opponent": "MARC Finals", "date": "2025-11-08", "time": "TBD", "type": "MARC Game", "location": "home"}'>
-          <div class="game-header">
-            <div class="game-date">
-              <span class="month">Nov</span>
-              <span class="day">08</span>
-            </div>
-            <div class="game-info">
-              <h3 class="opponent">MARC Finals</h3>
-              <p class="game-time">TBD</p>
-              <p class="game-type">MARC Game</p>
-            </div>
-            <div class="opponent-logo championship-trophy">🏆</div>
-            <div class="location-indicator home"></div>
-          </div>
-          <div class="calendar-options">
-            <button class="calendar-btn google" onclick="addToGoogleCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Google_Calendar_icon_%282020%29.svg" alt="Google Calendar Logo" class="calendar-logo">
-              <span>Google</span>
-            </button>
-            <button class="calendar-btn apple" onclick="addToAppleCalendar(this.closest('.game-card'))">
-              <img src="https://cdn-icons-png.flaticon.com/512/94/94225.png" alt="Apple Calendar Logo" class="calendar-logo">
-              <span>Apple</span>
-            </button>
-            <button class="calendar-btn outlook" onclick="addToOutlookCalendar(this.closest('.game-card'))">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg/2203px-Microsoft_Office_Outlook_%282018%E2%80%93present%29.svg.png" alt="Outlook Calendar Logo" class="calendar-logo">
-              <span>Outlook</span>
-            </button>
+          <div class="practice-card">
+            <div class="practice-card__day">Friday</div>
+            <div class="practice-card__time">4-6 PM</div>
+            <div class="practice-card__location">Walker Field</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- MAP LOCATION -->
-    <section class="map-section walker-field-section" data-aos="fade-up">
-      <div class="section-header-enhanced">
-        <div class="header-accent"></div>
-        <h2 class="location-title">Walker Field Location</h2>
-        <div class="header-accent"></div>
-      </div>
-      <p class="location-description">
-        Our practices and home matches take place at <strong>Walker Field</strong> on the beautiful UMBC campus. 
-        This premier athletic facility serves as the heart of our rugby program and home to countless memorable moments.
-      </p>
+    <!-- Game Schedule -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Fall 2025</span>
+          <h2 class="section-title">Game Schedule</h2>
+          <p class="section-subtitle">Click any game to add it to your calendar.</p>
+        </div>
 
-      <!-- Enhanced Navigation Buttons -->
-      <div class="map-navigation-enhanced" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="nav-subtitle">Get Directions</h3>
-        <div class="nav-buttons-grid">
-          <button class="nav-btn-enhanced google-maps" onclick="openGoogleMaps()">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24"><path d="M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5Z"/></svg>
+        <!-- Location Legend -->
+        <div class="location-legend">
+          <div class="location-legend__item">
+            <span class="location-legend__dot location-legend__dot--home"></span>
+            <span>Home Games</span>
+          </div>
+          <div class="location-legend__item">
+            <span class="location-legend__dot location-legend__dot--away"></span>
+            <span>Away Games</span>
+          </div>
+        </div>
+
+        <!-- Games -->
+        <div class="games-grid">
+          <!-- American University -->
+          <div class="game-card" data-game='{"opponent":"American","date":"2025-08-30","time":"11:00 AM","type":"Scrimmage"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Aug</span>
+              <span class="game-card__day">30</span>
             </div>
-            <span>Google Maps</span>
-          </button>
-          <button class="nav-btn-enhanced apple-maps" onclick="openAppleMaps()">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24"><path d="M18.71,19.5C17.88,20.74 17,21.95 15.66,21.97C14.32,22 13.89,21.18 12.37,21.18C10.84,21.18 10.37,21.95 9.1,22C7.79,22.05 6.8,20.68 5.96,19.47C4.25,17 2.94,12.45 4.7,9.39C5.57,7.87 7.13,6.91 8.82,6.88C10.1,6.86 11.32,7.75 12.11,7.75C12.89,7.75 14.37,6.68 15.92,6.84C16.57,6.87 18.39,7.1 19.56,8.82C19.47,8.88 17.39,10.17 17.41,12.63C17.44,15.65 20.06,16.66 20.09,16.67C20.06,16.74 19.67,18.11 18.71,19.5M13,3.5C13.73,2.67 14.94,2.04 15.94,2C16.07,3.17 15.6,4.35 14.9,5.19C14.21,6.04 13.07,6.7 11.95,6.61C11.8,5.46 12.36,4.26 13,3.5Z"/></svg>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">American University</h3>
+              <p class="game-card__meta">11:00 AM | Scrimmage</p>
             </div>
-            <span>Apple Maps</span>
-          </button>
-          <button class="nav-btn-enhanced waze" onclick="openWaze()">
-            <div class="btn-icon">
-              <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z"/></svg>
+            <img src="assets/images/American_Eagles_logo.svg.png" alt="American University" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- Villanova (Home) -->
+          <div class="game-card" data-game='{"opponent":"Villanova","date":"2025-09-06","time":"12:00 PM","type":"Scrimmage"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Sep</span>
+              <span class="game-card__day">06</span>
             </div>
-            <span>Waze</span>
-          </button>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Villanova University</h3>
+              <p class="game-card__meta">12:00 PM | Scrimmage</p>
+            </div>
+            <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- Georgetown -->
+          <div class="game-card" data-game='{"opponent":"Georgetown","date":"2025-09-13","time":"TBD","type":"MARC Game"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Sep</span>
+              <span class="game-card__day">13</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Georgetown University</h3>
+              <p class="game-card__meta">TBD | MARC Game</p>
+            </div>
+            <img src="assets/images/Georgetown_Hoyas_logo.svg.png" alt="Georgetown" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- CNU -->
+          <div class="game-card" data-game='{"opponent":"CNU","date":"2025-09-20","time":"TBD","type":"Scrimmage"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Sep</span>
+              <span class="game-card__day">20</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Christopher Newport University</h3>
+              <p class="game-card__meta">TBD | Scrimmage</p>
+            </div>
+            <img src="assets/images/CNULogoSmall.png" alt="CNU" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- Villanova (Away) -->
+          <div class="game-card game-card--away" data-game='{"opponent":"Villanova","date":"2025-09-27","time":"TBD","type":"MARC Game"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Sep</span>
+              <span class="game-card__day">27</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Villanova University</h3>
+              <p class="game-card__meta">TBD | MARC Game</p>
+            </div>
+            <img src="assets/images/Villanova_Wildcats_logo.svg.png" alt="Villanova" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--away">Away</span>
+          </div>
+
+          <!-- Towson -->
+          <div class="game-card" data-game='{"opponent":"Towson","date":"2025-10-04","time":"TBD","type":"MARC Game"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Oct</span>
+              <span class="game-card__day">04</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Towson University</h3>
+              <p class="game-card__meta">TBD | MARC Game</p>
+            </div>
+            <img src="assets/images/tigerhead-transparentbkgd-ic.png" alt="Towson" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- Salisbury (Away) -->
+          <div class="game-card game-card--away" data-game='{"opponent":"Salisbury","date":"2025-10-18","time":"TBD","type":"MARC Game"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Oct</span>
+              <span class="game-card__day">18</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Salisbury University</h3>
+              <p class="game-card__meta">TBD | MARC Game</p>
+            </div>
+            <img src="assets/images/Salisbury_Seagulls_logo.svg.png" alt="Salisbury" class="game-card__logo">
+            <span class="game-card__badge game-card__badge--away">Away</span>
+          </div>
+
+          <!-- MARC Quarterfinals -->
+          <div class="game-card game-card--championship" data-game='{"opponent":"MARC QF","date":"2025-10-25","time":"TBD","type":"Playoffs"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Oct</span>
+              <span class="game-card__day">25</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">MARC Quarterfinals</h3>
+              <p class="game-card__meta">TBD | Playoffs</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">Home</span>
+          </div>
+
+          <!-- MARC Semifinals -->
+          <div class="game-card game-card--championship" data-game='{"opponent":"MARC SF","date":"2025-11-01","time":"TBD","type":"Playoffs"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Nov</span>
+              <span class="game-card__day">01</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">MARC Semifinals</h3>
+              <p class="game-card__meta">TBD | Playoffs</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">TBD</span>
+          </div>
+
+          <!-- MARC Finals -->
+          <div class="game-card game-card--championship" data-game='{"opponent":"MARC Finals","date":"2025-11-08","time":"TBD","type":"Championship"}'>
+            <div class="game-card__date">
+              <span class="game-card__month">Nov</span>
+              <span class="game-card__day">08</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">MARC Finals</h3>
+              <p class="game-card__meta">TBD | Championship</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">TBD</span>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="map-container">
-        <div class="map-wrapper">
+    <!-- Map Section -->
+    <section class="section section--elevated">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Location</span>
+          <h2 class="section-title">Walker Field</h2>
+          <p class="section-subtitle">Home of UMBC Rugby on the UMBC campus.</p>
+        </div>
+
+        <div class="map-buttons">
+          <a href="https://maps.google.com/?q=Walker+Field+UMBC" target="_blank" class="btn btn--primary">Google Maps</a>
+          <a href="https://maps.apple.com/?q=Walker+Field+UMBC" target="_blank" class="btn btn--secondary">Apple Maps</a>
+        </div>
+
+        <div class="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1544.674839476125!2d-76.7174043148411!3d39.25763190706712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c81dcca1aaaaab%3A0xaad2b84386103553!2sWalker%20Field!5e0!3m2!1sen!2sus!4v1735791923883!5m2!1sen!2sus"
-            width="600"
-            height="450"
-            style="border:0; width: 100%;"
+            title="Walker Field Location"
             allowfullscreen=""
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Walker Field Location"
           ></iframe>
         </div>
-      </div>
 
-      <div class="location-info-grid-enhanced">
-        <div class="location-card-enhanced" data-aos="fade-up" data-aos-delay="100">
-          <div class="card-header">
-            <div class="location-icon-enhanced address-icon">
+        <div class="location-cards">
+          <div class="location-card">
+            <div class="location-card__icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12,2C8.13,2 5,5.13 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9C19,5.13 15.87,2 12,2M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5Z"/>
               </svg>
             </div>
-            <h3>Address</h3>
+            <h3 class="location-card__title">Address</h3>
+            <p class="location-card__text">Walker Field, UMBC Campus<br>1000 Hilltop Circle<br>Baltimore, MD 21250</p>
           </div>
-          <div class="card-content">
-            <p class="address-details">
-              <span class="venue-name">Walker Field</span>
-              <span class="campus-name">UMBC Campus</span>
-              <span class="full-address">1000 Hilltop Circle, Baltimore, MD 21250</span>
-            </p>
-            <button class="copy-address-enhanced" onclick="copyAddress()">Copy Address</button>
-          </div>
-        </div>
-
-        <div class="location-card-enhanced" data-aos="fade-up" data-aos-delay="200">
-          <div class="card-header">
-            <div class="location-icon-enhanced parking-icon">
+          <div class="location-card">
+            <div class="location-card__icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
                 <path d="M6,3A1,1 0 0,0 5,4V20A1,1 0 0,0 6,21H7A1,1 0 0,0 8,20V15H10.5C13,15 15,13 15,10.5C15,8 13,6 10.5,6H8V4A1,1 0 0,0 7,3H6M8,8H10.5C11.9,8 13,9.1 13,10.5C13,11.9 11.9,13 10.5,13H8V8Z"/>
               </svg>
             </div>
-            <h3>Parking Information</h3>
+            <h3 class="location-card__title">Parking</h3>
+            <p class="location-card__text">Free parking available in adjacent lots near the athletic facilities.</p>
           </div>
-          <div class="card-content">
-            <p>
-              <strong>Free parking available</strong> in adjacent lots near the athletic facilities. 
-              Look for directional signs leading to Walker Field. The stadium parking lot is recommended for easy access.
-            </p>
-          </div>
-        </div>
-
-        <div class="location-card-enhanced" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-header">
-            <div class="location-icon-enhanced transit-icon">
+          <div class="location-card">
+            <div class="location-card__icon">
               <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12,2A8,8 0 0,1 20,10A8,8 0 0,1 12,18A8,8 0 0,1 4,10A8,8 0 0,1 12,2M12,4A6,6 0 0,0 6,10C6,13.31 8.69,16 12,16C15.31,16 18,13.31 18,10A6,6 0 0,0 12,4M12,6A4,4 0 0,1 16,10A4,4 0 0,1 12,14A4,4 0 0,1 8,10A4,4 0 0,1 12,6M12,8A2,2 0 0,0 10,10A2,2 0 0,0 12,12A2,2 0 0,0 14,10A2,2 0 0,0 12,8Z"/>
+                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4Z"/>
               </svg>
             </div>
-            <h3>Public Transportation</h3>
-          </div>
-          <div class="card-content">
-            <p>
-              <strong>UMBC Shuttle System</strong> provides convenient campus transportation. 
-              <strong>Baltimore Public Transit</strong> routes 77 and 35 stop directly on campus with easy access to Walker Field.
-            </p>
+            <h3 class="location-card__title">Transit</h3>
+            <p class="location-card__text">UMBC Shuttle and Baltimore Public Transit routes 77 and 35 stop on campus.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <!-- Logo -->
-    <div class="footer-logo">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="assets/images/ncr.png" alt="NCR Logo" />
-      <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo">
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
     </div>
-
-    <!-- Navigation Links -->
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="roster.html">Roster</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="rugby-ready.html">Rugby Ready</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul>
-    </nav>
-
-    <!-- Copyright Text -->
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    // Initialize AOS
-    AOS.init({
-      duration: 1200,
-      once: true,
-      offset: 100
-    });
-
-    // Mobile Menu Initialization - Same as working index.html version
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      const menuOverlay = document.querySelector('.mobile-menu-overlay');
-      const navbar = document.getElementById('navbar');
-      
-      if (!menuToggle || !navMenu || !menuOverlay) return;
-
-      // Toggle mobile menu
-      function toggleMenu() {
-        const isOpen = navbar.classList.contains('mobile-open');
-        
-        navbar.classList.toggle('mobile-open');
-        menuToggle.classList.toggle('active');
-        menuToggle.setAttribute('aria-expanded', !isOpen);
-        document.body.classList.toggle('menu-open');
-        
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = !isOpen ? 'hidden' : '';
-      }
-
-      // Close mobile menu
-      function closeMenu() {
-        navbar.classList.remove('mobile-open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-        document.body.style.overflow = '';
-      }
-
-      // Event listeners
-      menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-      });
-      
-      menuOverlay.addEventListener('click', closeMenu);
-
-      // Close menu when clicking on navigation links
-      const navLinks = navMenu.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
-          closeMenu();
-        }
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          closeMenu();
-        }
-      });
-    }
-
-    // Calendar functions for schedule page
-    function addToGoogleCalendar(gameCard) {
-      const gameInfo = JSON.parse(gameCard.getAttribute('data-game-info'));
-      const startDate = new Date(gameInfo.date + 'T' + convertTo24Hour(gameInfo.time));
-      const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000); // 2 hours later
-      
-      const googleUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=UMBC Rugby vs ${gameInfo.opponent}&dates=${formatDateForGoogle(startDate)}/${formatDateForGoogle(endDate)}&details=${gameInfo.type} - ${gameInfo.location === 'home' ? 'Home' : 'Away'} Game&location=Walker Avenue Field, UMBC`;
-      
-      window.open(googleUrl, '_blank');
-    }
-
-    function addToAppleCalendar(gameCard) {
-      const gameInfo = JSON.parse(gameCard.getAttribute('data-game-info'));
-      const startDate = new Date(gameInfo.date + 'T' + convertTo24Hour(gameInfo.time));
-      const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000);
-      
-      const icsContent = generateICSContent(gameInfo, startDate, endDate);
-      const blob = new Blob([icsContent], { type: 'text/calendar' });
-      const url = window.URL.createObjectURL(blob);
-      
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `umbc-rugby-${gameInfo.opponent.toLowerCase().replace(/\s+/g, '-')}.ics`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    }
-
-    function addToOutlookCalendar(gameCard) {
-      const gameInfo = JSON.parse(gameCard.getAttribute('data-game-info'));
-      const startDate = new Date(gameInfo.date + 'T' + convertTo24Hour(gameInfo.time));
-      const endDate = new Date(startDate.getTime() + 2 * 60 * 60 * 1000);
-      
-      const outlookUrl = `https://outlook.live.com/calendar/0/deeplink/compose?subject=UMBC Rugby vs ${gameInfo.opponent}&startdt=${startDate.toISOString()}&enddt=${endDate.toISOString()}&body=${gameInfo.type} - ${gameInfo.location === 'home' ? 'Home' : 'Away'} Game&location=Walker Avenue Field, UMBC`;
-      
-      window.open(outlookUrl, '_blank');
-    }
-
-    function convertTo24Hour(time12h) {
-      if (time12h === 'TBD') return '12:00:00';
-      const [time, modifier] = time12h.split(' ');
-      let [hours, minutes] = time.split(':');
-      if (hours === '12') hours = '00';
-      if (modifier === 'PM') hours = parseInt(hours, 10) + 12;
-      return `${hours.padStart(2, '0')}:${minutes}:00`;
-    }
-
-    function formatDateForGoogle(date) {
-      return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-    }
-
-    function generateICSContent(gameInfo, startDate, endDate) {
-      const formatICSDate = (date) => date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
-      
-      return `BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//UMBC Rugby//Game Schedule//EN
-BEGIN:VEVENT
-DTSTART:${formatICSDate(startDate)}
-DTEND:${formatICSDate(endDate)}
-SUMMARY:UMBC Rugby vs ${gameInfo.opponent}
-DESCRIPTION:${gameInfo.type} - ${gameInfo.location === 'home' ? 'Home' : 'Away'} Game
-LOCATION:Walker Avenue Field, UMBC
-END:VEVENT
-END:VCALENDAR`;
-    }
-
-    // Initialize mobile menu
-    initMobileMenu();
-
-    // Dark Mode Toggle Functionality
-    function initThemeToggle() {
-      const themeToggle = document.getElementById('theme-toggle');
-      
-      if (!themeToggle) return;
-      
-      // Get saved theme or default to light
-      const savedTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-theme', savedTheme);
-      
-      themeToggle.addEventListener('click', () => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        
-        console.log(`Theme switched to: ${newTheme}`);
-      });
-      
-      console.log(`Theme initialized: ${savedTheme}`);
-    }
-    
-    // Initialize theme toggle
-    initThemeToggle();
-  </script>
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

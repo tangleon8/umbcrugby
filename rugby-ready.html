@@ -1,210 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no " />
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/styles.css" />
-
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <script src="js/scripts.js" defer></script>
-
-  <!-- AOS library & Google Fonts -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-
-  <title>Getting Rugby-Ready | UMBC Rugby Club</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rugby Ready - UMBC Rugby</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-<script>
-// Initialize AOS
-document.addEventListener('DOMContentLoaded', function() {
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
-});
-
-</script>
-
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" title="Back to Top">↑</button>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
-  <!-- Header -->
- <header id="hero-header" class="rugby-ready-hero">
-  <img src="assets/images/IMG_4635.jpg" alt="Header Background" id="header-image" />
-  <div class="hero-overlay"></div>
-  <div class="hero-content" data-aos="fade-up">
-    <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-    <h1 class="hero-title animated-title">Getting Rugby-Ready</h1>
-    <div class="hero-animated-text">
-      <p class="hero-subtitle animated-subtitle">Prepare your body and mind for the demands of rugby.</p>
-      <p class="hero-description animated-description">Train Hard. Play Harder. Win Together.</p>
-    </div>
-  </div>
-</header>
-
-
-    <!-- Navigation -->
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link active">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link active">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link">FAQs</a></li>
       </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link">Roster</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link active">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link">Recruitment</a>
+      <a href="alumni.html" class="nav__link">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
     </div>
   </nav>
 
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/IMG_4635.jpg" alt="Rugby Training" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">Getting Rugby-Ready</h1>
+      <p class="page-hero__subtitle">Prepare your body and mind for the demands of rugby</p>
+    </div>
+  </header>
+
   <!-- Main Content -->
-  <main>
+  <main id="main-content">
     <!-- Rugby Preparation Section -->
-    <section id="rugby-preparation" class="info-section" data-aos="fade-up">
-      <h2 class="section-title">Preparing for Rugby</h2>
-      <p>
-        Rugby isn’t just a game, it’s a challenge of your strength, fitness, and mindset. Whether you’re just starting out or have been playing for years, getting ready to take the field means preparing your body and mind for the unique demands of the sport. Rugby matches come in different formats, each testing you in its own way. In traditional 15s rugby, games last 80 minutes, split into two halves with limited rest. Meanwhile, 7s rugby is shorter but intense, with 14-minute matches often played back-to-back. Preparing for this variety is about more than just showing up strong—it’s about being fit, focused, and ready for anything.
-      </p>
-      <div class="content-grid">
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h3>Strength</h3>
-          <p>
-            When it comes to strength, rugby is about more than building muscle for the sake of it. Sure, having power is important, but it’s the functional kind of strength that makes the difference on the field. Your legs and core do most of the heavy lifting in rugby—whether you’re sprinting, tackling, or pushing in a scrum. Exercises like squats, deadlifts, and box jumps are great ways to build the kind of strength that translates directly to the game. It’s also about being explosive and agile, not just strong. After all, what’s the point of all that power if you can’t move quickly or keep up with the pace of the match?
-          </p>
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Preparation</span>
+          <h2 class="section-title">Preparing for Rugby</h2>
+          <p class="section-subtitle">Rugby isn't just a game, it's a challenge of your strength, fitness, and mindset. Whether you're just starting out or have been playing for years, getting ready to take the field means preparing your body and mind for the unique demands of the sport.</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200">
-          <h3>Fitness</h3>
-          <p>
-            Fitness is absolutely vital in rugby. In the traditional 15-a-side game, matches last 80 minutes. Meanwhile, the 7-a-side format is characterized by its brief, intense 14-minute matches, often totaling 3-4 games in a single day. Players get minimal rest and once substituted, they cannot re-enter the game, which means most need the stamina to last the whole match. Rugby demands a unique blend of fitness as players constantly switch between different levels of physical exertion—running, tackling, jogging, sprinting, wrestling, lifting, and pushing. To keep up with these demands, it's essential to incorporate a mix of traditional cardio exercises and High-Intensity Interval Training (HIIT).
-          </p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h3>Nutrition</h3>
-          <p>
-            Nutrition and hydration are crucial yet frequently overlooked aspects of achieving peak physical performance. While many athletes prioritize proteins and complex carbohydrates, it's also essential not to underestimate the importance of a varied diet that includes plenty of fruits and vegetables. These provide essential vitamins and minerals that help your body function optimally and maintain top performance levels.
-          </p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="400">
-          <h3>Rest</h3>
-          <p>
-            Yes, it's possible to overdo your workouts. Your muscles require rest days to repair and grow. Equally important is getting enough sleep. Sleep is the critical time when your body and your brain rests, recovers, and repairs itself. Lack of quality sleep can diminish motivation, hinder workout recovery, increase the risk of injuries and illness, and impair cognitive functions and mood. These setbacks are not only detrimental to your rugby performance but to everyday life and academic success as well. Aim for a full 8 hours of sleep each night to stay at your best.
-          </p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="500">
-          <h3>Mental Preparedness</h3>
-          <p>
-            Taking care of your mental and emotional well-being is crucial for overall health. Everyone encounters various types of stress and pressures from school, finances, family, and more. Given that rugby is a physically demanding and contact-heavy sport, being in the right mindset is essential not only for your safety but also for the safety of others on the field.
-            <br><br>
-            Remember, while rugby is competitive, it should also be enjoyable and can serve as a fantastic stress reliever when approached with the right attitude. If you ever find yourself struggling with mental or emotional health issues, know that you are not alone. The coaching staff is here to support you and will do everything possible to help.
-          </p>
+
+        <div class="content-grid">
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Strength</h3>
+            <p class="content-card__text">
+              Rugby is about functional strength that makes a difference on the field. Your legs and core do most of the heavy lifting whether you're sprinting, tackling, or pushing in a scrum. Exercises like squats, deadlifts, and box jumps build the kind of strength that translates directly to the game. It's about being explosive and agile, not just strong.
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Fitness</h3>
+            <p class="content-card__text">
+              In 15-a-side rugby, matches last 80 minutes. In 7s, brief 14-minute matches often total 3-4 games in a single day. Rugby demands a unique blend of fitness as players constantly switch between running, tackling, jogging, sprinting, wrestling, lifting, and pushing. Incorporate both traditional cardio and High-Intensity Interval Training (HIIT).
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Nutrition</h3>
+            <p class="content-card__text">
+              Nutrition and hydration are crucial yet frequently overlooked aspects of peak physical performance. While many athletes prioritize proteins and complex carbohydrates, it's also essential to include plenty of fruits and vegetables. These provide essential vitamins and minerals that help your body function optimally.
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Rest</h3>
+            <p class="content-card__text">
+              Yes, it's possible to overdo your workouts. Your muscles require rest days to repair and grow. Sleep is the critical time when your body and brain rests, recovers, and repairs itself. Lack of quality sleep can diminish motivation, hinder recovery, increase injury risk, and impair cognitive functions. Aim for 8 hours each night.
+            </p>
+          </div>
+
+          <div class="content-card content-card--wide" data-animate>
+            <h3 class="content-card__title">Mental Preparedness</h3>
+            <p class="content-card__text">
+              Taking care of your mental and emotional well-being is crucial for overall health. Everyone encounters various types of stress from school, finances, family, and more. Given that rugby is a physically demanding contact sport, being in the right mindset is essential not only for your safety but also for the safety of others on the field.
+            </p>
+            <p class="content-card__text">
+              Remember, while rugby is competitive, it should also be enjoyable and can serve as a fantastic stress reliever when approached with the right attitude. If you ever find yourself struggling, know that you are not alone. The coaching staff is here to support you.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Rugby IQ Section -->
-    <section id="rugby-iq" class="info-section" data-aos="fade-up">
-      <h2>Increasing Your Rugby IQ</h2>
-      <p>
-        Whether you're new to rugby or have some experience, improving your skills and knowledge is a journey. You can learn enough to play in just a month, but mastering the game takes years. If you're starting out, don't feel overwhelmed—focus on the basics, take it slow, and most importantly, enjoy the process. Rugby is as much about learning as it is about having fun!
-      </p>
-      <div class="content-grid">
-        <div data-aos="fade-up" data-aos-delay="100">
-          <h3>Learn the Basics</h3>
-          <p>
-            Start with the foundations: familiarize yourself with the rules and terminology. This will help you understand the game and reduce confusion on the field. For 15s rugby, check out an introductory video on Rugby Union. If you're playing 7s rugby, a short video on this faster-paced variation is highly recommended.
-          </p>
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Knowledge</span>
+          <h2 class="section-title">Increasing Your Rugby IQ</h2>
+          <p class="section-subtitle">Whether you're new to rugby or have some experience, improving your skills and knowledge is a journey. You can learn enough to play in just a month, but mastering the game takes years. Focus on the basics, take it slow, and most importantly, enjoy the process!</p>
         </div>
-        <div data-aos="fade-up" data-aos-delay="200">
-          <h3>Watch Matches</h3>
-          <p>
-            Watching rugby is one of the best ways to learn. Explore games at various levels—from international matches to collegiate games. Pay attention to:
-          </p>
-          <ul>
-            <li>The flow of the game and how it progresses.</li>
-            <li>Offensive and defensive strategies, including player positioning.</li>
-            <li>Players in your position: observe their decisions and techniques to improve your own gameplay.</li>
-          </ul>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="300">
-          <h3>Understand the Laws</h3>
-          <p>
-            Knowing the official rules, or IRB Laws, is key to becoming a better player. These laws evolve regularly, so even seasoned players benefit from periodic reviews. Staying updated ensures you're playing within the latest standards and strategies.
-          </p>
-        </div>
-        <div data-aos="fade-up" data-aos-delay="400">
-          <h3>Focus on Your Role</h3>
-          <p>
-            Each position in rugby has unique responsibilities. Whether you're scrummaging in the front row or mastering kicks as a flyhalf, focus on honing the skills specific to your role. Engage with your coaches—they can provide tailored advice to help you excel and make a bigger impact on the team.
-          </p>
+
+        <div class="content-grid">
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Learn the Basics</h3>
+            <p class="content-card__text">
+              Start with the foundations: familiarize yourself with the rules and terminology. This will help you understand the game and reduce confusion on the field. For 15s rugby, check out an introductory video on Rugby Union. If you're playing 7s, a video on this faster-paced variation is highly recommended.
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Watch Matches</h3>
+            <p class="content-card__text">
+              Watching rugby is one of the best ways to learn. Explore games at various levels from international matches to collegiate games. Pay attention to the flow of the game, offensive and defensive strategies, player positioning, and players in your position to observe their decisions and techniques.
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Understand the Laws</h3>
+            <p class="content-card__text">
+              Knowing the official rules, or IRB Laws, is key to becoming a better player. These laws evolve regularly, so even seasoned players benefit from periodic reviews. Staying updated ensures you're playing within the latest standards and strategies.
+            </p>
+          </div>
+
+          <div class="content-card" data-animate>
+            <h3 class="content-card__title">Focus on Your Role</h3>
+            <p class="content-card__text">
+              Each position in rugby has unique responsibilities. Whether you're scrummaging in the front row or mastering kicks as a flyhalf, focus on honing the skills specific to your role. Engage with your coaches they can provide tailored advice to help you excel and make a bigger impact on the team.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Resources Section -->
-    <section id="resources" class="info-section" data-aos="fade-up">
-      <h2>Helpful Resources</h2>
-      <p>Looking for more guidance? Check out these carefully curated resources to help you get started on your rugby journey:</p>
-      <ul>
-        <li data-aos="fade-right" data-aos-delay="100"><a href="https://www.springboks.rugby/media/3jobvisl/eating-plans.pdf" target="_blank">Professional Rugby Diet Plan</a></li>
-        <li data-aos="fade-right" data-aos-delay="200"><a href="https://www.world.rugby/the-game/laws" target="_blank">Official World Rugby Laws</a></li>
-        <li data-aos="fade-right" data-aos-delay="300"><a href="https://www.youtube.com/watch?v=F22A_V77Tic" target="_blank">Rugby Tutorials and Match Footage</a></li>
-      </ul>
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Learn More</span>
+          <h2 class="section-title">Helpful Resources</h2>
+          <p class="section-subtitle">Looking for more guidance? Check out these carefully curated resources to help you get started on your rugby journey</p>
+        </div>
+
+        <ul class="resources-list" data-animate>
+          <li class="resources-list__item">
+            <a href="https://www.springboks.rugby/media/3jobvisl/eating-plans.pdf" target="_blank" rel="noopener" class="resources-list__link">
+              Professional Rugby Diet Plan
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          </li>
+          <li class="resources-list__item">
+            <a href="https://www.world.rugby/the-game/laws" target="_blank" rel="noopener" class="resources-list__link">
+              Official World Rugby Laws
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          </li>
+          <li class="resources-list__item">
+            <a href="https://www.youtube.com/watch?v=F22A_V77Tic" target="_blank" rel="noopener" class="resources-list__link">
+              Rugby Tutorials and Match Footage
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+
+        <div class="section__cta">
+          <a href="recruitment.html" class="btn btn--primary">Join the Team</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-  <!-- Logo -->
-  <div class="footer-logo">
-    <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-    <img src="assets/images/ncr.png" alt="NCR Logo" />
-    <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="footer__logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo" class="footer__logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo" class="footer__logo">
+      </div>
 
-  </div>
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
 
-  <!-- Navigation Links -->
-  <nav class="footer-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="roster.html">Roster</a></li>
-      <li><a href="schedule.html">Schedule</a></li>
-      <li><a href="rugby-ready.html">Rugby Ready</a></li>
-      <li><a href="recruitment.html">Recruitment</a></li>
-      <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-      <li><a href="donate.html">Donate</a></li>
-      <li><a href="faq.html">FAQs</a></li>
-    </ul>
-  </nav>
-
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
+    </div>
   </footer>
 
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({\n      duration: 1200,\n      once: true,\n      offset: 100\n    });\n\n    // Mobile Menu Initialization\n    function initMobileMenu() {\n      const menuToggle = document.querySelector('.mobile-menu-toggle');\n      const navMenu = document.querySelector('.nav-menu');\n      const menuOverlay = document.querySelector('.mobile-menu-overlay');\n      const navbar = document.getElementById('navbar');\n      \n      if (!menuToggle || !navMenu || !menuOverlay) return;\n\n      // Toggle mobile menu\n      function toggleMenu() {\n        const isOpen = navbar.classList.contains('mobile-open');\n        \n        navbar.classList.toggle('mobile-open');\n        menuToggle.classList.toggle('active');\n        menuToggle.setAttribute('aria-expanded', !isOpen);\n        document.body.classList.toggle('menu-open');\n        \n        // Prevent body scroll when menu is open\n        document.body.style.overflow = !isOpen ? 'hidden' : '';\n      }\n\n      // Close mobile menu\n      function closeMenu() {\n        navbar.classList.remove('mobile-open');\n        menuToggle.classList.remove('active');\n        menuToggle.setAttribute('aria-expanded', 'false');\n        document.body.classList.remove('menu-open');\n        document.body.style.overflow = '';\n      }\n\n      // Event listeners\n      menuToggle.addEventListener('click', (e) => {\n        e.preventDefault();\n        e.stopPropagation();\n        toggleMenu();\n      });\n      \n      menuOverlay.addEventListener('click', closeMenu);\n\n      // Close menu when clicking on navigation links\n      const navLinks = navMenu.querySelectorAll('.nav-link');\n      navLinks.forEach(link => {\n        link.addEventListener('click', closeMenu);\n      });\n\n      // Close menu on escape key\n      document.addEventListener('keydown', (e) => {\n        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {\n          closeMenu();\n        }\n      });\n\n      // Handle window resize\n      window.addEventListener('resize', () => {\n        if (window.innerWidth > 768) {\n          closeMenu();\n        }\n      });\n    }\n\n    // Initialize mobile menu\n    initMobileMenu();
-  </script>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

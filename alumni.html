@@ -3,135 +3,325 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alumni - UMBC Rugby</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <script src="js/scripts.js" defer></script>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <title>UMBC Rugby Shop - Redirecting...</title>
-  <script>
-    // Redirect to the shop URL in a new tab
-    window.open("https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product", "_blank");
-    // Also update current page to show redirect message
-  </script>
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- Back to Top Button -->
-  <button id="back-to-top" title="Back to Top">↑</button>
-
-  <!-- NAVIGATION -->
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link active">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link">FAQs</a></li>
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link active">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link">FAQs</a></li>
       </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link">Roster</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link">Recruitment</a>
+      <a href="alumni.html" class="nav__link active">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO SECTION -->
-  <header id="hero-header">
-    <img src="assets/images/1987.jpg" alt="UMBC Rugby Shop" id="header-image" />
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title">UMBC Rugby Shop</h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle">Redirecting to Shop...</p>
-        <p class="hero-description">You will be automatically redirected to our official merchandise store.</p>
-      </div>
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/1987.jpg" alt="UMBC Rugby Alumni" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">Alumni Network</h1>
+      <p class="page-hero__subtitle">Once a Retriever, always a Retriever. Stay connected with UMBC Rugby.</p>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <!-- Redirect Message Section -->
-    <section class="about-section">
+  <main id="main">
+    <!-- Legacy Section -->
+    <section class="section">
       <div class="container">
-        <h2 class="section-title">UMBC Rugby Shop</h2>
-        <div class="about-content">
-          <div class="about-text">
-            <p>
-              You are being redirected to our official UMBC Rugby merchandise store. 
-              If you are not automatically redirected, please click the button below.
+        <div class="section-header text-center">
+          <span class="section-label">Our Legacy</span>
+          <h2 class="section-title">40+ Years of Brotherhood</h2>
+          <p class="section-subtitle">Since 1984, UMBC Rugby has built a tradition of excellence, camaraderie, and lifelong connections that extend far beyond graduation.</p>
+        </div>
+
+        <div class="stats-grid" data-animate>
+          <div class="stat-card">
+            <div class="stat-card__number">1984</div>
+            <div class="stat-card__label">Founded</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">500+</div>
+            <div class="stat-card__label">Alumni Network</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">40+</div>
+            <div class="stat-card__label">Years of Rugby</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-card__number">1</div>
+            <div class="stat-card__label">Brotherhood</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stay Connected Section -->
+    <section class="section section--elevated">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Get Involved</span>
+          <h2 class="section-title">Stay Connected</h2>
+          <p class="section-subtitle">There are many ways to stay involved with UMBC Rugby after graduation</p>
+        </div>
+
+        <div class="features__grid">
+          <div class="feature-card" data-animate>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Alumni Weekend</h3>
+            <p class="feature-card__description">Join us for our annual Alumni Weekend celebration. Reconnect with old teammates and meet current players.</p>
+            <a href="#events" class="feature-card__link">
+              Learn More
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3M7,5A2,2 0 0,0 5,7A2,2 0 0,0 7,9A2,2 0 0,0 9,7A2,2 0 0,0 7,5M17,5A2,2 0 0,0 15,7A2,2 0 0,0 17,9A2,2 0 0,0 19,7A2,2 0 0,0 17,5M12,5A2,2 0 0,0 10,7A2,2 0 0,0 12,9A2,2 0 0,0 14,7A2,2 0 0,0 12,5M7,10A2,2 0 0,0 5,12A2,2 0 0,0 7,14A2,2 0 0,0 9,12A2,2 0 0,0 7,10M17,10A2,2 0 0,0 15,12A2,2 0 0,0 17,14A2,2 0 0,0 19,12A2,2 0 0,0 17,10M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M7,15A2,2 0 0,0 5,17A2,2 0 0,0 7,19A2,2 0 0,0 9,17A2,2 0 0,0 7,15M17,15A2,2 0 0,0 15,17A2,2 0 0,0 17,19A2,2 0 0,0 19,17A2,2 0 0,0 17,15M12,15A2,2 0 0,0 10,17A2,2 0 0,0 12,19A2,2 0 0,0 14,17A2,2 0 0,0 12,15Z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Attend Matches</h3>
+            <p class="feature-card__description">Come cheer on the current squad at home games. Your support means everything to the team.</p>
+            <a href="schedule.html" class="feature-card__link">
+              View Schedule
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Support the Club</h3>
+            <p class="feature-card__description">Your donations help fund equipment, travel, and scholarships for student-athletes.</p>
+            <a href="donate.html" class="feature-card__link">
+              Donate Now
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+
+          <div class="feature-card" data-animate>
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Hall of Fame</h3>
+            <p class="feature-card__description">Nominate deserving alumni for the UMBC Rugby Hall of Fame recognition.</p>
+            <a href="#hall-of-fame" class="feature-card__link">
+              Learn More
+              <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="section" id="events">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Mark Your Calendar</span>
+          <h2 class="section-title">Upcoming Alumni Events</h2>
+          <p class="section-subtitle">Join us for these special events throughout the year</p>
+        </div>
+
+        <div class="games-grid">
+          <div class="game-card" data-animate>
+            <div class="game-card__date">
+              <span class="game-card__month">Oct</span>
+              <span class="game-card__day">TBD</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Alumni Weekend 2025</h3>
+              <p class="game-card__meta">Annual Reunion | Walker Field</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">Annual</span>
+          </div>
+
+          <div class="game-card" data-animate>
+            <div class="game-card__date">
+              <span class="game-card__month">Nov</span>
+              <span class="game-card__day">TBD</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">Hall of Fame Ceremony</h3>
+              <p class="game-card__meta">Recognition Event | UMBC Campus</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">Special</span>
+          </div>
+
+          <div class="game-card" data-animate>
+            <div class="game-card__date">
+              <span class="game-card__month">Dec</span>
+              <span class="game-card__day">TBD</span>
+            </div>
+            <div class="game-card__info">
+              <h3 class="game-card__opponent">End of Season Banquet</h3>
+              <p class="game-card__meta">Celebration | Baltimore Area</p>
+            </div>
+            <span class="game-card__badge game-card__badge--home">Social</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hall of Fame Section -->
+    <section class="section section--dark" id="hall-of-fame">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Recognition</span>
+          <h2 class="section-title">Hall of Fame</h2>
+          <p class="section-subtitle">Honoring those who have made exceptional contributions to UMBC Rugby</p>
+        </div>
+
+        <div class="testimonials__grid">
+          <div class="testimonial-card" data-animate>
+            <span class="testimonial-card__quote">"</span>
+            <p class="testimonial-card__text">
+              The Hall of Fame recognizes alumni who have demonstrated exceptional dedication to UMBC Rugby through their playing career, leadership, or continued support of the program.
             </p>
-            <p>
-              Shop for official UMBC Rugby gear, apparel, and accessories to show your support for the team!
-            </p>
-            <div style="text-align: center; margin-top: 30px;">
-              <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" 
-                 target="_blank"
-                 class="cta-button" 
-                 style="display: inline-block; padding: 15px 30px; background: var(--umbc-gold); color: black; text-decoration: none; border-radius: 5px; font-weight: bold;">
-                Visit Shop Now →
-              </a>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">HF</div>
+              <div>
+                <div class="testimonial-card__name">Hall of Fame</div>
+                <div class="testimonial-card__role">Nominations Open Annually</div>
+              </div>
             </div>
           </div>
+
+          <div class="testimonial-card" data-animate>
+            <span class="testimonial-card__quote">"</span>
+            <p class="testimonial-card__text">
+              Know someone who deserves recognition? Contact us to nominate a former player or coach who has made a lasting impact on the UMBC Rugby program.
+            </p>
+            <div class="testimonial-card__author">
+              <div class="testimonial-card__avatar">NM</div>
+              <div>
+                <div class="testimonial-card__name">Nominate Someone</div>
+                <div class="testimonial-card__role">Email: umbcmensrugby@gmail.com</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Reconnect</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <p class="section-subtitle">We'd love to hear from you. Reach out to reconnect with UMBC Rugby.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">EMAIL</div>
+            <h3 class="contact-card__title">Email Us</h3>
+            <p class="contact-card__text">umbcmensrugby@gmail.com</p>
+          </div>
+
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">SOCIAL</div>
+            <h3 class="contact-card__title">Follow Us</h3>
+            <p class="contact-card__text">@umbcmensrugby</p>
+          </div>
+
+          <div class="contact-card" data-animate>
+            <div class="contact-card__icon">VISIT</div>
+            <h3 class="contact-card__title">Come to a Game</h3>
+            <p class="contact-card__text">Walker Field, UMBC<br>Check schedule for times</p>
+          </div>
+        </div>
+
+        <div class="testimonials__cta" data-animate>
+          <div class="testimonials__cta-content">
+            <h3 class="testimonials__cta-title">Support the Next Generation</h3>
+            <p class="testimonials__cta-text">Your contribution helps current players experience the same brotherhood you did.</p>
+          </div>
+          <a href="donate.html" class="btn btn--primary btn--lg">
+            Make a Donation
+            <span class="arrow">&rarr;</span>
+          </a>
         </div>
       </div>
     </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <!-- Logo -->
-    <div class="footer-logo">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
-      <img src="assets/images/ncr.png" alt="NCR Logo">
-      <img src="assets/images/umbclogo.png" alt="UMBC Logo">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo">
+      </div>
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
     </div>
-
-    <!-- Footer Navigation Links -->
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="roster.html">Roster</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="rugby-ready.html">Rugby Ready</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul>
-    </nav>
-
-    <!-- Copyright -->
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 100
-    });
-  </script>
-
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">&uarr;</button>
+  <script src="js/scripts.js"></script>
 </body>
 </html>

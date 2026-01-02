@@ -1,664 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <link rel="stylesheet" href="css/styles.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-  <script src="js/scripts.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQs - UMBC Rugby</title>
-  
-  <style>
-    /* FAQ Specific Styling */
-    .faq-section {
-      max-width: 1000px;
-      margin: 60px auto;
-      padding: 50px 30px;
-      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-      border-radius: 20px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      position: relative;
-      z-index: 10;
-    }
-    
-    .section-header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    
-    .section-header h2 {
-      font-size: clamp(2rem, 5vw, 2.8rem);
-      color: var(--umbc-gold, #FFB81C);
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-    
-    .faq-item {
-      background: rgba(255, 255, 255, 0.95);
-      border-radius: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 184, 28, 0.1);
-    }
-    
-    .faq-item:hover {
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-      transform: translateY(-2px);
-      border-color: rgba(255, 184, 28, 0.3);
-    }
-    
-    .faq-question {
-      width: 100%;
-      background: none;
-      border: none;
-      padding: 25px 30px;
-      text-align: left;
-      font-size: clamp(1rem, 2.5vw, 1.2rem);
-      font-weight: 600;
-      color: #333;
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-    
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      font-weight: 300;
-      color: var(--umbc-gold, #FFB81C);
-      transition: transform 0.3s ease;
-      flex-shrink: 0;
-      margin-left: 20px;
-    }
-    
-    .faq-item.active .faq-question::after {
-      transform: rotate(45deg);
-    }
-    
-    .faq-question:hover {
-      background: rgba(255, 184, 28, 0.05);
-      color: #333;
-    }
-    
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.5s ease, padding 0.5s ease;
-      background: #f8f9fa;
-    }
-    
-    .faq-item.active .faq-answer {
-      max-height: 400px;
-      padding: 25px 30px;
-    }
-    
-    .faq-answer p {
-      margin: 0;
-      line-height: 1.7;
-      color: #555;
-      font-size: clamp(0.9rem, 2vw, 1.1rem);
-    }
-    
-    .faq-answer a {
-      color: var(--umbc-gold, #FFB81C);
-      text-decoration: none;
-      font-weight: 600;
-    }
-    
-    .faq-answer a:hover {
-      text-decoration: underline;
-    }
-    
-    /* Intro section styling */
-    .faq-intro {
-      background: linear-gradient(135deg, rgba(255, 184, 28, 0.1), rgba(255, 184, 28, 0.05));
-      padding: 80px 20px;
-      text-align: center;
-      margin-bottom: 60px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-    
-    .intro-title {
-      font-size: clamp(2.5rem, 8vw, 4rem);
-      color: var(--umbc-gold, #FFB81C);
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-    
-    .intro-description {
-      font-size: clamp(1rem, 3vw, 1.3rem);
-      color: #666;
-      max-width: 700px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-    
-    /* Enhanced Mobile responsiveness */
-    @media (max-width: 768px) {
-      .faq-section {
-        margin: 20px 15px;
-        padding: 35px 20px;
-        border-radius: 16px;
-      }
-      
-      .faq-intro {
-        margin: 20px 15px 40px;
-        padding: 50px 20px;
-        border-radius: 16px;
-      }
-      
-      .faq-question {
-        padding: 20px 20px;
-        font-size: clamp(0.95rem, 3vw, 1.1rem);
-        line-height: 1.4;
-      }
-      
-      .faq-question::after {
-        font-size: 1.3rem;
-        margin-left: 15px;
-      }
-      
-      .faq-item.active .faq-answer {
-        padding: 20px 20px;
-        max-height: 500px;
-      }
-      
-      .faq-answer p {
-        font-size: clamp(0.85rem, 2.5vw, 1rem);
-        line-height: 1.6;
-      }
-      
-      .section-header h2 {
-        font-size: clamp(1.6rem, 6vw, 2.2rem);
-        margin-bottom: 20px;
-      }
-      
-      .intro-title {
-        font-size: clamp(2rem, 8vw, 2.8rem);
-        margin-bottom: 15px;
-      }
-      
-      .intro-description {
-        font-size: clamp(0.9rem, 4vw, 1.1rem);
-        padding: 0 15px;
-      }
-      
-      .faq-item {
-        margin-bottom: 15px;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .faq-question {
-        padding: 15px 12px;
-        font-size: 0.9rem;
-        text-align: left;
-        display: block;
-        word-wrap: break-word;
-      }
-      
-      .faq-question::after {
-        position: absolute;
-        right: 12px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      
-      .faq-item.active .faq-answer {
-        padding: 15px 12px;
-        max-height: 400px;
-      }
-      
-      .faq-answer p {
-        font-size: 0.85rem;
-      }
-      
-      .section-header h2 {
-        font-size: 1.5rem;
-      }
-      
-      .intro-title {
-        font-size: 1.8rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      .faq-section {
-        margin: 15px 10px;
-        padding: 25px 15px;
-      }
-      
-      .faq-intro {
-        margin: 15px 10px 30px;
-        padding: 40px 15px;
-      }
-      
-      .faq-question {
-        padding: 16px 15px;
-      }
-      
-      .faq-item.active .faq-answer {
-        padding: 16px 15px;
-      }
-      
-      .faq-question::after {
-        right: 12px;
-        font-size: 1.2rem;
-      }
-    }
-
-    /* Video Section Styling */
-    .video-section {
-      text-align: center;
-      margin: 60px auto;
-      padding: 40px 20px;
-      max-width: 900px;
-      position: relative;
-    }
-    
-    .video-container h3 {
-      font-size: 2rem;
-      color: var(--umbc-gold, #FFB81C);
-      margin-bottom: 30px;
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-    }
-    
-    .video-container video {
-      transition: all 0.3s ease;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .video-container video:hover {
-      transform: scale(1.02);
-      box-shadow: 0 15px 40px rgba(255, 184, 28, 0.2) !important;
-    }
-
-    .video-container::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(255, 184, 28, 0.1) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      animation: particleFloat 8s ease-in-out infinite;
-      z-index: 0;
-    }
-  </style>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="assets/images/rugbylogo.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <!-- Back to Top Button -->
-  <button id="back-to-top" title="Back to Top">↑</button>
-
-  <!-- HEADER -->
-  <header id="hero-header" class="faq-hero">
-    <!-- Background Image -->
-    <img src="assets/images/Latchana_Rugby89.jpg" alt="UMBC Rugby FAQ Header Image" id="header-image" class="faq-hero-bg" />
-
-    <!-- Enhanced Gradient Overlay -->
-    <div class="hero-overlay faq-overlay"></div>
-
-    <!-- Hero Content -->
-    <div class="hero-content" data-aos="fade-up">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="hero-logo" />
-      <h1 class="hero-title animated-title">FAQs</h1>
-      <div class="hero-animated-text">
-        <p class="hero-subtitle animated-subtitle">Frequently Asked Questions</p>
-        <p class="hero-description animated-description">Get answers to common questions about UMBC Rugby Club.</p>
-      </div>
-    </div>
-  </header>
+  <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
 
   <!-- Navigation -->
-  <nav id="navbar" class="hero-nav" role="navigation">
-    <div class="nav-container">
-      <!-- Mobile Menu Toggle -->
-      <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      
-      <!-- Navigation Logo (for mobile) -->
-      <div class="nav-logo">
-        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby" class="nav-logo-img">
-      </div>
-      
-      <!-- Navigation Menu -->
-      <ul class="nav-menu">
-        <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="roster.html" class="nav-link">Roster</a></li>
-        <li><a href="schedule.html" class="nav-link">Schedule</a></li>
-        <li><a href="rugby-ready.html" class="nav-link">Rugby Ready</a></li>
-        <li><a href="recruitment.html" class="nav-link">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav-link">Shop</a></li>
-        <li><a href="donate.html" class="nav-link">Donate</a></li>
-        <li><a href="faq.html" class="nav-link active">FAQs</a></li>
+  <nav class="nav" id="nav">
+    <div class="nav__container">
+      <a href="index.html" class="nav__logo">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby">
+      </a>
+      <ul class="nav__menu">
+        <li><a href="index.html" class="nav__link">Home</a></li>
+        <li><a href="roster.html" class="nav__link">Roster</a></li>
+        <li><a href="schedule.html" class="nav__link">Schedule</a></li>
+        <li><a href="rugby-ready.html" class="nav__link">Rugby Ready</a></li>
+        <li><a href="recruitment.html" class="nav__link">Recruitment</a></li>
+        <li><a href="alumni.html" class="nav__link">Alumni</a></li>
+        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a></li>
+        <li><a href="donate.html" class="nav__link">Donate</a></li>
+        <li><a href="faq.html" class="nav__link active">FAQs</a></li>
       </ul>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay"></div>
+      <div class="nav__cta">
+        <a href="recruitment.html" class="btn btn--primary btn--sm">Join Team</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+        <span class="nav__toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav__mobile-menu" id="mobile-menu">
+      <a href="index.html" class="nav__link">Home</a>
+      <a href="roster.html" class="nav__link">Roster</a>
+      <a href="schedule.html" class="nav__link">Schedule</a>
+      <a href="rugby-ready.html" class="nav__link">Rugby Ready</a>
+      <a href="recruitment.html" class="nav__link">Recruitment</a>
+      <a href="alumni.html" class="nav__link">Alumni</a>
+      <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="nav__link">Shop</a>
+      <a href="donate.html" class="nav__link">Donate</a>
+      <a href="faq.html" class="nav__link active">FAQs</a>
+      <div class="nav__mobile-cta">
+        <a href="recruitment.html" class="btn btn--primary">Join The Team</a>
+      </div>
     </div>
   </nav>
 
+  <!-- Page Hero -->
+  <header class="page-hero">
+    <img src="assets/images/Latchana_Rugby89.jpg" alt="UMBC Rugby FAQ" class="page-hero__image">
+    <div class="page-hero__overlay"></div>
+    <div class="page-hero__content">
+      <h1 class="page-hero__title">FAQs</h1>
+      <p class="page-hero__subtitle">Get answers to common questions about UMBC Rugby Club</p>
+    </div>
+  </header>
+
   <!-- Main Content -->
-  <main id="faq-content">
-    <!-- FAQ Intro Section -->
-    <section class="faq-intro" data-aos="fade-up">
-      <div class="intro-container">
-        <h2 class="intro-title">Common Questions</h2>
-        <p class="intro-description">
-          Find answers to frequently asked questions about joining UMBC Rugby Club.
-        </p>
+  <main id="main-content">
+    <!-- General Questions -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Basics</span>
+          <h2 class="section-title">General Questions</h2>
+        </div>
+
+        <div class="faq-list" data-animate>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              I don't know anything about rugby. Can I still play?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Yes! We'll teach you everything you need to know.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What do I need to play? Do I need to buy anything?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>No, not right away! You can come practice with as little as good athletic shoes and a water bottle. Eventually, you'll need a mouth guard, cleats, and rugby shorts, but you're fine to start without.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Is rugby dangerous?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Like any contact sport, it can be. However, our USA rugby-certified coaching staff and senior players teach the fundamentals of safe and secure play to reduce risk.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Practice & Games -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Training</span>
+          <h2 class="section-title">Practice & Games</h2>
+        </div>
 
-    <!-- FAQ Sections -->
-   <section class="faq-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-    <div class="section-header" data-aos="slide-down" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <h2>General Questions</h2>
-    </div>
-    <div class="faq-item" data-aos="flip-left" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: I don't know anything about rugby. Can I still play?</button>
-      <div class="faq-answer">
-        <p>A: Yes! We'll teach you everything you need to know.</p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="flip-right" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: What do I need to play? Do I need to buy anything?</button>
-      <div class="faq-answer">
-        <p>
-          A: No, not right away! You can come practice with as little as good athletic shoes and a water bottle.
-          Eventually, you'll need a mouth guard, cleats, and rugby shorts, but you're fine to start without.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="flip-left" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: Is rugby dangerous?</button>
-      <div class="faq-answer">
-        <p>
-          A: Like any contact sport, it can be. However, our USA rugby-certified coaching staff and senior players
-          teach the fundamentals of safe and secure play to reduce risk.
-        </p>
-      </div>
-    </div>
-  </section>
+        <div class="faq-list" data-animate>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              When and where are practices?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Practices are held on Walker Avenue Field, typically on weekday evenings. Check our <a href="schedule.html">schedule</a> for updates.</p>
+            </div>
+          </div>
 
-  <!-- Practice & Games -->
-  <section class="faq-section" data-aos="fade-up" data-aos-duration="1200" data-aos-easing="ease-out-cubic">
-    <div class="section-header" data-aos="slide-down" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <h2>Practice & Games</h2>
-    </div>
-    <div class="faq-item" data-aos="slide-right" data-aos-delay="100" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: When and where are practices?</button>
-      <div class="faq-answer">
-        <p>A: Practices are held on Walker Avenue Field, typically on weekday evenings. Check our schedule for updates.</p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="slide-left" data-aos-delay="200" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: Do I need to attend every practice?</button>
-      <div class="faq-answer">
-        <p>
-          A: While regular attendance is encouraged to build skills and teamwork, we understand if you have other commitments.
-          Just communicate with the team captains and coaches.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="slide-right" data-aos-delay="300" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: What teams do you play against?</button>
-      <div class="faq-answer">
-        <p>
-          A: We play against other collegiate teams in the Mid-Atlantic Rugby Conference (MARC).
-          We also welcome matches with new teams. If you're interested, reach out via Instagram or fill out our <a href="recruitment.html">recruitment form</a>.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item" data-aos="slide-left" data-aos-delay="400" data-aos-duration="800" data-aos-easing="ease-out-back">
-      <button class="faq-question">Q: What positions are there in rugby?</button>
-      <div class="faq-answer">
-        <p>
-          A: Rugby positions are divided into forwards and backs. Forwards are typically stronger and involved in physical contests
-          while backs are faster and focus on running and scoring. You'll find the best position for your skills during practice.
-        </p>
-      </div>
-    </div>
-  </section>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Do I need to attend every practice?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>While regular attendance is encouraged to build skills and teamwork, we understand if you have other commitments. Just communicate with the team captains and coaches.</p>
+            </div>
+          </div>
 
-  <!-- Sponsorship Opportunities -->
-  <section class="faq-section" data-aos="fade-up">
-    <div class="section-header" data-aos="fade-left">
-      <h2>Sponsorship Opportunities</h2>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: How can my company sponsor UMBC Rugby?</button>
-      <div class="faq-answer">
-        <p>
-          A: We offer multiple sponsorship opportunities to support UMBC Rugby and connect with our vibrant community.
-          Download our <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a> for detailed information about sponsorship tiers, benefits, and how your contribution can make an impact.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: What are the benefits of sponsoring UMBC Rugby?</button>
-      <div class="faq-answer">
-        <p>
-          A: Sponsors receive recognition on our website, social media, and game-day materials, along with opportunities
-          to showcase their brand to the UMBC community and beyond. For more details, please refer to the
-          <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a>.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: Who should I contact for sponsorship inquiries?</button>
-      <div class="faq-answer">
-        <p>
-          A: Feel free to reach out to us via Instagram or email us directly!.
-        </p>
-      </div>
-    </div>
-  </section>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What teams do you play against?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We play against other collegiate teams in the Mid-Atlantic Rugby Conference (MARC). We also welcome matches with new teams. If you're interested, reach out via Instagram or fill out our <a href="recruitment.html">recruitment form</a>.</p>
+            </div>
+          </div>
 
-  <!-- Team Culture & Events -->
-  <section class="faq-section" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Team Culture & Events</h2>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: What is the team culture like?</button>
-      <div class="faq-answer">
-        <p>
-          A: Our team culture is centered on inclusivity, sportsmanship, and brotherhood. We welcome players of all skill levels
-          and backgrounds to join and contribute to our supportive and competitive environment.
-        </p>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What positions are there in rugby?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Rugby positions are divided into forwards and backs. Forwards are typically stronger and involved in physical contests while backs are faster and focus on running and scoring. You'll find the best position for your skills during practice.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: What events do you host?</button>
-      <div class="faq-answer">
-        <p>
-          A: We host several events throughout the year, including the Alumni Weekend, Hall of Fame Ceremony, and post-game socials.
-          These events are open to players, alumni, and fans to celebrate the spirit of UMBC Rugby.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: Can I invite friends and family to watch games?</button>
-      <div class="faq-answer">
-        <p>
-          A: Absolutely! Games are free to attend and open to everyone. Bring your friends and family to cheer us on and enjoy the rugby experience.
-        </p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: How does rugby prepare players for life outside the game?</button>
-      <div class="faq-answer">
-        <p>
-          A: Rugby teaches resilience, teamwork, and leadership—qualities that benefit players in their careers and personal lives.
-          Many of our alumni carry these values into their communities and professions.
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-    <section class="faq-section" data-aos="fade-up">
-    <div class="section-header">
-      <h2>Rugby Merchandise</h2>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Q: Where can I buy UMBC Rugby merchandise?</button>
-      <div class="faq-answer">
-        <p>
-          A: Show your UMBC Rugby pride with official merchandise! Visit our partner store
-          <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank">
-            Steamroller Rugby</a> for jerseys, shorts, accessories, and more.
-        </p>
-        <p>
-          Whether you're a player, fan, or alumni, you’ll find high-quality gear that helps support the team.
-        </p>
+    <!-- Sponsorship Opportunities -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Partners</span>
+          <h2 class="section-title">Sponsorship Opportunities</h2>
+        </div>
+
+        <div class="faq-list" data-animate>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              How can my company sponsor UMBC Rugby?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We offer multiple sponsorship opportunities to support UMBC Rugby and connect with our vibrant community. Download our <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a> for detailed information about sponsorship tiers, benefits, and how your contribution can make an impact.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What are the benefits of sponsoring UMBC Rugby?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Sponsors receive recognition on our website, social media, and game-day materials, along with opportunities to showcase their brand to the UMBC community and beyond. For more details, please refer to the <a href="assets/docs/sponsor.pdf" target="_blank">Sponsor Packet</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Who should I contact for sponsorship inquiries?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Feel free to reach out to us via Instagram or email us directly!</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- Team Culture & Events -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Community</span>
+          <h2 class="section-title">Team Culture & Events</h2>
+        </div>
+
+        <div class="faq-list" data-animate>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What is the team culture like?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Our team culture is centered on inclusivity, sportsmanship, and brotherhood. We welcome players of all skill levels and backgrounds to join and contribute to our supportive and competitive environment.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              What events do you host?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>We host several events throughout the year, including the Alumni Weekend, Hall of Fame Ceremony, and post-game socials. These events are open to players, alumni, and fans to celebrate the spirit of UMBC Rugby.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Can I invite friends and family to watch games?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Absolutely! Games are free to attend and open to everyone. Bring your friends and family to cheer us on and enjoy the rugby experience.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              How does rugby prepare players for life outside the game?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Rugby teaches resilience, teamwork, and leadership qualities that benefit players in their careers and personal lives. Many of our alumni carry these values into their communities and professions.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rugby Merchandise -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-label">Gear</span>
+          <h2 class="section-title">Rugby Merchandise</h2>
+        </div>
+
+        <div class="faq-list" data-animate>
+          <div class="faq-item">
+            <button class="faq-item__question" aria-expanded="false">
+              Where can I buy UMBC Rugby merchandise?
+              <span class="faq-item__icon">+</span>
+            </button>
+            <div class="faq-item__answer">
+              <p>Show your UMBC Rugby pride with official merchandise! Visit our partner store <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank">Steamroller Rugby</a> for jerseys, shorts, accessories, and more.</p>
+              <p>Whether you're a player, fan, or alumni, you'll find high-quality gear that helps support the team.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__cta">
+          <a href="recruitment.html" class="btn btn--primary">Ready to Join? Sign Up Now</a>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <!-- Logo -->
-    <div class="footer-logo">
-      <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" />
-      <img src="assets/images/ncr.png" alt="NCR Logo" />
-      <img src="assets/images/umbclogo.png" alt="UMBC Logo" />
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__logos">
+        <img src="assets/images/rugbylogo.png" alt="UMBC Rugby Logo" class="footer__logo">
+        <img src="assets/images/ncr.png" alt="NCR Logo" class="footer__logo">
+        <img src="assets/images/umbclogo.png" alt="UMBC Logo" class="footer__logo">
+      </div>
+
+      <nav class="footer__nav">
+        <a href="index.html" class="footer__link">Home</a>
+        <a href="roster.html" class="footer__link">Roster</a>
+        <a href="schedule.html" class="footer__link">Schedule</a>
+        <a href="rugby-ready.html" class="footer__link">Rugby Ready</a>
+        <a href="recruitment.html" class="footer__link">Recruitment</a>
+        <a href="alumni.html" class="footer__link">Alumni</a>
+        <a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener" class="footer__link">Shop</a>
+        <a href="donate.html" class="footer__link">Donate</a>
+        <a href="faq.html" class="footer__link">FAQs</a>
+      </nav>
+
+      <p class="footer__copyright">&copy; 2025 UMBC Rugby Club. Web Design by Leon Tang.</p>
     </div>
-
-    <!-- Footer Navigation Links -->
-    <nav class="footer-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="roster.html">Roster</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="rugby-ready.html">Rugby Ready</a></li>
-        <li><a href="recruitment.html">Recruitment</a></li>
-        <li><a href="https://www.steamrollerrugby.com/search.php?search_query=umbc&section=product" target="_blank" rel="noopener">Shop</a></li>
-        <li><a href="donate.html">Donate</a></li>
-        <li><a href="faq.html">FAQs</a></li>
-      </ul>
-    </nav>
-
-    <!-- Copyright -->
-    <p>&copy; 2025 UMBC Rugby Club. Web Design made by Leon Tang.</p>
   </footer>
 
-  <!-- AOS Library -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/scripts.js"></script>
   <script>
-    // Initialize AOS
-    AOS.init();
+    // FAQ Accordion
+    (function() {
+      const faqItems = document.querySelectorAll('.faq-item');
 
-    // Mobile Menu Initialization - Same as working index.html version
-    function initMobileMenu() {
-      const menuToggle = document.querySelector('.mobile-menu-toggle');
-      const navMenu = document.querySelector('.nav-menu');
-      const menuOverlay = document.querySelector('.mobile-menu-overlay');
-      const navbar = document.getElementById('navbar');
-      
-      if (!menuToggle || !navMenu || !menuOverlay) return;
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-item__question');
 
-      // Toggle mobile menu
-      function toggleMenu() {
-        const isOpen = navbar.classList.contains('mobile-open');
-        
-        navbar.classList.toggle('mobile-open');
-        menuToggle.classList.toggle('active');
-        menuToggle.setAttribute('aria-expanded', !isOpen);
-        document.body.classList.toggle('menu-open');
-        
-        // Prevent body scroll when menu is open
-        document.body.style.overflow = !isOpen ? 'hidden' : '';
-      }
+        question.addEventListener('click', () => {
+          const isOpen = item.classList.contains('faq-item--open');
 
-      // Close mobile menu
-      function closeMenu() {
-        navbar.classList.remove('mobile-open');
-        menuToggle.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        document.body.classList.remove('menu-open');
-        document.body.style.overflow = '';
-      }
-
-      // Event listeners
-      menuToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleMenu();
-      });
-      
-      menuOverlay.addEventListener('click', closeMenu);
-
-      // Close menu when clicking on navigation links
-      const navLinks = navMenu.querySelectorAll('.nav-link');
-      navLinks.forEach(link => {
-        link.addEventListener('click', closeMenu);
-      });
-
-      // Close menu on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && navbar.classList.contains('mobile-open')) {
-          closeMenu();
-        }
-      });
-
-      // Handle window resize
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-          closeMenu();
-        }
-      });
-    }
-
-    // Initialize mobile menu
-    initMobileMenu();
-
-    // FAQ Functionality
-    function initFAQ() {
-      const faqQuestions = document.querySelectorAll('.faq-question');
-      
-      faqQuestions.forEach(question => {
-        question.addEventListener('click', function() {
-          const faqItem = this.parentElement;
-          const isActive = faqItem.classList.contains('active');
-          
-          // Close all other FAQ items
-          document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
+          // Close all items
+          faqItems.forEach(i => {
+            i.classList.remove('faq-item--open');
+            i.querySelector('.faq-item__question').setAttribute('aria-expanded', 'false');
           });
-          
-          // Toggle current item if it wasn't active
-          if (!isActive) {
-            faqItem.classList.add('active');
+
+          // Open clicked item if it wasn't open
+          if (!isOpen) {
+            item.classList.add('faq-item--open');
+            question.setAttribute('aria-expanded', 'true');
           }
         });
       });
-    }
-
-    // Initialize FAQ after DOM is loaded
-    document.addEventListener('DOMContentLoaded', initFAQ);
+    })();
   </script>
 </body>
 </html>
